@@ -25,15 +25,20 @@ Our proposed project is creating a website that addresses the current challenges
 
 
 ## Prototype 1
-1. ![image](https://drive.google.com/uc?export=view&id=1vkJysQpBWe0lSBDjYg1nLdEb-wX4XTp3)
+1. 
+![image](https://drive.google.com/uc?export=view&id=1vkJysQpBWe0lSBDjYg1nLdEb-wX4XTp3)
 
-2. ![image](https://drive.google.com/uc?export=view&id=1ag_TX11I6EsNHC5jlGAMKipOTczqTL-q)
+2. 
+![image](https://drive.google.com/uc?export=view&id=1ag_TX11I6EsNHC5jlGAMKipOTczqTL-q)
 
-3. ![image](https://drive.google.com/uc?export=view&id=1VjdUTOnkajf4dh-eE5aoDWCaZp5Z0UF1)
+3. 
+![image](https://drive.google.com/uc?export=view&id=1VjdUTOnkajf4dh-eE5aoDWCaZp5Z0UF1)
 
-4. ![image](https://drive.google.com/uc?export=view&id=1lTZ1JLrRTTojk6OMfH9_oXv5Jv-BVYl0)
+4. 
+![image](https://drive.google.com/uc?export=view&id=1lTZ1JLrRTTojk6OMfH9_oXv5Jv-BVYl0)
 
-5. ![image](https://drive.google.com/uc?export=view&id=1PnWn_I202kAOjiPI0RcpOFVigIT4acsv)
+5. 
+![image](https://drive.google.com/uc?export=view&id=1PnWn_I202kAOjiPI0RcpOFVigIT4acsv)
 
 
 ## Prototype 2
