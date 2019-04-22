@@ -18,9 +18,13 @@ Our proposed project is creating a website that addresses the current challenges
 
 
 ## Storyboard 1
+This storyboard illustrates some of the elder abuse that occurs when elderly who understand little about technology are coerced into purchasing the most expensive new devices rather than cheaper devices more suited to their needs. 
+
 ![image](https://drive.google.com/uc?export=view&id=1qxKIzjWPSg2il5PQcXeFyAbZYDrhQnLp)
 
 ## Storyboard 2
+This storyboard illustrates how we envision the user flow and demonstrates a use case for an elder seeking to purchase a new tablet or phone and how Elderleap can help them find the right device for them. 
+
 ![image](https://drive.google.com/uc?export=view&id=1LB6WDsUUU7hArBZBhu_zmosoqGUyo8yC)
 
 
