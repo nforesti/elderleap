@@ -42,6 +42,7 @@ Our proposed project is creating a website that addresses the current challenges
 
 
 ## Prototype 2
+This prototype utilizes a filtering interface to help elderly find the proper device for them.
 1. 
 ![image](https://drive.google.com/uc?export=view&id=1-1wY3prA-yIh-Z5mFoqgr6AAkOYT3ukt)
 
