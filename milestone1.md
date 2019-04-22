@@ -25,6 +25,8 @@ Our proposed project is creating a website that addresses the current challenges
 
 
 ## Prototype 1
+This prototype utilizes a quiz selection interface to help the elderly find the right device, phone or tablet, to suit their needs. 
+
 1. 
 ![image](https://drive.google.com/uc?export=view&id=1vkJysQpBWe0lSBDjYg1nLdEb-wX4XTp3)
 
