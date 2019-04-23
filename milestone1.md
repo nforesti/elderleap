@@ -31,30 +31,30 @@ This storyboard illustrates how we envision the user flow and demonstrates a use
 ## Prototype 1
 This prototype utilizes a quiz selection interface to help the elderly find the right phone device to suit their needs. Through the questions (related to price, phone size, brand), the website will narrow down the options so that the the user will only have a few options that fit their needs. With a few options, the user can then go to the local phone store and try out the devices. There is also a rating and review feature (rated for and by elderly users). This interface provides two options. If a user already knows what type of device they want (and are more technologically-skilled) or wants to leave a rating, they can search for the device directly. Otherwise, they can be guided through the questionairre. Because there is a rating system, this is not meant for one-time use; we hope that users will come back, reference this, see their saved devices, and leave ratings.
 
-1. 
+1. Welcome page. can choose to search specific device or do the questionnaire. and option 1 --> search for a specific device, view reviews, and leave a review
 ![image](https://drive.google.com/uc?export=view&id=1vkJysQpBWe0lSBDjYg1nLdEb-wX4XTp3)
 
-2. 
+2. option 2. questionnaire to lead user to a few devices that fit their needs.
 ![image](https://drive.google.com/uc?export=view&id=18ipOtqoBEPzpSS-z_G_3Q0KGJ9FSQSuu)
 
-3. 
+3. View devices that fit their needs from option 2
 ![image](https://drive.google.com/uc?export=view&id=1lTZ1JLrRTTojk6OMfH9_oXv5Jv-BVYl0)
 
-4. 
+4. View information, reviews about a device
 ![image](https://drive.google.com/uc?export=view&id=1PnWn_I202kAOjiPI0RcpOFVigIT4acsv)
 
 
 ## Prototype 2
 This prototype utilizes a filtering interface to help elderly find the proper device (phone or tablet) for them. This will give users a lot more flexibility by allowing them to easily play around with different specifications. This interface also provides different information from prototype 1, such as Uses. Also, there is no login with this system, so the ratings and reviews are from a separate source, rather than made by fellow users. In general, this prototype is much simpler and meant for one-time use.
 
-1. 
+1. Welcome page. user chooses if looking for phone or tablet
 ![image](https://drive.google.com/uc?export=view&id=1-1wY3prA-yIh-Z5mFoqgr6AAkOYT3ukt)
 
-2. 
+2. uses filters, can scroll through devices on the right that qualify specified filters.
 ![image](https://drive.google.com/uc?export=view&id=1jKKqbvBvTDy1kmyYotwohVpxCfQdM3WR)
 
-3. 
+3. after clicking on a device, can view information about the device
 ![image](https://drive.google.com/uc?export=view&id=1YAFou5LLoKZesqAbczK9aonF-qoOWB09)
 
-4. 
+4. view ratings and reviews (imported from another source) for that device
 ![image](https://drive.google.com/uc?export=view&id=1f9DDP7EP27WnfIRRloEL-5jaK-hYaH-r)
