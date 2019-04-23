@@ -18,37 +18,34 @@ Our proposed project is creating a website that addresses the current challenges
 
 
 ## Storyboard 1
-This storyboard illustrates some of the elder abuse that occurs when elderly who understand little about technology are coerced into purchasing the most expensive new devices rather than cheaper devices more suited to their needs. 
+This storyboard illustrates some of the elder abuse that occurs when elderly who understand little about technology are coerced into purchasing the most expensive new devices rather than cheaper devices more suited to their needs. An elderly man who has experienced this tries using our website and is empowered when he goes to the store and already knows what devices he needs in mind; hence, he is not able to fall into the scam of phone sellers.
 
 ![image](https://drive.google.com/uc?export=view&id=1qxKIzjWPSg2il5PQcXeFyAbZYDrhQnLp)
 
 ## Storyboard 2
-This storyboard illustrates how we envision the user flow and demonstrates a use case for an elder seeking to purchase a new tablet or phone and how Elderleap can help them find the right device for them. 
+This storyboard illustrates how we envision the user flow and demonstrates a use case for an elder seeking to purchase a new tablet or phone and how Elderleap can help them find the right device for them. An elderly woman wants to easily be able to find a device that has large visual output and text size. The website helps her and her son find this.
 
 ![image](https://drive.google.com/uc?export=view&id=1LB6WDsUUU7hArBZBhu_zmosoqGUyo8yC)
 
 
 ## Prototype 1
-This prototype utilizes a quiz selection interface to help the elderly find the right device, phone or tablet, to suit their needs. 
+This prototype utilizes a quiz selection interface to help the elderly find the right phone device to suit their needs. Through the questions (related to price, phone size, brand), the website will narrow down the options so that the the user will only have a few options that fit their needs. With a few options, the user can then go to the local phone store and try out the devices. There is also a rating and review feature (rated for and by elderly users). This interface provides two options. If a user already knows what type of device they want (and are more technologically-skilled) or wants to leave a rating, they can search for the device directly. Otherwise, they can be guided through the questionairre. Because there is a rating system, this is not meant for one-time use; we hope that users will come back, reference this, see their saved devices, and leave ratings.
 
 1. 
 ![image](https://drive.google.com/uc?export=view&id=1vkJysQpBWe0lSBDjYg1nLdEb-wX4XTp3)
 
 2. 
-![image](https://drive.google.com/uc?export=view&id=1ag_TX11I6EsNHC5jlGAMKipOTczqTL-q)
+![image](https://drive.google.com/uc?export=view&id=18ipOtqoBEPzpSS-z_G_3Q0KGJ9FSQSuu)
 
 3. 
-![image](https://drive.google.com/uc?export=view&id=1VjdUTOnkajf4dh-eE5aoDWCaZp5Z0UF1)
-
-4. 
 ![image](https://drive.google.com/uc?export=view&id=1lTZ1JLrRTTojk6OMfH9_oXv5Jv-BVYl0)
 
-5. 
+4. 
 ![image](https://drive.google.com/uc?export=view&id=1PnWn_I202kAOjiPI0RcpOFVigIT4acsv)
 
 
 ## Prototype 2
-This prototype utilizes a filtering interface to help elderly find the proper device for them.
+This prototype utilizes a filtering interface to help elderly find the proper device (phone or tablet) for them. This will give users a lot more flexibility by allowing them to easily play around with different specifications. This interface also provides different information from prototype 1, such as Uses. Also, there is no login with this system, so the ratings and reviews are from a separate source, rather than made by fellow users. In general, this prototype is much simpler and meant for one-time use.
 
 1. 
 ![image](https://drive.google.com/uc?export=view&id=1-1wY3prA-yIh-Z5mFoqgr6AAkOYT3ukt)
