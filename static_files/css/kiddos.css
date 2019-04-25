@@ -1,4 +1,5 @@
 .flex-container {
+    justify-content: space-around;
     padding: 0;
     margin: 0;
     list-style: none;
@@ -20,14 +21,18 @@
   }
   .flex-item {
     background: tomato;
-    padding: 5px;
-    width: 100px;
-    height: 100px;
+    padding: 15px;
+    min-width: 200px;
+    max-width: 45%;
+    height: 100%;
     margin: 10px;
-    
-    line-height: 100px;
     color: white;
     font-weight: bold;
     font-size: 2em;
     text-align: center;
   }
+  
+  .flex-item img{
+    width: 80%;
+  }
+  
