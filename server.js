@@ -36,9 +36,23 @@ app.use(express.static('static_files'));
 // this script restarts. however, as long as the script is running, this
 // database can be modified at will.
 const fakeDatabase = {
-  'Philip': {job: 'professor', pet: 'cat.jpg'},
-  'John': {job: 'student',   pet: 'dog.jpg'},
-  'Carol': {job: 'engineer',  pet: 'bear.jpg'}
+  'Philip': { job: 'professor', pet: 'cat.jpg' },
+  'John': { job: 'student', pet: 'dog.jpg' },
+  'Carol': { job: 'engineer', pet: 'bear.jpg' }
+};
+
+
+const mario = {
+  'dinasaurs': {
+    'T Rex': 'https://www.shareicon.net/data/128x128/2016/04/13/491786_trex_252x298.png'
+  },
+  'dogs': {
+    'terrier': 'https://www.petplan.co.uk/images/breeds/sm/westhighland-white-terrier.jpg'
+  }
+};
+
+const imageDatabase = {
+  'smile': 'https://image.flaticon.com/icons/png/128/42/42829.png'
 };
 
 
@@ -80,3 +94,10 @@ app.get('/users/:userid', (req, res) => {
 app.listen(3000, () => {
   console.log('Server started at http://localhost:3000/');
 });
+
+
+
+
+
+
+
