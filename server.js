@@ -35,25 +35,34 @@ app.use(express.static('static_files'));
 // that they become persistent, but this fake database will be reset when
 // this script restarts. however, as long as the script is running, this
 // database can be modified at will.
+
+/*
 const fakeDatabase = {
   'Philip': { job: 'professor', pet: 'cat.jpg' },
   'John': { job: 'student', pet: 'dog.jpg' },
   'Carol': { job: 'engineer', pet: 'bear.jpg' }
-};
+};*/
 
-
-const mario = {
-  'dinasaurs': {
-    'T Rex': 'https://www.shareicon.net/data/128x128/2016/04/13/491786_trex_252x298.png'
+const fakeData =
+{
+  "preset": {
+    "category": {
+      "img": "https://image.flaticon.com/icons/png/128/42/42829.png",
+      "subcategory": "https://image.flaticon.com/icons/png/128/42/42829.png"
+    }
   },
-  'dogs': {
-    'terrier': 'https://www.petplan.co.uk/images/breeds/sm/westhighland-white-terrier.jpg'
+  "users": {
+    "mario": {
+      'dinasaurs': {
+        'T Rex': 'https://www.shareicon.net/data/128x128/2016/04/13/491786_trex_252x298.png'
+      },
+      'dogs': {
+        'terrier': 'https://www.petplan.co.uk/images/breeds/sm/westhighland-white-terrier.jpg'
+      }
+    }
   }
-};
+}
 
-const imageDatabase = {
-  'smile': 'https://image.flaticon.com/icons/png/128/42/42829.png'
-};
 
 
 // To learn more about server routing:
@@ -66,10 +75,12 @@ const imageDatabase = {
 //
 // To test, open this URL in your browser:
 //   http://localhost:3000/users
-app.get('/users', (req, res) => {
-  const allUsernames = Object.keys(fakeDatabase); // returns a list of object keys
-  console.log('allUsernames is:', allUsernames);
-  res.send(allUsernames);
+
+app.get('/browse', (req, res) => {
+  const data = fakeData;
+  const presetData = fakeData.preset;
+  console.log(presetData);
+  res.send(presetData);
 });
 
 
@@ -79,6 +90,10 @@ app.get('/users', (req, res) => {
 //   http://localhost:3000/users/Philip
 //   http://localhost:3000/users/Carol
 //   http://localhost:3000/users/invalidusername
+
+
+
+/*
 app.get('/users/:userid', (req, res) => {
   const nameToLookup = req.params.userid; // matches ':userid' above
   const val = fakeDatabase[nameToLookup];
@@ -88,7 +103,7 @@ app.get('/users/:userid', (req, res) => {
   } else {
     res.send({}); // failed, so return an empty object instead of undefined
   }
-});
+});*/
 
 // start the server at URL: http://localhost:3000/
 app.listen(3000, () => {
