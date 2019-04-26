@@ -1,66 +1,42 @@
-// Node.js + Express server backend for petsapp
-//
-// COGS121 by Philip Guo
-// https://github.com/pgbovine/COGS121
-
-// Prerequisites - first run:
-//   npm install
-//
-// which will look in package.json and install all dependencies
-// (e.g., express)
-//
-// To start the server, run:
-//   node server.js
-//
-// and open the frontend webpage at http://localhost:3000/petsapp.html
-
 const express = require('express');
 const app = express();
 
-// put all of your static files (e.g., HTML, CSS, JS, JPG) in the static_files/
-// sub-directory, and the server will serve them from there. e.g.,:
-//
-// http://localhost:3000/petsapp.html
-// http://localhost:3000/cat.jpg
-//
-// will send the file static_files/cat.jpg to the user's web browser
-//
 // Learn more: http://expressjs.com/en/starter/static-files.html
 app.use(express.static('static_files'));
-
-
-// simulates a database in memory, to make this example simple and
-// self-contained (so that you don't need to set up a separate database).
-// note that a real database will save its data to the hard drive so
-// that they become persistent, but this fake database will be reset when
-// this script restarts. however, as long as the script is running, this
-// database can be modified at will.
-
-/*
-const fakeDatabase = {
-  'Philip': { job: 'professor', pet: 'cat.jpg' },
-  'John': { job: 'student', pet: 'dog.jpg' },
-  'Carol': { job: 'engineer', pet: 'bear.jpg' }
-};*/
 
 const fakeData =
 {
   "preset": {
     "category": {
       "img": "https://image.flaticon.com/icons/png/128/42/42829.png",
-      "subcategory": "https://image.flaticon.com/icons/png/128/42/42829.png"
+      "subcategory1": "https://image.flaticon.com/icons/png/128/42/42829.png",
+      "subcategory2": "https://image.flaticon.com/icons/png/128/42/42829.png",
+      "subcategory3": "https://image.flaticon.com/icons/png/128/42/42829.png",
+      "subcategory4": "https://image.flaticon.com/icons/png/128/42/42829.png"
     },
     "category1": {
       "img": "https://image.flaticon.com/icons/png/128/42/42829.png",
-      "subcategory": "https://image.flaticon.com/icons/png/128/42/42829.png"
+      "subcategory5": "https://image.flaticon.com/icons/png/128/42/42829.png",
+      "subcategory6": "https://image.flaticon.com/icons/png/128/42/42829.png",
+      "subcategory7": "https://image.flaticon.com/icons/png/128/42/42829.png",
+      "subcategory8": "https://image.flaticon.com/icons/png/128/42/42829.png",
+      "subcategory9": "https://image.flaticon.com/icons/png/128/42/42829.png"
     },
     "category2": {
       "img": "https://image.flaticon.com/icons/png/128/42/42829.png",
-      "subcategory": "https://image.flaticon.com/icons/png/128/42/42829.png"
+      "subcategory10": "https://image.flaticon.com/icons/png/128/42/42829.png",
+      "subcategory11": "https://image.flaticon.com/icons/png/128/42/42829.png",
+      "subcategory12": "https://image.flaticon.com/icons/png/128/42/42829.png",
+      "subcategory13": "https://image.flaticon.com/icons/png/128/42/42829.png",
+      "subcategory14": "https://image.flaticon.com/icons/png/128/42/42829.png"
     },
     "category3": {
       "img": "https://image.flaticon.com/icons/png/128/42/42829.png",
-      "subcategory": "https://image.flaticon.com/icons/png/128/42/42829.png"
+      "subcategory15": "https://image.flaticon.com/icons/png/128/42/42829.png",
+      "subcategory16": "https://image.flaticon.com/icons/png/128/42/42829.png",
+      "subcategory17": "https://image.flaticon.com/icons/png/128/42/42829.png",
+      "subcategory18": "https://image.flaticon.com/icons/png/128/42/42829.png",
+      "subcategory19": "https://image.flaticon.com/icons/png/128/42/42829.png"
     }
   },
   "users": {
@@ -74,21 +50,6 @@ const fakeData =
     }
   }
 }
-
-
-
-// To learn more about server routing:
-// Express - Hello world: http://expressjs.com/en/starter/hello-world.html
-// Express - basic routing: http://expressjs.com/en/starter/basic-routing.html
-// Express - routing: https://expressjs.com/en/guide/routing.html
-
-
-// GET a list of all usernames
-//
-// To test, open this URL in your browser:
-//   http://localhost:3000/users
-
-
 
 app.get('/browse/preset', (req, res) => {
   const data = fakeData;
@@ -106,6 +67,13 @@ app.get('/browse/preset/:category', (req, res) => {
   res.send(presetData);
 });
 
+app.listen(3000, () => {
+  console.log('Server started at http://localhost:3000/');
+});
+
+
+
+
 
 // GET profile data for a user
 //
@@ -113,8 +81,6 @@ app.get('/browse/preset/:category', (req, res) => {
 //   http://localhost:3000/users/Philip
 //   http://localhost:3000/users/Carol
 //   http://localhost:3000/users/invalidusername
-
-
 
 /*
 app.get('/users/:userid', (req, res) => {
@@ -129,10 +95,18 @@ app.get('/users/:userid', (req, res) => {
 });*/
 
 // start the server at URL: http://localhost:3000/
-app.listen(3000, () => {
-  console.log('Server started at http://localhost:3000/');
-});
 
+
+// To learn more about server routing:
+// Express - Hello world: http://expressjs.com/en/starter/hello-world.html
+// Express - basic routing: http://expressjs.com/en/starter/basic-routing.html
+// Express - routing: https://expressjs.com/en/guide/routing.html
+
+
+// GET a list of all usernames
+//
+// To test, open this URL in your browser:
+//   http://localhost:3000/users
 
 
 
