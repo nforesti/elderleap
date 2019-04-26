@@ -49,6 +49,18 @@ const fakeData =
     "category": {
       "img": "https://image.flaticon.com/icons/png/128/42/42829.png",
       "subcategory": "https://image.flaticon.com/icons/png/128/42/42829.png"
+    },
+    "category1": {
+      "img": "https://image.flaticon.com/icons/png/128/42/42829.png",
+      "subcategory": "https://image.flaticon.com/icons/png/128/42/42829.png"
+    },
+    "category2": {
+      "img": "https://image.flaticon.com/icons/png/128/42/42829.png",
+      "subcategory": "https://image.flaticon.com/icons/png/128/42/42829.png"
+    },
+    "category3": {
+      "img": "https://image.flaticon.com/icons/png/128/42/42829.png",
+      "subcategory": "https://image.flaticon.com/icons/png/128/42/42829.png"
     }
   },
   "users": {
@@ -76,10 +88,21 @@ const fakeData =
 // To test, open this URL in your browser:
 //   http://localhost:3000/users
 
+
+
 app.get('/browse/preset', (req, res) => {
   const data = fakeData;
   const presetData = fakeData.preset;
   console.log(presetData);
+  res.send(presetData);
+});
+
+app.get('/browse/preset/:category', (req, res) => {
+  console.log("toprint");
+  const data = fakeData;
+  const categoryToLookup = req.params.category;
+  const presetData = fakeData.preset[categoryToLookup];
+  console.log("prefest" + presetData);
   res.send(presetData);
 });
 
