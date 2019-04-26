@@ -76,7 +76,7 @@ const fakeData =
 // To test, open this URL in your browser:
 //   http://localhost:3000/users
 
-app.get('/browse', (req, res) => {
+app.get('/browse/preset', (req, res) => {
   const data = fakeData;
   const presetData = fakeData.preset;
   console.log(presetData);

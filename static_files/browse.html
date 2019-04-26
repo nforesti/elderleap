@@ -1,40 +1,52 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
 	<meta charset="utf-8" />
-	
+
 	<title>Categories</title>
-		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<!-- Bootstrap css -->
 	<link href="css/bootstrap.css" rel="stylesheet" media="screen">
 	<!-- Theme css -->
-	<link href="css/colorfrog.css" rel="stylesheet" media="screen">   
-	<link href="css/kiddos.css" rel="stylesheet"> 
+	<link href="css/colorfrog.css" rel="stylesheet" media="screen">
+	<link href="css/kiddos.css" rel="stylesheet">
 
-	<link href='http://fonts.googleapis.com/css?family=PT+Sans:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+	<link href='http://fonts.googleapis.com/css?family=PT+Sans:400,700,400italic,700italic' rel='stylesheet'
+		type='text/css'>
 	<link href="img/favicon.ico" rel="shortcut icon" type="image/x-icon" />
 	<script src="js/respond.min.js"></script>
 
 	<script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
-	<script src="js/bootstrap.js"></script>	
+	<script src="js/bootstrap.js"></script>
 	<script src="js/jquery.fitvids.js"></script>
 	<script src="js/colorfrog.js"></script>
 	<script src="js/speech.js"></script>
+	<script>
+		console.log("printhere");
+		$(document).ready(() => {
+			const requestURL = '/browse/preset';
+			console.log(requestURL);
+			$.ajax({
+				// all URLs are relative to http://localhost:3000/
+				url: requestURL,
+				type: 'GET',
+				dataType: 'json', // this URL returns data in JSON format
+				success: (data) => {
+					console.log('You received some data!', data);
 
-	$(document).ready(() => {
-		
-		  $.ajax({
-			// all URLs are relative to http://localhost:3000/
-			url: requestURL,
-			type: 'GET',
-			dataType : 'json', // this URL returns data in JSON format
-			success: (data) => {
-			  console.log('You received some data!', data);
-			},
-		  });
-	};
+					for (category in data) {
+						console.log(data[category].img);
+						$('#testerimg').attr("src", data[category].img);
+						$('#testername').html(category);
+					}
 
-	
+				},
+			});
+		});
+	</script>
+
+
 	<!--[if lt IE 9]>
 	<script>
 		document.createElement('header');document.createElement('nav');document.createElement('section');document.createElement('article');document.createElement('aside');document.createElement('footer');
@@ -42,8 +54,9 @@
 	<![endif]-->
 
 </head>
+
 <body class="bw">
-<!--
+	<!--
 Use the corresponding body tag for your chosen theme
 <body class="blue">
 <body class="orange">
@@ -53,7 +66,9 @@ Use the corresponding body tag for your chosen theme
 
 	<div class="container">
 		<header>
-			<a href="index.html"><h1>ACT</h1></a>
+			<a href="index.html">
+				<h1>ACT</h1>
+			</a>
 		</header>
 
 		<button class="btn navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
@@ -61,22 +76,23 @@ Use the corresponding body tag for your chosen theme
 			<span class="icon-bar"></span>
 			<span class="icon-bar"></span>
 		</button>
-		
+
 		<nav class="navbar-collapse collapse">
 			<ul class="nav nav-pills">
 				<li><a href="index.html">Home</a></li>
 				<li><a href="styles.html">Styles</a></li>
 				<li><a href="templates.html">Templates</a></li>
-				<li><a href="support.html">Support</a></li>              
+				<li><a href="support.html">Support</a></li>
 			</ul>
 		</nav>
-	</div> <!-- //end container -->	
-	<ul class="flex-container wrap" >
-		<li id="tester" class="flex-item subcategory" >
-			<img src="https://image.flaticon.com/icons/png/128/42/42829.png">
-			<h3>Category</h3>
+	</div> <!-- //end container -->
+	<ul class="flex-container wrap">
+		<li id="tester" class="flex-item subcategory">
+			<img id="testerimg" src="">
+			<h3 id="testername"></h3>
 		</li>
 	</ul>
 
 </body>
+
 </html>
