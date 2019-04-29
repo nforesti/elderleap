@@ -28,7 +28,7 @@ $(document).ready(() => {
                 let html = "";
                 for (subcategory in data) {
                     if (subcategory != "img") {
-                        html = html + '<li onclick="toSpeech(&quot;'+subcategory+'&quot;)" class="flex-item category">\n<img src="' + data[subcategory] + '">\n<h3>' + subcategory + '</h3>\n</li>';
+                        html = html + '<li onclick="toSpeech(&quot;' + subcategory + '&quot;)" class="flex-item category">\n<img src="' + data[subcategory] + '">\n<h3>' + subcategory + '</h3>\n</li>';
                         $('#categoryContainer').html(html);
                     }
                 }

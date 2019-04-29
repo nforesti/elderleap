@@ -28,5 +28,5 @@ function toSpeech(word) {
     utterThis.pitch = .7;
     utterThis.rate = .9;
     synth.speak(utterThis);
-    console.log("isspeaking");
 }
+
