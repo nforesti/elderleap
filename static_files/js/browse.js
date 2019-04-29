@@ -1,5 +1,5 @@
 $(document).ready(() => {
-    const requestURL = '/browse/preset';
+    const requestURL = '/browse';
     console.log(requestURL);
     $.ajax({
         // all URLs are relative to http://localhost:3000/
@@ -21,7 +21,7 @@ $(document).ready(() => {
     $(document).on('click', '.category', function () {
         const catName = $(this).find("h3")[0].innerHTML;
         $.ajax({
-            url: 'browse/preset/' + catName,
+            url: 'browse/' + catName,
             type: 'GET',
             dataType: 'json',
             success: (data) => {

@@ -51,14 +51,14 @@ const fakeData =
   }
 }
 
-app.get('/browse/preset', (req, res) => {
+app.get('/browse', (req, res) => {
   const data = fakeData;
   const presetData = fakeData.preset;
   console.log(presetData);
   res.send(presetData);
 });
 
-app.get('/browse/preset/:category', (req, res) => {
+app.get('/browse/:category', (req, res) => {
   console.log("toprint");
   const data = fakeData;
   const categoryToLookup = req.params.category;

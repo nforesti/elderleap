@@ -19,8 +19,13 @@
   .wrap li {
     background: gold;
   }
-  .flex-item {
-    background: tomato;
+
+  
+  .flex-item img{
+    width: 80%;
+  }
+  .flex-item.category {
+    background: gold;
     padding: 15px;
     min-width: 200px;
     max-width: 45%;
@@ -31,7 +36,58 @@
     font-size: 2em;
     text-align: center;
   }
-  
-  .flex-item img{
+
+  #rememberlabel{
+    display: inline;
+  }
+
+
+  #navbar {
+    width: 100%;
+  }
+
+  #navbar  {
+    padding: 0;
+    list-style: none;
+  }
+
+
+  .nav {
+    display: flex;
+    height: 46px;
+    align-items: center;
+    padding: 0 10px;
+    border-radius: 5px;
+    color: rgba(117,117,117 ,1);
+  }
+  .nav * {
+    cursor: pointer;
+  }
+
+
+  .nav #homeBtn{
+    margin-left:5%;
+    margin-top: 2em;
+    margin-bottom: 2em;
+    max-width: 4em;
+  }
+
+  .nav #loginBtn{
+    margin-right: 5%;
+    margin-left: auto;
+    margin-top: 2em;
+    margin-bottom: 2em;
+  }
+
+  div.container{
+    padding-top: 2em;
+    padding-bottom: 2em;
+  }
+
+
+
+#navitem{
+  display: inline-flex;
+    float: right;
     width: 80%;
   }
