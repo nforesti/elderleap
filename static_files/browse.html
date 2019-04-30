@@ -14,6 +14,8 @@
 
 	<link href='http://fonts.googleapis.com/css?family=PT+Sans:400,700,400italic,700italic' rel='stylesheet'
 		type='text/css'>
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+		integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
 	<link href="img/favicon.ico" rel="shortcut icon" type="image/x-icon" />
 	<script src="js/respond.min.js"></script>
 
@@ -32,7 +34,7 @@
 </head>
 
 
-<body class="bw">
+<body>
 	<!--
 Use the corresponding body tag for your chosen theme
 <body class="blue">
@@ -42,21 +44,29 @@ Use the corresponding body tag for your chosen theme
 -->
 
 
-	<div style="width: 100%" class="container">
-		<header id="navbar" class="nav" role="navigation">
 
-			<h2 onclick="window.location.replace('/')" id="homeBtn"><i class="flex-item fa fa-home"></i>ACT</h2>
-			<div id="navitem">
-				<h5 style="margin-left: auto; margin-right: 0px;" class="flex-item"><a href="browse.html">Categories</a>
-				</h5>
-				<h5 style="margin-left: 1.5em; margin-right: 0px;" class="flex-item "><a
-						href="message.html">Messages</a></h5>
-			</div>
-		</header>
+	<div style="width: 90%; margin-left: auto; margin-right: auto; ">
+
+		<div style="width: 100%; padding-left: 0px; padding-right: 0px;" class="container">
+			<header id="navbar" class="nav" role="navigation">
+
+				<h2 onclick="window.location.replace('/')" id="homeBtn"><i class="flex-item fa fa-home"></i>ACT</h2>
+				<div id="navitem">
+					<h5 style="margin-left: auto; margin-right: 0px;" class="flex-item"><a
+							href="browse.html">Categories</a>
+					</h5>
+					<h5 style="margin-left: 1.5em; margin-right: 0px;" class="flex-item "><a
+							href="message.html">Messages</a></h5>
+					<h5 style="margin-left: 1.5em; margin-right: 0px;" class="flex-item "><a href="profile.html"><i
+								class="fas fa-user-circle"></i></a></h5>
+				</div>
+			</header>
+		</div>
+
+		<button style="display: none" id="backToHomeBtn" class="btn btn-small"><i class="fas fa-angle-left"></i> Browse</button>
+		<ul style="border: none" id="categoryContainer" class="flex-container wrap">
+		</ul>
 	</div>
-	<ul id="categoryContainer" class="flex-container wrap">
-
-	</ul>
 
 </body>
 
