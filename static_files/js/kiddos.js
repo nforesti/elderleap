@@ -4,7 +4,6 @@ $(document).ready(() => {
     });
 
     $("#messageBtn").click(messageToSpeech);
-    $("#backToHomeBtn").click((e) => {console.log("print");window.location.replace("/browse.html");});
 });
 
 
