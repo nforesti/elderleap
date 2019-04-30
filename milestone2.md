@@ -14,16 +14,19 @@ Below is a paper prototype for A.C.T - "Assistive Communication Tool". It consis
 
 Below are wireframes for the main pages of the application. 
 
-(1) home page
+### (1) Home Page
+
 ![image](https://drive.google.com/uc?export=view&id=1s8U3_wOf6y03d7FMqaMp_CQg36Rx7fBB) 
 
-(2) main categories page
+### (2) Main Categories Page
+
 ![image](https://drive.google.com/uc?export=view&id=1vrEAwuwD0sJr8XQiE8GL5N-oglAL5zk-) 
 
-(3) sub-categories page
+### (3) Sub-Categories Page
+
 ![image](https://drive.google.com/uc?export=view&id=1u5el8f5O0KPFgmAmUpLQ1X7Ec5lBeAmt)
 
-(4) about me page
+#### (4) About Me Page
 ![image](https://drive.google.com/uc?export=view&id=1t5JOF4hzwjnoO14h1H01mESGtiwjiMpQ) 
 
 ## Screenshots of UI Webpages
@@ -31,12 +34,12 @@ Our main webpages differ from our original paper prototypes in Milestone 1 due t
 The screenshots below are based on the paper prototype and wireframes presented in this milestone. We implemented the home page,
 the main interface of the app containing a grid of categories, which links to the next logical page containing subcategories after the user has clicked on a category. 
 
-(1) home page
+### (1) Home Page
 ![image](https://drive.google.com/uc?export=view&id=1Ni5u9p12QkAMW6tId9iD9-w_Eiof76At) 
 
-(2) main categories page
+### (2) Main Categories Page
 ![image](https://drive.google.com/uc?export=view&id=137jQ2TQQcXwmgu8t3TkcsHtyIKTnY4vz) 
 
-(3) sub-categories page
+### (3) Sub-Categories Page
 ![image](https://drive.google.com/uc?export=view&id=1sXZEqUPtW3uL_Ki6y_dZScxFSwueiO9m) 
 
