@@ -3,7 +3,7 @@
 ## Background
 After researching and prototyping our idea from Milestone 1, 
 we decided to go in a different direction due to some implementation issues with our first prototoype. Our new proposal for a web app is a
-communication tool for nonverbal children with autism. Our app would serve as a tool for our users to communicate by using an image-based text-to-speech interface. In addition, we are considering implementing features such as auto-complete, and possibly a "learning" feature to display a video demo of an ASL symbol corresponding to a given word. 
+communication tool for nonverbal children with autism. Our app would serve as a tool for our users to communicate by using an image based, text-to-speech interface. In addition, we are considering implementing features such as auto-complete, and possibly a "learning" feature to display a video demo of an ASL symbol corresponding to a given word. 
 
 ## Paper Prototype
 Below is a paper prototype for A.C.T - "Assistive Communication Tool". It consists of a homepage with general information about the app and its features, a login page, and the main interface of the web-app containing a grid of images that the user can click on to trigger a text-to-speech function associated with the image. Finally, there is an About Me page with important information about the user for caregivers to access - such as allergies, medications, and emergency contact numbers. 
