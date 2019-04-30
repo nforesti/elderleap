@@ -8,7 +8,7 @@ nonverbal children with autism, and our app would serve as a tool to help them c
 ## Paper Prototype
 ![image](https://drive.google.com/uc?export=view&id=1yHcopS1TwMvT1KuQlym9B4QTQlTice-y) 
 
-## Wireframes
+
 ![image](https://drive.google.com/uc?export=view&id=1XnBhCkrdvz5SkTUwe05QHp_gpBwb9LVC) 
 
 ![image](https://drive.google.com/uc?export=view&id=1ItQwjajCCsg-0RR7ru127q6gfLNZTQVz)
