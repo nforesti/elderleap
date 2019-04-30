@@ -8,14 +8,8 @@ nonverbal children with autism, and our app would serve as a tool to help them c
 ## Paper Prototype
 ![image](https://drive.google.com/uc?export=view&id=1yHcopS1TwMvT1KuQlym9B4QTQlTice-y) 
 
-
-![image](https://drive.google.com/uc?export=view&id=1XnBhCkrdvz5SkTUwe05QHp_gpBwb9LVC) 
-
-![image](https://drive.google.com/uc?export=view&id=1ItQwjajCCsg-0RR7ru127q6gfLNZTQVz)
-
-![image](https://drive.google.com/uc?export=view&id=1fHWUqCxce-QUQ4vqfCl9O6TN4LNZIVJT)
-
-![image](https://drive.google.com/uc?export=view&id=1OJn-H_QNEfwAbxeWvXIS2yyRY7QORBQc) 
+## Wireframes
+https://www.figma.com/file/HtPyaBZlkN2EWFRaLQD5dfmS/ACT-Prototype?node-id=0%3A1
 
 ## Screenshots of UI Webpages
 Our main webpages differ from our paper prototypes in Milestone 1 due to a change in the central project idea.
