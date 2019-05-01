@@ -30,6 +30,7 @@ $(document).ready(() => {
             type: 'GET',
             dataType: 'json',
             success: (data) => {
+                $('#subTitle').html(catName);
                 let html = "";
                 for (subcategory in data) {
                     if (subcategory != "img") {

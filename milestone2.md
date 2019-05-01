@@ -40,6 +40,5 @@ the main interface of the app containing a grid of categories, which links to th
 ### (2) Main Categories Page
 ![image](https://drive.google.com/uc?export=view&id=137jQ2TQQcXwmgu8t3TkcsHtyIKTnY4vz) 
 
-### (3) Sub-Categories Page
-![image](https://drive.google.com/uc?export=view&id=1sXZEqUPtW3uL_Ki6y_dZScxFSwueiO9m) 
-
+### Categories page after a category is clicked on 
+![image](https://drive.google.com/uc?export=view&id=1GVzwFkd1MlPLJDIYF7R61tVuKex13FkT)
