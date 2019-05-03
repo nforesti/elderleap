@@ -17,6 +17,30 @@
 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
 		integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
 	<link href="img/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+
+	<!-- The core Firebase JS SDK is always required and must be listed first -->
+	<script src="https://www.gstatic.com/firebasejs/5.11.1/firebase-app.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/3.1.0/firebase-database.js"></script>
+
+	<!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#config-web-app -->
+
+	<script>
+		// Your web app's Firebase configuration
+		var firebaseConfig = {
+			apiKey: "",
+			authDomain: "cogs121kiddos.firebaseapp.com",
+			databaseURL: "https://cogs121kiddos.firebaseio.com",
+			projectId: "cogs121kiddos",
+			storageBucket: "cogs121kiddos.appspot.com",
+			messagingSenderId: "497727301450",
+			appId: "1:497727301450:web:3ecbe728cb7639a0"
+		};
+		// Initialize Firebase
+		firebase.initializeApp(firebaseConfig);
+	</script>
+
+
 	<script src="js/respond.min.js"></script>
 
 	<script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
@@ -65,31 +89,11 @@ Use the corresponding body tag for your chosen theme
 
 		<button style="display: none" id="backToHomeBtn" class="btn btn-small"><i class="fas fa-angle-left"></i>
 			Browse</button>
+		<button id="updateDatabase"></button>
 		<h1 style="text-align: center; margin-left: auto; margin-right: auto;" id="subTitle"></h1>
 		<ul style="border: none" id="categoryContainer" class="flex-container wrap">
 		</ul>
 	</div>
-
-	<!-- The core Firebase JS SDK is always required and must be listed first -->
-	<script src="https://www.gstatic.com/firebasejs/5.11.1/firebase-app.js"></script>
-
-	<!-- TODO: Add SDKs for Firebase products that you want to use
-     https://firebase.google.com/docs/web/setup#config-web-app -->
-
-	<script>
-		// Your web app's Firebase configuration
-		var firebaseConfig = {
-			apiKey: "AIzaSyAe_CzU19-FuQoekJU1qqUVLVc_2U9Ufk8",
-			authDomain: "cogs121-project.firebaseapp.com",
-			databaseURL: "https://cogs121-project.firebaseio.com",
-			projectId: "cogs121-project",
-			storageBucket: "cogs121-project.appspot.com",
-			messagingSenderId: "335939219637",
-			appId: "1:335939219637:web:0276e446a372503b"
-		};
-		// Initialize Firebase
-		firebase.initializeApp(firebaseConfig);
-	</script>
 </body>
 
 </html>

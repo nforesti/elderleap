@@ -1,4 +1,9 @@
 $(document).ready(() => {
+    const database = firebase.database();
+    $(document).on('click', '#updateDatabase', function () {
+        console.log("print");
+        database.ref('categories/').set(fakeData.preset);
+    });
     const fakeData =
     {
         "preset": {
@@ -35,8 +40,10 @@ $(document).ready(() => {
             }
         }
     }
-    const database = firebase.database();
-    database.ref('browse/preset').set({'user': "bla"});
+
+    
+
+
 
 
 
