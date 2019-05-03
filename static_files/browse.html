@@ -63,12 +63,33 @@ Use the corresponding body tag for your chosen theme
 			</header>
 		</div>
 
-		<button style="display: none" id="backToHomeBtn" class="btn btn-small"><i class="fas fa-angle-left"></i> Browse</button>
+		<button style="display: none" id="backToHomeBtn" class="btn btn-small"><i class="fas fa-angle-left"></i>
+			Browse</button>
 		<h1 style="text-align: center; margin-left: auto; margin-right: auto;" id="subTitle"></h1>
 		<ul style="border: none" id="categoryContainer" class="flex-container wrap">
 		</ul>
 	</div>
 
+	<!-- The core Firebase JS SDK is always required and must be listed first -->
+	<script src="https://www.gstatic.com/firebasejs/5.11.1/firebase-app.js"></script>
+
+	<!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#config-web-app -->
+
+	<script>
+		// Your web app's Firebase configuration
+		var firebaseConfig = {
+			apiKey: "AIzaSyAe_CzU19-FuQoekJU1qqUVLVc_2U9Ufk8",
+			authDomain: "cogs121-project.firebaseapp.com",
+			databaseURL: "https://cogs121-project.firebaseio.com",
+			projectId: "cogs121-project",
+			storageBucket: "cogs121-project.appspot.com",
+			messagingSenderId: "335939219637",
+			appId: "1:335939219637:web:0276e446a372503b"
+		};
+		// Initialize Firebase
+		firebase.initializeApp(firebaseConfig);
+	</script>
 </body>
 
 </html>
