@@ -1,5 +1,6 @@
 $(document).ready(() => {
     const database = firebase.database();
+
     $(document).on('click', '#updateDatabase', function () {
         console.log("print");
         database.ref('categories/').set(fakeData.preset);
@@ -7,7 +8,7 @@ $(document).ready(() => {
     const fakeData =
     {
         "preset": {
-            "category": {
+            "fakecategory": {
                 "img": "https://image.flaticon.com/icons/png/128/42/42829.png",
                 "subcategory1": "https://image.flaticon.com/icons/png/128/42/42829.png",
                 "subcategory2": "https://image.flaticon.com/icons/png/128/42/42829.png",
@@ -48,7 +49,7 @@ $(document).ready(() => {
 
 
 
-    /*
+    
     const enterBrowse = () => {
         const requestURL = '/browse';
         console.log(requestURL);
@@ -94,5 +95,5 @@ $(document).ready(() => {
 
         document.getElementById("backToHomeBtn").style.display = "inline";
     });
-    */
+    
 });
