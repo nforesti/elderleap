@@ -1,3 +1,21 @@
+//Require Wrapper Library for pexels 
+const PexelsAPI = require('pexels-api-wrapper');
+
+//Create Client instance by passing in API key
+var pexelsClient = new PexelsAPI(getPexel);
+
+//Search API
+pexelsClient.search("food", 1, 1)
+    .then(function(result){
+        console.log(result);
+    }).
+    catch(function(e){
+        console.err(e);
+    });
+
+
+/* Fake Database from Milestone 2
+
 const express = require('express');
 const app = express();
 
@@ -50,63 +68,10 @@ const fakeData =
     }
   }
 }
-
-app.get('/browse', (req, res) => {
-  const data = fakeData;
-  const presetData = fakeData.preset;
-  console.log(presetData);
-  res.send(presetData);
-});
-
-app.get('/browse/:category', (req, res) => {
-  console.log("toprint");
-  const data = fakeData;
-  const categoryToLookup = req.params.category;
-  const presetData = fakeData.preset[categoryToLookup];
-  console.log("prefest" + presetData);
-  res.send(presetData);
-});
-
-app.listen(3000, () => {
-  console.log('Server started at http://localhost:3000/');
-});
+*/ 
 
 
 
-
-
-// GET profile data for a user
-//
-// To test, open these URLs in your browser:
-//   http://localhost:3000/users/Philip
-//   http://localhost:3000/users/Carol
-//   http://localhost:3000/users/invalidusername
-
-/*
-app.get('/users/:userid', (req, res) => {
-  const nameToLookup = req.params.userid; // matches ':userid' above
-  const val = fakeDatabase[nameToLookup];
-  console.log(nameToLookup, '->', val); // for debugging
-  if (val) {
-    res.send(val);
-  } else {
-    res.send({}); // failed, so return an empty object instead of undefined
-  }
-});*/
-
-// start the server at URL: http://localhost:3000/
-
-
-// To learn more about server routing:
-// Express - Hello world: http://expressjs.com/en/starter/hello-world.html
-// Express - basic routing: http://expressjs.com/en/starter/basic-routing.html
-// Express - routing: https://expressjs.com/en/guide/routing.html
-
-
-// GET a list of all usernames
-//
-// To test, open this URL in your browser:
-//   http://localhost:3000/users
 
 
 
