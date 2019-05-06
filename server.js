@@ -1,8 +1,10 @@
-//Require Wrapper Library for pexels 
+
+const info = require('./info');
 const PexelsAPI = require('pexels-api-wrapper');
 
 //Create Client instance by passing in API key
-var pexelsClient = new PexelsAPI(getPexel);
+var pexelsClient = new PexelsAPI(info.getPexel());
+
 
 //Search API
 pexelsClient.search("food", 1, 1)
