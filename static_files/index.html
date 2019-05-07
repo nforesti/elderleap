@@ -24,7 +24,6 @@
 	<script src="js/bootstrap.js"></script>
 	<script src="js/jquery.fitvids.js"></script>
 	<script src="js/colorfrog.js"></script>
-	<script src="js/kiddos.js"></script>
 
 
 	<!--[if lt IE 9]>
@@ -32,6 +31,31 @@
 		document.createElement('header');document.createElement('nav');document.createElement('section');document.createElement('article');document.createElement('aside');document.createElement('footer');
 	</script>
 	<![endif]-->
+	<script>
+		/*
+$(document).on('click', '#updateDatabase', function () {
+	console.log("print");
+	database.ref('categories/').set(fakeData.preset);
+});*/
+
+		$(document).ready(() => {
+			$("#signInBtn").click(function () {
+				window.location.replace("/browse.html");
+			});
+
+			const requestURL = '/update';
+			console.log(requestURL);
+			$.ajax({
+				// all URLs are relative to http://localhost:3000/
+				url: requestURL,
+				type: 'GET',
+				dataType: 'json', // this URL returns data in JSON format
+				success: (data) => {
+					console.log("success");
+				},
+			});
+		});
+	</script>
 
 </head>
 
@@ -77,25 +101,29 @@ Use the corresponding body tag for your chosen theme
 				<!--<h2 class="subTitle">Built with your needs in mind</h2> -->
 			</div>
 			<div class="col-sm-4 feature">
-				<div style="cursor: pointer;" class="icon styles" onclick="window.location.replace('/browse.html');"></div>
+				<div style="cursor: pointer;" class="icon styles" onclick="window.location.replace('/browse.html');">
+				</div>
 				<h3>Interactive<br>Image-to-Speech</h3>
 				<p>You and your child can click on easily-recognizable images, and the image will be voiced.</p>
 			</div>
 			<div class="col-sm-4 feature">
-					<div style="cursor: pointer;" class="icon styles" onclick="window.location.replace('/browse.html');"></div>
+				<div style="cursor: pointer;" class="icon styles" onclick="window.location.replace('/browse.html');">
+				</div>
 				<h3>Interactive<br>Image-to-ASL</h3>
 				<p>If your child is unable or prefers not to voice, many of the images have an American Sign Language
 					option to help your child communicate.</p>
 			</div>
 			<div style="padding-bottom: 30px" class="col-sm-4 feature">
-					<div style="cursor: pointer;" class="icon styles" onclick="window.location.replace('/message.html');"></div>
+				<div style="cursor: pointer;" class="icon styles" onclick="window.location.replace('/message.html');">
+				</div>
 				<h3>Message<br>Text-to-Speech</h3>
 				<p>A tool to help your child voice if they can write.</p>
 			</div>
 
 		</div> <!-- //end of row -->
 		<p style="margin-top: 2em; display: block; text-align: center"><button class="btn btn-large"
-				style="margin-left:auto; margin-right: auto;" onclick="window.location.replace('/login.html');">Get Started</button></p>
+				style="margin-left:auto; margin-right: auto;" onclick="window.location.replace('/login.html');">Get
+				Started</button></p>
 
 	</div> <!-- //end container -->
 

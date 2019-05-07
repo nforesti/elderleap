@@ -8,21 +8,42 @@ var pexelsClient = new PexelsAPI(info.getPexel());
 
 //Search API
 pexelsClient.search("food", 1, 1)
-    .then(function(result){
-        console.log(result);
-    }).
-    catch(function(e){
-        console.err(e);
-    });
+  .then(function (result) {
+    console.log(result);
+  }).
+  catch(function (e) {
+    console.err(e);
+  });
 
 
-/* Fake Database from Milestone 2
+//Fake Database from Milestone 2
 
 const express = require('express');
 const app = express();
+var bodyParser = require('body-parser');
+app.use(bodyParser.json()); //need to parse HTTP request body
 
 // Learn more: http://expressjs.com/en/starter/static-files.html
 app.use(express.static('static_files'));
+app.listen(3000, () => {
+  console.log('Server started at http://localhost:3000/');
+});
+
+var firebase = require('firebase');
+var config = {
+  apiKey: '"' + info.getFirebase() + '"',
+  authDomain: "cogs121kiddos.firebaseapp.com",
+  databaseURL: "https://cogs121kiddos.firebaseio.com",
+  projectId: "cogs121kiddos",
+  storageBucket: "cogs121kiddos.appspot.com",
+  messagingSenderId: "497727301450",
+  appId: "1:497727301450:web:3ecbe728cb7639a0"
+
+};
+firebase.initializeApp(config);
+
+
+
 
 const fakeData =
 {
@@ -70,13 +91,59 @@ const fakeData =
     }
   }
 }
-*/ 
 
 
 
 
 
 
+app.get('/update', function (req, res) {
+  console.log("HTTP Get Request");
+  res.send("HTTP GET Request");
+  //Insert key,value pair to database
+  firebase.database().ref('/categories').set(fakeData.preset);
+
+});
+
+app.get('/browse', function (req, res) {
+  //Fetch instances
+
+  console.log("HTTP Get Request");
+  var userReference = firebase.database().ref("/categories/");
+
+  //Attach an asynchronous callback to read the data
+  userReference.on("value",
+    function (snapshot) {
+      console.log(snapshot.val());
+      res.json(snapshot.val());
+      userReference.off("value");
+    },
+    function (errorObject) {
+      console.log("The read failed: " + errorObject.code);
+      res.send("The read failed: " + errorObject.code);
+    });
+});
+
+app.get('/browse/:category', function (req, res) {
+  //Fetch instances
+
+  console.log("HTTP Get Request");
+  var userReference = firebase.database().ref("/categories/"+req.params.category);
+  const categoryToLookup = req.params.category;
+  const presetData = fakeData.preset[categoryToLookup];
+
+  //Attach an asynchronous callback to read the data
+  userReference.on("value",
+    function (snapshot) {
+      console.log(snapshot.val());
+      res.json(snapshot.val());
+      userReference.off("value");
+    },
+    function (errorObject) {
+      console.log("The read failed: " + errorObject.code);
+      res.send("The read failed: " + errorObject.code);
+    });
+});
 
 
 
