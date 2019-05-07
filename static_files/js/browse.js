@@ -1,54 +1,6 @@
 $(document).ready(() => {
     const database = firebase.database();
 
-    $(document).on('click', '#updateDatabase', function () {
-        console.log("print");
-        database.ref('categories/').set(fakeData.preset);
-    });
-    const fakeData =
-    {
-        "preset": {
-            "fakecategory": {
-                "img": "https://image.flaticon.com/icons/png/128/42/42829.png",
-                "subcategory1": "https://image.flaticon.com/icons/png/128/42/42829.png",
-                "subcategory2": "https://image.flaticon.com/icons/png/128/42/42829.png",
-                "subcategory3": "https://image.flaticon.com/icons/png/128/42/42829.png",
-                "subcategory4": "https://image.flaticon.com/icons/png/128/42/42829.png"
-            },
-            "category1": {
-                "img": "https://image.flaticon.com/icons/png/128/42/42829.png",
-                "subcategory5": "https://image.flaticon.com/icons/png/128/42/42829.png",
-                "subcategory6": "https://image.flaticon.com/icons/png/128/42/42829.png",
-                "subcategory7": "https://image.flaticon.com/icons/png/128/42/42829.png",
-                "subcategory8": "https://image.flaticon.com/icons/png/128/42/42829.png",
-                "subcategory9": "https://image.flaticon.com/icons/png/128/42/42829.png"
-            },
-            "category2": {
-                "img": "https://image.flaticon.com/icons/png/128/42/42829.png",
-                "subcategory10": "https://image.flaticon.com/icons/png/128/42/42829.png",
-                "subcategory11": "https://image.flaticon.com/icons/png/128/42/42829.png",
-                "subcategory12": "https://image.flaticon.com/icons/png/128/42/42829.png",
-                "subcategory13": "https://image.flaticon.com/icons/png/128/42/42829.png",
-                "subcategory14": "https://image.flaticon.com/icons/png/128/42/42829.png"
-            },
-            "category3": {
-                "img": "https://image.flaticon.com/icons/png/128/42/42829.png",
-                "subcategory15": "https://image.flaticon.com/icons/png/128/42/42829.png",
-                "subcategory16": "https://image.flaticon.com/icons/png/128/42/42829.png",
-                "subcategory17": "https://image.flaticon.com/icons/png/128/42/42829.png",
-                "subcategory18": "https://image.flaticon.com/icons/png/128/42/42829.png",
-                "subcategory19": "https://image.flaticon.com/icons/png/128/42/42829.png"
-            }
-        }
-    }
-
-    
-
-
-
-
-
-
     
     const enterBrowse = () => {
         const requestURL = '/browse';
@@ -74,6 +26,8 @@ $(document).ready(() => {
     }
     $("#backToHomeBtn").click((e) => {enterBrowse();});
     enterBrowse();
+
+    $("#updateDatabase").click((e) => {updateDatabase();});
 
     $(document).on('click', '.category', function () {
         const catName = $(this).find("h3")[0].innerHTML;

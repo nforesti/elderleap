@@ -41,13 +41,7 @@ var config = {
 firebase.initializeApp(config);
 
 
-app.get('/browse', function (req, res) {
-  console.log("HTTP Get Request");
-  res.send("HTTP GET Request");
-  //Insert key,value pair to database
-  firebase.database().ref('/TestMessages').set({TestMessage: 'GET Request'});
-  
-});
+
 
 const fakeData =
 {
@@ -101,7 +95,13 @@ const fakeData =
 
 
 
-
+app.get('/update', function (req, res) {
+  console.log("HTTP Get Request");
+  res.send("HTTP GET Request");
+  //Insert key,value pair to database
+  firebase.database().ref('/categories').set(fakeData.preset);
+  
+});
 
 
 
