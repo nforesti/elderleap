@@ -20,6 +20,8 @@ pexelsClient.search("food", 1, 1)
 
 const express = require('express');
 const app = express();
+var bodyParser = require('body-parser');
+app.use(bodyParser.json()); //need to parse HTTP request body
 
 // Learn more: http://expressjs.com/en/starter/static-files.html
 app.use(express.static('static_files'));
@@ -100,7 +102,47 @@ app.get('/update', function (req, res) {
   res.send("HTTP GET Request");
   //Insert key,value pair to database
   firebase.database().ref('/categories').set(fakeData.preset);
-  
+
+});
+
+app.get('/browse', function (req, res) {
+  //Fetch instances
+
+  console.log("HTTP Get Request");
+  var userReference = firebase.database().ref("/categories/");
+
+  //Attach an asynchronous callback to read the data
+  userReference.on("value",
+    function (snapshot) {
+      console.log(snapshot.val());
+      res.json(snapshot.val());
+      userReference.off("value");
+    },
+    function (errorObject) {
+      console.log("The read failed: " + errorObject.code);
+      res.send("The read failed: " + errorObject.code);
+    });
+});
+
+app.get('/browse/:category', function (req, res) {
+  //Fetch instances
+
+  console.log("HTTP Get Request");
+  var userReference = firebase.database().ref("/categories/"+req.params.category);
+  const categoryToLookup = req.params.category;
+  const presetData = fakeData.preset[categoryToLookup];
+
+  //Attach an asynchronous callback to read the data
+  userReference.on("value",
+    function (snapshot) {
+      console.log(snapshot.val());
+      res.json(snapshot.val());
+      userReference.off("value");
+    },
+    function (errorObject) {
+      console.log("The read failed: " + errorObject.code);
+      res.send("The read failed: " + errorObject.code);
+    });
 });
 
 

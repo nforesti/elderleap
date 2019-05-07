@@ -1,7 +1,5 @@
 $(document).ready(() => {
-    const database = firebase.database();
 
-    
     const enterBrowse = () => {
         const requestURL = '/browse';
         console.log(requestURL);
@@ -31,6 +29,7 @@ $(document).ready(() => {
 
     $(document).on('click', '.category', function () {
         const catName = $(this).find("h3")[0].innerHTML;
+        console.log("!!!!! " + catName);
         $.ajax({
             url: 'browse/' + catName,
             type: 'GET',
