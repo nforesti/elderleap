@@ -1,3 +1,6 @@
+$(document).ready(() => {
+    $("#messageBtn").click(messageToSpeech);    
+});
 
 /**
  * TextAreaExpander plugin for jQuery
@@ -114,31 +117,6 @@ function messageToSpeech() {
     /*
     event.stopPropagation();
     event.stopImmediatePropagation();*/
-    console.log("here");
     const message = $("#messageArea").val();
-    console.log(message);
-
-
-
-    const synth = window.speechSynthesis;
-    const voices = window.speechSynthesis.getVoices()
-
-    if (synth.speaking) {
-        console.error('speechSynthesis.speaking');
-        return;
-    }
-    const utterThis = new SpeechSynthesisUtterance(message);
-    /*utterThis.onend = function (event) {
-        console.log('SpeechSynthesisUtterance.onend');
-    }*/
-    utterThis.onerror = function (event) {
-        console.error('SpeechSynthesisUtterance.onerror');
-    }
-
-
-    utterThis.lang = "en-US"
-    utterThis.pitch = .7;
-    utterThis.rate = .9;
-    synth.speak(utterThis);
-    console.log("isspeaking");
+    toSpeech(message);
 }

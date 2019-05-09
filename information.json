@@ -1,151 +1,553 @@
 {
     "animals": {
-        "animal": 1,
-        "bug": 1,
-        "dog": 1,
-        "cat": 1,
-        "cow": 1,
-        "fish": 1,
-        "bear": 1,
-        "turtle": 1,
-        "deer": 1,
-        "horse": 1,
-        "pig": 1,
-        "bird": 1,
-        "spider":1,
-        "sheep": 1,
-        "frog": 1,
-        "elephant": 1,
-        "giraffe": 1,
-        "lobster": 1,
-        "squirrel": 1,
-        "crocodile": 1,
-        "octopus": 1,
-        "kangaroo": 1,
-        "snake": 1,
-        "lion": 1,
-        "gorilla": 1,
-        "monkey": 1,
-        "hippo": 1
+        "img": "",
+        "animal": {
+            "img": "",
+            "asl": 1
+        },
+        "bug": {
+            "img": "",
+            "asl": 1
+        },
+        "dog": {
+            "img": "",
+            "asl": 1
+        },
+        "cat": {
+            "img": "",
+            "asl": 1
+        },
+        "cow": {
+            "img": "",
+            "asl": 1
+        },
+        "fish": {
+            "img": "",
+            "asl": 1
+        },
+        "bear": {
+            "img": "",
+            "asl": 1
+        },
+        "turtle": {
+            "img": "",
+            "asl": 1
+        },
+        "deer": {
+            "img": "",
+            "asl": 1
+        },
+        "horse": {
+            "img": "",
+            "asl": 1
+        },
+        "pig": {
+            "img": "",
+            "asl": 1
+        },
+        "bird": {
+            "img": "",
+            "asl": 1
+        },
+        "spider": {
+            "img": "",
+            "asl": 1
+        },
+        "sheep": {
+            "img": "",
+            "asl": 1
+        },
+        "frog": {
+            "img": "",
+            "asl": 1
+        },
+        "elephant": {
+            "img": "",
+            "asl": 1
+        },
+        "giraffe": {
+            "img": "",
+            "asl": 1
+        },
+        "lobster": {
+            "img": "",
+            "asl": 1
+        },
+        "squirrel": {
+            "img": "",
+            "asl": 1
+        },
+        "crocodile": {
+            "img": "",
+            "asl": 1
+        },
+        "octopus": {
+            "img": "",
+            "asl": 1
+        },
+        "kangaroo": {
+            "img": "",
+            "asl": 1
+        },
+        "snake": {
+            "img": "",
+            "asl": 1
+        },
+        "lion": {
+            "img": "",
+            "asl": 1
+        },
+        "gorilla": {
+            "img": "",
+            "asl": 1
+        },
+        "monkey": {
+            "img": "",
+            "asl": 1
+        },
+        "hippo": {
+            "img": "",
+            "asl": 1
+        }
     },
     "body": {
-        "body": 1,
-        "heart": 1,
-        "ear": 1,
-        "eyes": 1,
-        "nose": 0,
-        "mouth": 1,
-        "knee": 0,
-        "arm": 1,
-        "leg": 0,
-        "hand": 0,
-        "elbow":0,
-        "wrist": 0,
-        "shoulder": 1,
-        "neck": 0,
-        "foot": 0,
-        "ankle": 0,
-        "toes": 0,
-        "hair": 1
+        "img": "",
+        "body": {
+            "img": "",
+            "asl": 1
+        },
+        "heart": {
+            "img": "",
+            "asl": 1
+        },
+        "ear": {
+            "img": "",
+            "asl": 1
+        },
+        "eyes": {
+            "img": "",
+            "asl": 1
+        },
+        "nose": {
+            "img": "",
+            "asl": 0
+        },
+        "mouth": {
+            "img": "",
+            "asl": 1
+        },
+        "knee": {
+            "img": "",
+            "asl": 0
+        },
+        "arm": {
+            "img": "",
+            "asl": 1
+        },
+        "leg": {
+            "img": "",
+            "asl": 0
+        },
+        "hand": {
+            "img": "",
+            "asl": 0
+        },
+        "elbow": {
+            "img": "",
+            "asl": 0
+        },
+        "wrist": {
+            "img": "",
+            "asl": 0
+        },
+        "shoulder": {
+            "img": "",
+            "asl": 1
+        },
+        "neck": {
+            "img": "",
+            "asl": 0
+        },
+        "foot": {
+            "img": "",
+            "asl": 0
+        },
+        "ankle": {
+            "img": "",
+            "asl": 0
+        },
+        "toes": {
+            "img": "",
+            "asl": 0
+        },
+        "hair": {
+            "img": "",
+            "asl": 1
+        }
     },
     "clothes": {
-        "clothes": 0,
-        "shirt": 1,
-        "shoes": 1,
-        "socks": 1,
-        "pants": 1,
-        "sweater": 1,
-        "jacket": 1,
-        "suit": 0,
-        "bowtie": 1,
-        "swim suit": 0,
-        "skirt": 1,
-        "dress": 1,
-        "tank top": 0,
-        "bra": 1
+        "img": "",
+        "clothes": {
+            "img": "",
+            "asl": 0
+        },
+        "shirt": {
+            "img": "",
+            "asl": 1
+        },
+        "shoes": {
+            "img": "",
+            "asl": 1
+        },
+        "socks": {
+            "img": "",
+            "asl": 1
+        },
+        "pants": {
+            "img": "",
+            "asl": 1
+        },
+        "sweater": {
+            "img": "",
+            "asl": 1
+        },
+        "jacket": {
+            "img": "",
+            "asl": 1
+        },
+        "suit": {
+            "img": "",
+            "asl": 0
+        },
+        "bowtie": {
+            "img": "",
+            "asl": 1
+        },
+        "swim suit": {
+            "img": "",
+            "asl": 0
+        },
+        "skirt": {
+            "img": "",
+            "asl": 1
+        },
+        "dress": {
+            "img": "",
+            "asl": 1
+        },
+        "tank top": {
+            "img": "",
+            "asl": 0
+        },
+        "bra": {
+            "img": "",
+            "asl": 1
+        }
     },
     "colors": {
-        "color": 1,
-        "red": 1,
-        "blue": 1,
-        "yellow": 1,
-        "orange": 1,
-        "green": 1,
-        "black": 1,
-        "white": 0,
-        "purple": 1,
-        "pink": 1
+        "img": "",
+        "color": {
+            "img": "",
+            "asl": 1
+        },
+        "red": {
+            "img": "",
+            "asl": 1
+        },
+        "blue": {
+            "img": "",
+            "asl": 1
+        },
+        "yellow": {
+            "img": "",
+            "asl": 1
+        },
+        "orange": {
+            "img": "",
+            "asl": 1
+        },
+        "green": {
+            "img": "",
+            "asl": 1
+        },
+        "black": {
+            "img": "",
+            "asl": 1
+        },
+        "white": {
+            "img": "",
+            "asl": 0
+        },
+        "purple": {
+            "img": "",
+            "asl": 1
+        },
+        "pink": {
+            "img": "",
+            "asl": 1
+        }
     },
     "drinks": {
-        "drink": 1,
-        "warm": 1,
-        "cold": 1,
-        "tea": 1,
-        "water": 1,
-        "milk": 1,
-        "juice": 0,
-        "coffee": 1,
-        "hot chocolate": 0,
-        "soda": 1
+        "img": "",
+        "drink": {
+            "img": "",
+            "asl": 1
+        },
+        "warm": {
+            "img": "",
+            "asl": 1
+        },
+        "cold": {
+            "img": "",
+            "asl": 1
+        },
+        "tea": {
+            "img": "",
+            "asl": 1
+        },
+        "water": {
+            "img": "",
+            "asl": 1
+        },
+        "milk": {
+            "img": "",
+            "asl": 1
+        },
+        "juice": {
+            "img": "",
+            "asl": 0
+        },
+        "coffee": {
+            "img": "",
+            "asl": 1
+        },
+        "hot chocolate": {
+            "img": "",
+            "asl": 0
+        },
+        "soda": {
+            "img": "",
+            "asl": 1
+        }
     },
     "emotion": {
-        "emotion": 1,
-        "happy": 1,
-        "sad": 1,
-        "scared": 1,
-        "shy": 1,
-        "jealous": 1,
-        "angry": 1,
-        "gross": 0,
-        "love": 0,
-        "surprise": 1,
-        "annoyed": 0,
-        "excited": 0,
-        "worry": 1,
-        "confused": 0
+        "img": "",
+        "emotion": {
+            "img": "",
+            "asl": 1
+        },
+        "happy": {
+            "img": "",
+            "asl": 1
+        },
+        "sad": {
+            "img": "",
+            "asl": 1
+        },
+        "scared": {
+            "img": "",
+            "asl": 1
+        },
+        "shy": {
+            "img": "",
+            "asl": 1
+        },
+        "jealous": {
+            "img": "",
+            "asl": 1
+        },
+        "angry": {
+            "img": "",
+            "asl": 1
+        },
+        "gross": {
+            "img": "",
+            "asl": 0
+        },
+        "love": {
+            "img": "",
+            "asl": 0
+        },
+        "surprise": {
+            "img": "",
+            "asl": 1
+        },
+        "annoyed": {
+            "img": "",
+            "asl": 0
+        },
+        "excited": {
+            "img": "",
+            "asl": 0
+        },
+        "worry": {
+            "img": "",
+            "asl": 1
+        },
+        "confused": {
+            "img": "",
+            "asl": 0
+        }
     },
     "food": {
-        "food": 0,
-        "breakfast": 0,
-        "toast": 1,
-        "cereal": 1,
-        "bagel": 0,
-        "pancake": 0,
-        "bacon": 1,
-        "oatmeal": 0,
-        "bread": 1,
-        "egg": 1,
-        "omelet": 0,
-        "pasta": 0,
-        "pizza": 0,
-        "steak": 1,
-        "meat": 1,
-        "sandwich": 1
+        "img": "",
+        "food": {
+            "img": "",
+            "asl": 0
+        },
+        "breakfast": {
+            "img": "",
+            "asl": 0
+        },
+        "toast": {
+            "img": "",
+            "asl": 1
+        },
+        "cereal": {
+            "img": "",
+            "asl": 1
+        },
+        "bagel": {
+            "img": "",
+            "asl": 0
+        },
+        "pancake": {
+            "img": "",
+            "asl": 0
+        },
+        "bacon": {
+            "img": "",
+            "asl": 1
+        },
+        "oatmeal": {
+            "img": "",
+            "asl": 0
+        },
+        "bread": {
+            "img": "",
+            "asl": 1
+        },
+        "egg": {
+            "img": "",
+            "asl": 1
+        },
+        "omelet": {
+            "img": "",
+            "asl": 0
+        },
+        "pasta": {
+            "img": "",
+            "asl": 0
+        },
+        "pizza": {
+            "img": "",
+            "asl": 0
+        },
+        "steak": {
+            "img": "",
+            "asl": 1
+        },
+        "meat": {
+            "img": "",
+            "asl": 1
+        },
+        "sandwich": {
+            "img": "",
+            "asl": 1
+        }
     },
     "furniture": {
-        "furniture": 1,
-        "chair": 1,
-        "couch": 0,
-        "bed": 1,
-        "bookshelf": 0,
-        "lamp": 1
+        "img": "",
+        "furniture": {
+            "img": "",
+            "asl": 1
+        },
+        "chair": {
+            "img": "",
+            "asl": 1
+        },
+        "couch": {
+            "img": "",
+            "asl": 0
+        },
+        "bed": {
+            "img": "",
+            "asl": 1
+        },
+        "bookshelf": {
+            "img": "",
+            "asl": 0
+        },
+        "lamp": {
+            "img": "",
+            "asl": 1
+        }
     },
     "family": {
-        "food": 0,
-        "breakfast": 0,
-        "toast": 1,
-        "cereal": 1,
-        "bagel": 0,
-        "pancake": 0,
-        "bacon": 1,
-        "oatmeal": 0,
-        "bread": 1,
-        "egg": 1,
-        "omelet": 0,
-        "pasta": 0,
-        "pizza": 0,
-        "steak": 1,
-        "meat": 1,
-        "sandwich": 1
-    },
+        "img": "",
+        "food": {
+            "img": "",
+            "asl": 0
+        },
+        "breakfast": {
+            "img": "",
+            "asl": 0
+        },
+        "toast": {
+            "img": "",
+            "asl": 1
+        },
+        "cereal": {
+            "img": "",
+            "asl": 1
+        },
+        "bagel": {
+            "img": "",
+            "asl": 0
+        },
+        "pancake": {
+            "img": "",
+            "asl": 0
+        },
+        "bacon": {
+            "img": "",
+            "asl": 1
+        },
+        "oatmeal": {
+            "img": "",
+            "asl": 0
+        },
+        "bread": {
+            "img": "",
+            "asl": 1
+        },
+        "egg": {
+            "img": "",
+            "asl": 1
+        },
+        "omelet": {
+            "img": "",
+            "asl": 0
+        },
+        "pasta": {
+            "img": "",
+            "asl": 0
+        },
+        "pizza": {
+            "img": "",
+            "asl": 0
+        },
+        "steak": {
+            "img": "",
+            "asl": 1
+        },
+        "meat": {
+            "img": "",
+            "asl": 1
+        },
+        "sandwich": {
+            "img": "",
+            "asl": 1
+        }
+    }
 }

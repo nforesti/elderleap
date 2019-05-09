@@ -45,7 +45,7 @@ firebase.initializeApp(config);
 
 
 
-const fakeData =
+/*const fakeData =
 {
   "preset": {
     "category": {
@@ -90,19 +90,17 @@ const fakeData =
       }
     }
   }
-}
+}*/
 
 
 
-
-
+const categories = info.getCategories();
 
 app.get('/update', function (req, res) {
   console.log("HTTP Get Request");
   res.send("HTTP GET Request");
   //Insert key,value pair to database
-  firebase.database().ref('/categories').set(fakeData.preset);
-
+  firebase.database().ref('/categories').set(categories);
 });
 
 app.get('/browse', function (req, res) {
@@ -130,7 +128,7 @@ app.get('/browse/:category', function (req, res) {
   console.log("HTTP Get Request");
   var userReference = firebase.database().ref("/categories/"+req.params.category);
   const categoryToLookup = req.params.category;
-  const presetData = fakeData.preset[categoryToLookup];
+  const presetData = categories[categoryToLookup];
 
   //Attach an asynchronous callback to read the data
   userReference.on("value",
@@ -144,6 +142,7 @@ app.get('/browse/:category', function (req, res) {
       res.send("The read failed: " + errorObject.code);
     });
 });
+
 
 
 

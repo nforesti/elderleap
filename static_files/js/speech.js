@@ -3,30 +3,23 @@ original code by Chris Mills
 https://github.com/mdn/web-speech-api/blob/master/speak-easy-synthesis
 */
 function toSpeech(word) {
-    /*
-    event.stopPropagation();
-    event.stopImmediatePropagation();*/
+    let synth = window.speechSynthesis;
+    var msg = new SpeechSynthesisUtterance(word);
 
-
-    const synth = window.speechSynthesis;
-    const voices = window.speechSynthesis.getVoices()
-
-    if (synth.speaking) {
-        console.error('speechSynthesis.speaking');
-        return;
+    let voices = synth.getVoices();
+    for (let voice of voices) {
+        console.log("there");
+        if ((voice.lang === 'en-US') && (voice.name === '"Microsoft Zira Desktop - English (United States)"')) {
+            msg.voice = voice;
+        }
     }
-    const utterThis = new SpeechSynthesisUtterance(word);
-    /*utterThis.onend = function (event) {
-        console.log('SpeechSynthesisUtterance.onend');
-    }*/
-    utterThis.onerror = function (event) {
+    msg.rate = .7;
+    msg.lang = "en-US";
+    synth.speak(msg);
+
+    msg.onerror = function (event) {
         console.error('SpeechSynthesisUtterance.onerror');
     }
 
-
-    utterThis.lang = "en-US"
-    utterThis.pitch = .7;
-    utterThis.rate = .9;
-    synth.speak(utterThis);
 }
 
