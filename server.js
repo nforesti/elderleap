@@ -100,7 +100,7 @@ firebase.initializeApp(config);
 
 
 const categories = info.getCategories();
-
+/*
 // dummy function for getting image URL 
 const getImageURL = (keyword) => {
   return (keyword + ".jpg");
@@ -116,16 +116,17 @@ function setImageURL(category, imageUrl) {
 // iterates over categories, gets image src for each category, and stores in database
 function updateImages() {
   categories_array = (Object.keys(categories));
+  let imageURL;
   categories_array.forEach(category => {
     console.log(category);
-    let imageUrl = getImageURL(category);
-    console.log(imageURL); 
-    setImageURL(category, imageUrl);
+    imageURL = getImageURL(category);
+    console.log(imageURL);
+    setImageURL(category, imageURL);
   });
 }
 // call function to update images 
-updateImages(); 
-
+//updateImages(); 
+*/
 app.get('/update', function (req, res) {
   console.log("HTTP Get Request");
   res.send("HTTP GET Request");
