@@ -50,83 +50,53 @@ var config = {
 };
 firebase.initializeApp(config);
 
-/*const fakeData =
-{
-  "preset": {
-    "category": {
-      "img": "https://image.flaticon.com/icons/png/128/42/42829.png",
-      "subcategory1": "https://image.flaticon.com/icons/png/128/42/42829.png",
-      "subcategory2": "https://image.flaticon.com/icons/png/128/42/42829.png",
-      "subcategory3": "https://image.flaticon.com/icons/png/128/42/42829.png",
-      "subcategory4": "https://image.flaticon.com/icons/png/128/42/42829.png"
-    },
-    "category1": {
-      "img": "https://image.flaticon.com/icons/png/128/42/42829.png",
-      "subcategory5": "https://image.flaticon.com/icons/png/128/42/42829.png",
-      "subcategory6": "https://image.flaticon.com/icons/png/128/42/42829.png",
-      "subcategory7": "https://image.flaticon.com/icons/png/128/42/42829.png",
-      "subcategory8": "https://image.flaticon.com/icons/png/128/42/42829.png",
-      "subcategory9": "https://image.flaticon.com/icons/png/128/42/42829.png"
-    },
-    "category2": {
-      "img": "https://image.flaticon.com/icons/png/128/42/42829.png",
-      "subcategory10": "https://image.flaticon.com/icons/png/128/42/42829.png",
-      "subcategory11": "https://image.flaticon.com/icons/png/128/42/42829.png",
-      "subcategory12": "https://image.flaticon.com/icons/png/128/42/42829.png",
-      "subcategory13": "https://image.flaticon.com/icons/png/128/42/42829.png",
-      "subcategory14": "https://image.flaticon.com/icons/png/128/42/42829.png"
-    },
-    "category3": {
-      "img": "https://image.flaticon.com/icons/png/128/42/42829.png",
-      "subcategory15": "https://image.flaticon.com/icons/png/128/42/42829.png",
-      "subcategory16": "https://image.flaticon.com/icons/png/128/42/42829.png",
-      "subcategory17": "https://image.flaticon.com/icons/png/128/42/42829.png",
-      "subcategory18": "https://image.flaticon.com/icons/png/128/42/42829.png",
-      "subcategory19": "https://image.flaticon.com/icons/png/128/42/42829.png"
-    }
-  },
-  "users": {
-    "mario": {
-      'dinasaurs': {
-        'T Rex': 'https://www.shareicon.net/data/128x128/2016/04/13/491786_trex_252x298.png'
-      },
-      'dogs': {
-        'terrier': 'https://www.petplan.co.uk/images/breeds/sm/westhighland-white-terrier.jpg'
-      }
-    }
-  }
-}*/
-
-
-
 const categories = info.getCategories();
-/*
+
 // dummy function for getting image URL 
 const getImageURL = (keyword) => {
   return (keyword + ".jpg");
 };
 
 // function that writes img data to category in database
-function setImageURL(category, imageUrl) {
-  firebase.database().ref('categories/' + category).set({
+function setCategoryImage(category, imageUrl) {
+  firebase.database().ref('categories/' + category + '/img').set({
+    img: imageUrl
+  });
+}
+
+function setSubCategoryImage(category, subcategory, imageUrl) {
+  firebase.database().ref('categories/' + category + '/' + subcategory + '/img').set({
     img: imageUrl
   });
 }
 
 // iterates over categories, gets image src for each category, and stores in database
 function updateImages() {
-  categories_array = (Object.keys(categories));
+  let categories_array = (Object.keys(categories));
+  let subcategories_array = []; 
   let imageURL;
+  //set category images
   categories_array.forEach(category => {
     console.log(category);
     imageURL = getImageURL(category);
     console.log(imageURL);
-    setImageURL(category, imageURL);
+    setCategoryImage(category, imageURL);
+  });
+  // set subcategory images
+  Object.keys(categories).forEach(function(category) {
+    subcategories_array = (Object.keys(categories[category]));
+    subcategories_array.forEach(subcategory => {
+      console.log(subcategory);
+      imageURL = getImageURL(subcategory);
+      console.log(imageURL); 
+      setSubCategoryImage(category, subcategory, imageURL);
+    });
   });
 }
 // call function to update images 
-//updateImages(); 
-*/
+updateImages(); 
+
+
 app.get('/update', function (req, res) {
   console.log("HTTP Get Request");
   res.send("HTTP GET Request");
