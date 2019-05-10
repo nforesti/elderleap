@@ -6,17 +6,25 @@ const PexelsAPI = require('pexels-api-wrapper');
 var pexelsClient = new PexelsAPI(info.getPexel());
 
 
-//Search API
-pexelsClient.search("food", 1, 1)
-  .then(function (result) {
-    console.log(result);
-  }).
-  catch(function (e) {
-    console.err(e);
-  });
+//Search API 
+/*
 
+const getImage = (keyword) => {
+  let image_src;
+  pexelsClient.search(keyword, 1, 1)
+    .then(function (result) {
+      image_src = result.photos[0].src.small;
+    }).
+    catch(function (e) {
+      console.err(e);
+    });
+  return image_src;
+};
 
-//Fake Database from Milestone 2
+let image = getImage("hamburger");
+console.log(image);
+
+*/
 
 const express = require('express');
 const app = express();
@@ -41,9 +49,6 @@ var config = {
 
 };
 firebase.initializeApp(config);
-
-
-
 
 /*const fakeData =
 {
@@ -96,6 +101,31 @@ firebase.initializeApp(config);
 
 const categories = info.getCategories();
 
+// dummy function for getting image URL 
+const getImageURL = (keyword) => {
+  return (keyword + ".jpg");
+};
+
+// function that writes img data to category in database
+function setImageURL(category, imageUrl) {
+  firebase.database().ref('categories/' + category).set({
+    img: imageUrl
+  });
+}
+
+// iterates over categories, gets image src for each category, and stores in database
+function updateImages() {
+  categories_array = (Object.keys(categories));
+  categories_array.forEach(category => {
+    console.log(category);
+    let imageUrl = getImageURL(category);
+    console.log(imageURL); 
+    setImageURL(category, imageUrl);
+  });
+}
+// call function to update images 
+updateImages(); 
+
 app.get('/update', function (req, res) {
   console.log("HTTP Get Request");
   res.send("HTTP GET Request");
@@ -126,7 +156,7 @@ app.get('/browse/:category', function (req, res) {
   //Fetch instances
 
   console.log("HTTP Get Request");
-  var userReference = firebase.database().ref("/categories/"+req.params.category);
+  var userReference = firebase.database().ref("/categories/" + req.params.category);
   const categoryToLookup = req.params.category;
   const presetData = categories[categoryToLookup];
 
