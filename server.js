@@ -5,27 +5,6 @@ const PexelsAPI = require('pexels-api-wrapper');
 //Create Client instance by passing in API key
 var pexelsClient = new PexelsAPI(info.getPexel());
 
-
-//Search API 
-/*
-
-const getImage = (keyword) => {
-  let image_src;
-  pexelsClient.search(keyword, 1, 1)
-    .then(function (result) {
-      image_src = result.photos[0].src.small;
-    }).
-    catch(function (e) {
-      console.err(e);
-    });
-  return image_src;
-};
-
-let image = getImage("hamburger");
-console.log(image);
-
-*/
-
 const express = require('express');
 const app = express();
 var bodyParser = require('body-parser');
@@ -52,57 +31,60 @@ firebase.initializeApp(config);
 
 const categories = info.getCategories();
 
-// dummy function for getting image URL 
-const getImageURL = (keyword) => {
-  return (keyword + ".jpg");
-};
-
 // function that writes img data to category in database
-function setCategoryImage(category, imageUrl) {
-  firebase.database().ref('categories/' + category + '/img').set({
-    img: imageUrl
+function setCategoryImage(category) {
+  pexelsClient.search(category, 1, 1)
+  .then(function (result) {
+   let imgUrl = result.photos[0].src.small;
+   firebase.database().ref('categories/' + category + '/img').set({
+    img: imgUrl });
+  }).
+  catch(function (e) {
+    console.err(e); 
   });
 }
 
-function setSubCategoryImage(category, subcategory, imageUrl) {
-  firebase.database().ref('categories/' + category + '/' + subcategory + '/img').set({
-    img: imageUrl
+//function that writes img data to sub-categories in database
+function setSubCategoryImage(category, subcategory) {
+  pexelsClient.search(subcategory, 1, 1)
+  .then(function (result) {
+   let imgUrl = result.photos[0].src.small;
+   firebase.database().ref('categories/' + category + '/' + subcategory +  '/img').set({
+    img: imgUrl });
+  }).
+  catch(function (e) {
+    console.err(e);
   });
 }
 
-// iterates over categories, gets image src for each category, and stores in database
-function updateImages() {
+// sets images in database using function calls to PexelsPAI
+function setImages() {
   let categories_array = (Object.keys(categories));
   let subcategories_array = []; 
-  let imageURL;
   //set category images
   categories_array.forEach(category => {
     console.log(category);
-    imageURL = getImageURL(category);
-    console.log(imageURL);
-    setCategoryImage(category, imageURL);
+    setCategoryImage(category);
   });
   // set subcategory images
   Object.keys(categories).forEach(function(category) {
     subcategories_array = (Object.keys(categories[category]));
     subcategories_array.forEach(subcategory => {
       console.log(subcategory);
-      imageURL = getImageURL(subcategory);
-      console.log(imageURL); 
-      setSubCategoryImage(category, subcategory, imageURL);
+      setSubCategoryImage(category, subcategory);
     });
   });
 }
-// call function to update images 
-updateImages(); 
+// call function to set images in database
+//setImages(); 
 
-
-app.get('/update', function (req, res) {
-  console.log("HTTP Get Request");
-  res.send("HTTP GET Request");
+//reset database to null values 
+//app.get('/update', function (req, res) {
+//  console.log("HTTP Get Request");
+//  res.send("HTTP GET Request");
   //Insert key,value pair to database
-  firebase.database().ref('/categories').set(categories);
-});
+  //firebase.database().ref('/categories').set(categories);
+//});
 
 app.get('/browse', function (req, res) {
   //Fetch instances
