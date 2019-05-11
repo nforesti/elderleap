@@ -11,12 +11,11 @@
 	<!-- Theme css -->
 	<link href="css/colorfrog.css" rel="stylesheet" media="screen">
 	<link href="css/kiddos.css" rel="stylesheet">
-	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
-		integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf"
+	 crossorigin="anonymous">
 
 
-	<link href='http://fonts.googleapis.com/css?family=PT+Sans:400,700,400italic,700italic' rel='stylesheet'
-		type='text/css'>
+	<link href='http://fonts.googleapis.com/css?family=PT+Sans:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
 	<link href="favicon.ico" rel="shortcut icon" type="image/x-icon" />
 	<script src="js/respond.min.js"></script>
 
@@ -68,7 +67,7 @@ Use the corresponding body tag for your chosen theme
 <body class="bw">
 -->
 
-
+	<!--
 	<div style="width: 90%; margin-left: auto; margin-right: auto; ">
 
 		<div style="width: 100%; padding-left: 0px; padding-right: 0px;" class="container">
@@ -81,10 +80,35 @@ Use the corresponding body tag for your chosen theme
 						onclick="window.location.replace('/login.html');" class="btn flex-item">Login</button>
 				</div>
 
-
 			</header>
-		</div>
-	</div>
+		-->
+
+		<div style="width: 90%; margin-left: auto; margin-right: auto; ">
+
+				<div style="width: 100%; padding-left: 0px; padding-right: 0px;" class="container">
+					<header id="navbar" class="nav" role="navigation">
+		
+						<h1 onclick="window.location.replace('/')" id="homeBtn"><i class="flex-item fa fa-home"></i>ACT</h1>
+						<div id="navitem">
+							<h4 style="margin-left: auto; margin-right: 0px;" class="flex-item"><a
+									href="browse.html">Dashboard</a>
+							</h4>
+							<h4 style="margin-left: 1.5em; margin-right: 0px;" class="flex-item "><a
+									href="message.html">Keyboard</a></h4>
+							<h4 style="margin-left: 1.5em; margin-right: 0px;" class="flex-item "><a href="about.html">About</a></h4>
+						</div>
+					</header>
+				</div>
+		
+				<button style="display: none" id="backToHomeBtn" class="btn btn-small"><i class="fas fa-angle-left"></i>
+					Browse</button>
+				<!--<button id="updateDatabase"></button>-->
+				<h1 style="text-align: center; margin-left: auto; margin-right: auto;" id="subTitle"></h1>
+				<ul style="border: none" id="categoryContainer" class="flex-container wrap">
+				</ul>
+			</div>
+
+
 
 
 	<div class="jumbotron">
@@ -92,40 +116,59 @@ Use the corresponding body tag for your chosen theme
 			<h1>Welcome to A.C.T.</h1>
 			<h2>An Assistive Communication Tool for nonverbal children. </h2>
 		</div>
-	</div> <!-- //end hero-unit -->
+	</div>
+	<!-- //end hero-unit -->
 
+	</div>
+	<!-- //end of row -->
 
-	<div class="container content underHero" style="padding-top: 1em;">
+	<div class="container content underHero">
 		<div class="row">
-			<div class="col-sm-12">
-				<!--<h2 class="subTitle">Built with your needs in mind</h2> -->
-			</div>
 			<div class="col-sm-4 feature">
-				<div style="cursor: pointer;" class="icon styles" onclick="window.location.replace('/browse.html');">
+				<h3>Image-to-Speech</h3>
+				<div class="icon faq">
+					<a href="browse.html">image to speech</a>
 				</div>
-				<h3>Interactive<br>Image-to-Speech</h3>
 				<p>You and your child can click on easily-recognizable images, and the image will be voiced.</p>
+				<a class="btn btn-large" href="browse.html">Get Started</a>
 			</div>
 			<div class="col-sm-4 feature">
-				<div style="cursor: pointer;" class="icon styles" onclick="window.location.replace('/browse.html');">
+				<h3>Image to ASL</h3>
+				<div class="icon author">
+					<a href="browse.html">image to asl</a>
 				</div>
-				<h3>Interactive<br>Image-to-ASL</h3>
-				<p>If your child is unable or prefers not to voice, many of the images have an American Sign Language
-					option to help your child communicate.</p>
+				<p>If your child is unable or prefers not to voice, many of the images have an American Sign Language option to help your
+					child communicate.</p>
+				<a class="btn btn-large" href="browse.html">Get Started</a>
 			</div>
-			<div style="padding-bottom: 30px" class="col-sm-4 feature">
-				<div style="cursor: pointer;" class="icon styles" onclick="window.location.replace('/message.html');">
+			<div class="col-sm-4 feature">
+				<h3>Interactive Keyboard</h3>
+				<div class="icon feedback">
+					<a href="message.html"></a>
 				</div>
-				<h3>Message<br>Text-to-Speech</h3>
-				<p>A tool to help your child voice if they can write.</p>
+				<p>A text-to-speech keyboard tool to help your child communicate if they can type.</p>
+				<a class="btn btn-large" href="message.html">Get Started</a>
 			</div>
-
-		</div> <!-- //end of row -->
-		<p style="margin-top: 2em; display: block; text-align: center"><button class="btn btn-large"
-				style="margin-left:auto; margin-right: auto;" onclick="window.location.replace('/login.html');">Get
-				Started</button></p>
-
-	</div> <!-- //end container -->
+		</div>
+		<!-- //end row -->
+	</div>
+	<!-- //end container -->
+	<footer>
+		<div class="container">
+			<div class="row">
+				<div class="col-sm-6">
+					<p>Copyright &copy; 2015 Colorfrog. All rights reserved.
+						<a href="">Terms</a> &amp;
+						<a href="">Privacy</a>.</p>
+				</div>
+				<div class="col-sm-6">
+					<p> Stock photos sourced from
+						<a href="http://pexels.com">Pexels</a>.</p>
+				</div>
+			</div>
+		</div>
+		<!--//end container -->
+	</footer>
 
 </body>
 
