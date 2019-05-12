@@ -1,0 +1,284 @@
+<script src="https://unpkg.com/react@16/umd/react.production.min.js" crossorigin></script>
+<script src="https://unpkg.com/react-dom@16/umd/react-dom.production.min.js" crossorigin></script>
+
+<style>body {
+    font-family: Helvetica, sans-serif;
+  }
+  
+  .react-autosuggest__container {
+    position: relative;
+      background-color:#5c9bb7;
+      background-image:-webkit-linear-gradient(top, #5c9bb7, #5392ad);
+      background-image:-moz-linear-gradient(top, #5c9bb7, #5392ad);
+      background-image:linear-gradient(top, #5c9bb7, #5392ad);
+  
+      box-shadow: 0 1px 1px #ccc;
+      border-radius: 2px;
+      width: 400px;
+      padding: 14px;
+      margin: 80px auto 20px;
+      position:relative;
+  }
+  
+  .react-autosuggest__input {
+      background:#fff no-repeat 13px 13px;
+      background-image:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyBpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMC1jMDYwIDYxLjEzNDc3NywgMjAxMC8wMi8xMi0xNzozMjowMCAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNSBXaW5kb3dzIiB4bXBNTTpJbnN0YW5jZUlEPSJ4bXAuaWlkOkU5NEY0RTlFMTA4NzExRTM5RTEzQkFBQzMyRjkyQzVBIiB4bXBNTTpEb2N1bWVudElEPSJ4bXAuZGlkOkU5NEY0RTlGMTA4NzExRTM5RTEzQkFBQzMyRjkyQzVBIj4gPHhtcE1NOkRlcml2ZWRGcm9tIHN0UmVmOmluc3RhbmNlSUQ9InhtcC5paWQ6RTk0RjRFOUMxMDg3MTFFMzlFMTNCQUFDMzJGOTJDNUEiIHN0UmVmOmRvY3VtZW50SUQ9InhtcC5kaWQ6RTk0RjRFOUQxMDg3MTFFMzlFMTNCQUFDMzJGOTJDNUEiLz4gPC9yZGY6RGVzY3JpcHRpb24+IDwvcmRmOlJERj4gPC94OnhtcG1ldGE+IDw/eHBhY2tldCBlbmQ9InIiPz4DjA/RAAABK0lEQVR42pTSQUdEURjG8dOY0TqmPkGmRcqYD9CmzZAWJRHVRIa0iFYtM6uofYaiEW2SRJtEi9YxIklp07ZkWswu0v/wnByve7vm5ee8M+85zz1jbt9Os+WiGkYdYxjCOx5wgFeXUHmtBSzpcCGa+5BJTCjEP+0nKWAT8xqe4ArPGEEVC1hHEbs2oBwdXkM7mj/JLZrad437sCGHOfUtcziutuYu2v8XUFF/4f6vMK/YgAH1HxkBYV60AR31gxkBYd6xAeF3VzMCwvzOBpypX8V4yuFRzX2d2gD/l5yjH4fYQEnzkj4fae5rJulF2sMXVrAsaTWttRFu4Osb+1jEDT71/ZveyhouTch2fINQL9hKefKjuYFfuznXWzXMTabyrvfyIV3M4vhXgAEAUMs7K0J9UJAAAAAASUVORK5CYII=);
+  
+      border: none;
+      width: 100%;
+      line-height: 19px;
+      padding: 11px 0;
+  
+      border-radius: 2px;
+      box-shadow: 0 2px 8px #c4c4c4 inset;
+      text-align: left;
+      font-size: 14px;
+      font-family: inherit;
+      color: #738289;
+      font-weight: bold;
+      outline: none;
+      text-indent: 40px;
+  }
+  
+  .react-autosuggest__input--focused {
+    outline: none;
+  }
+  
+  .react-autosuggest__input--open {
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+  }
+  
+  .react-autosuggest__suggestions-container {
+    display: none;
+  }
+  
+  .react-autosuggest__suggestions-container--open {
+    display: block;
+    position: absolute;
+    top: 51px;
+    width: 280px;
+    border: 1px solid #aaa;
+    background-color: #fff;
+    font-family: Helvetica, sans-serif;
+    font-weight: 300;
+    font-size: 16px;
+    border-bottom-left-radius: 4px;
+    border-bottom-right-radius: 4px;
+    z-index: 2;
+  }
+  
+  .react-autosuggest__suggestions-list {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+  }
+  
+  .react-autosuggest__suggestion {
+    cursor: pointer;
+    padding: 10px 20px;
+  }
+  
+  .react-autosuggest__suggestion--highlighted {
+    background-color: #ddd;
+  }
+  
+  .react-autosuggest__section-container {
+    border-top: 1px dashed #ccc;
+  }
+  
+  .react-autosuggest__section-container--first {
+    border-top: 0;
+  }
+  
+  .react-autosuggest__section-title {
+    padding: 10px 0 0 10px;
+    font-size: 12px;
+    color: #777;
+  }
+  </style>
+
+<h2>Multiple sections</h2>
+<div id="app"></div>
+
+
+<script>
+const categories = [
+  {
+        title: "animals",
+        img: "",
+        tags: ["cute", "alive", "yummy"],
+        subcategories: [
+          {
+            name: "animal",
+            img: "http://www.myiconfinder.com/uploads/iconsets/256-256-86dc422818667e51e344d8c812995e96-cat.png",
+            asl: 1
+          },
+          {
+            name: "dog",
+            img: "",
+            asl: 1
+          },
+        ]
+  },
+  {
+    title: "foods",
+    img: "",
+    tags: ["cute","yummy"],
+    subcategories: [
+      {
+        name: "food",
+        img: "",
+      },
+      {
+        name: "carrot",
+        img: "",
+      }
+    ]
+  },
+  {
+    title: "foodies",
+    img: "",
+    tags: ["here"],
+    subcategories: [
+      {
+         name: "carroties",
+         img: ""
+      }
+    ]
+  }
+  
+];
+
+// https://developer.mozilla.org/en/docs/Web/JavaScript/Guide/Regular_Expressions#Using_Special_Characters
+function escapeRegexCharacters(str) {
+  return str.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+}
+
+function getSuggestions(value) {
+  const escapedValue = escapeRegexCharacters(value.trim());
+  
+  if (escapedValue === '') {
+    return [];
+  }
+
+  const regex = new RegExp('^' + escapedValue, 'i');
+  console.log(regex);
+
+  return categories
+    .map(section => {
+    var newthing = "";
+    var bool = false;
+    section.tags.forEach(newtag => {
+      if (regex.test(newtag)==true){bool = true}
+      else if (bool ==true){} 
+      else {bool=false;}
+    });
+    console.log("bool" + bool);
+    console.log(regex.test(section.title));
+    if (regex.test(section.title) == true){
+      console.log("not hello");
+        return {
+        title: section.title,
+        subcategories: section.subcategories.filter(subcategory => regex.test(section.title))
+        };
+      }
+    else if (bool == true){
+      console.log(section.tags.indexOf(regex));
+      let newvar = [];
+      section.tags.forEach(tag => {
+        if (regex.test(tag)){
+          section.subcategories.forEach(subcategory =>{
+            newvar.push(subcategory);
+          });
+        }
+      });
+      return {
+        title: section.title,
+        subcategories: newvar
+      }
+    }
+      else{
+      console.log("hello!");
+        return{
+          title: section.title,
+          subcategories: section.subcategories.filter(subcategory =>regex.test(subcategory.name))
+        }
+      }
+    })
+    .filter(section => section.subcategories.length > 0);
+}
+
+function getSuggestionValue(suggestion) {
+  return suggestion.name;
+}
+
+function renderSuggestion(suggestion) {
+  return (
+    <span>{suggestion.name}     <img src="{suggestion.img}"></img></span>
+  );
+}
+
+function renderSectionTitle(section) {
+  return (
+    <strong>{section.title}</strong>
+  );
+}
+
+function getSectionSuggestions(section) {
+  return section.subcategories;
+}
+
+class App extends React.Component {
+  constructor() {
+    super();
+
+    this.state = {
+      value: '',
+      suggestions: []
+    };    
+  }
+
+  onChange = (event, { newValue, method }) => {
+    this.setState({
+      value: newValue
+    });
+  };
+  
+  onSuggestionsFetchRequested = ({ value }) => {
+    this.setState({
+      suggestions: getSuggestions(value)
+    });
+  };
+
+  onSuggestionsClearRequested = () => {
+    this.setState({
+      suggestions: []
+    });
+  };
+
+  render() {
+    const { value, suggestions } = this.state;
+    const inputProps = {
+      placeholder: "Search for a category, word, or adjective",
+      value,
+      onChange: this.onChange
+    };
+
+    return (
+      <Autosuggest 
+        multiSection={true}
+        suggestions={suggestions}
+        onSuggestionsFetchRequested={this.onSuggestionsFetchRequested}
+        onSuggestionsClearRequested={this.onSuggestionsClearRequested}
+        getSuggestionValue={getSuggestionValue}
+        renderSuggestion={renderSuggestion}
+        renderSectionTitle={renderSectionTitle}
+        getSectionSuggestions={getSectionSuggestions}
+        inputProps={inputProps} />
+    );
+  }
+}
+
+ReactDOM.render(<App />, document.getElementById('app'));
+</script>

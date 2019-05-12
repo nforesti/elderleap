@@ -72,18 +72,20 @@ Use the corresponding body tag for your chosen theme
 	<div style="width: 90%; margin-left: auto; margin-right: auto; ">
 
 		<div style="width: 100%; padding-left: 0px; padding-right: 0px;" class="container">
+            <header id="navbar" class="nav" role="navigation">
 
-			<header id="navbar" class="nav" role="navigation">
+                <h2 onclick="window.location.replace('/')" id="homeBtn"><i class="flex-item fa fa-home"></i>ACT</h2>
+                <div id="navitem">
+                    <h5 style="margin-left: auto; margin-right: 0px;" class="flex-item"><a
+                            href="browse.html">Categories</a>
+                    </h5>
+                    <h5 style="margin-left: 1.5em; margin-right: 0px;" class="flex-item "><a
+                            href="message.html">Messages</a></h5>
+                    <h5 style="margin-left: 1.5em; margin-right: 0px;" class="flex-item "><a href="about.html">About</a></h5>
 
-				<h2 onclick="window.location.replace('/')" id="homeBtn"><i class="flex-item fa fa-home"></i>ACT</h2>
-				<div id="navitem">
-					<button style="margin-left: auto; margin-right: 0px;" id="loginBtn"
-						onclick="window.location.replace('/login.html');" class="btn flex-item">Login</button>
-				</div>
-
-
-			</header>
-		</div>
+                </div>
+            </header>
+        </div>
 	</div>
 
 
@@ -122,7 +124,7 @@ Use the corresponding body tag for your chosen theme
 
 		</div> <!-- //end of row -->
 		<p style="margin-top: 2em; display: block; text-align: center"><button class="btn btn-large"
-				style="margin-left:auto; margin-right: auto;" onclick="window.location.replace('/login.html');">Get
+				style="margin-left:auto; margin-right: auto;" onclick="window.location.replace('/browse.html');">Get
 				Started</button></p>
 
 	</div> <!-- //end container -->
