@@ -1,44 +1,52 @@
-function _defineProperty(obj, key, value) {if (key in obj) {Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true });} else {obj[key] = value;}return obj;}const categories = [
-{
-  title: "animals",
-  img: "",
-  tags: ["cute", "alive", "yummy"],
-  subcategories: [
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; } const categories = [
   {
-    name: "animal",
-    img: "http://www.myiconfinder.com/uploads/iconsets/256-256-86dc422818667e51e344d8c812995e96-cat.png",
-    asl: 1 },
-
-  {
-    name: "dog",
+    title: "animals",
     img: "",
-    asl: 1 }] },
+    tags: ["cute", "alive", "yummy"],
+    subcategories: [
+      {
+        name: "animal",
+        img: "http://www.myiconfinder.com/uploads/iconsets/256-256-86dc422818667e51e344d8c812995e96-cat.png",
+        asl: 1
+      },
+
+      {
+        name: "dog",
+        img: "",
+        asl: 1
+      }]
+  },
 
 
 
-{
-  title: "foods",
-  img: "",
-  tags: ["cute", "yummy"],
-  subcategories: [
   {
-    name: "food",
-    img: "" },
+    title: "foods",
+    img: "",
+    tags: ["cute", "yummy"],
+    subcategories: [
+      {
+        name: "food",
+        img: ""
+      },
+
+      {
+        name: "carrot",
+        img: ""
+      }]
+  },
+
+
 
   {
-    name: "carrot",
-    img: "" }] },
-
-
-
-{
-  title: "foodies",
-  img: "",
-  tags: ["here"],
-  subcategories: [
-  {
-    name: "carroties",
-    img: "" }] }];
+    title: "foodies",
+    img: "",
+    tags: ["here"],
+    subcategories: [
+      {
+        name: "carroties",
+        img: ""
+      }]
+  }];
 
 
 
@@ -61,47 +69,48 @@ function getSuggestions(value) {
   console.log(regex);
 
   return categories.
-  map(section => {
-    var newthing = "";
-    var bool = false;
-    section.tags.forEach(newtag => {
-      if (regex.test(newtag) == true) {bool = true;} else
-      if (bool == true) {} else
-      {bool = false;}
-    });
-    console.log("bool" + bool);
-    console.log(regex.test(section.title));
-    if (regex.test(section.title) == true) {
-      console.log("not hello");
-      return {
-        title: section.title,
-        subcategories: section.subcategories.filter(subcategory => regex.test(section.title)) };
-
-    } else
-    if (bool == true) {
-      console.log(section.tags.indexOf(regex));
-      let newvar = [];
-      section.tags.forEach(tag => {
-        if (regex.test(tag)) {
-          section.subcategories.forEach(subcategory => {
-            newvar.push(subcategory);
-          });
-        }
+    map(section => {
+      var newthing = "";
+      var bool = false;
+      section.tags.forEach(newtag => {
+        if (regex.test(newtag) == true) { bool = true; } else
+          if (bool == true) { } else { bool = false; }
       });
-      return {
-        title: section.title,
-        subcategories: newvar };
+      console.log("bool" + bool);
+      console.log(regex.test(section.title));
+      if (regex.test(section.title) == true) {
+        console.log("not hello");
+        return {
+          title: section.title,
+          subcategories: section.subcategories.filter(subcategory => regex.test(section.title))
+        };
 
-    } else
-    {
-      console.log("hello!");
-      return {
-        title: section.title,
-        subcategories: section.subcategories.filter(subcategory => regex.test(subcategory.name)) };
+      } else
+        if (bool == true) {
+          console.log(section.tags.indexOf(regex));
+          let newvar = [];
+          section.tags.forEach(tag => {
+            if (regex.test(tag)) {
+              section.subcategories.forEach(subcategory => {
+                newvar.push(subcategory);
+              });
+            }
+          });
+          return {
+            title: section.title,
+            subcategories: newvar
+          };
 
-    }
-  }).
-  filter(section => section.subcategories.length > 0);
+        } else {
+          console.log("hello!");
+          return {
+            title: section.title,
+            subcategories: section.subcategories.filter(subcategory => regex.test(subcategory.name))
+          };
+
+        }
+    }).
+    filter(section => section.subcategories.length > 0);
 }
 
 function getSuggestionValue(suggestion) {
@@ -126,7 +135,7 @@ function getSectionSuggestions(section) {
 
 class App extends React.Component {
   constructor() {
-    super();_defineProperty(this, "onChange",
+    super(); _defineProperty(this, "onChange",
 
 
 
@@ -134,30 +143,35 @@ class App extends React.Component {
 
 
 
-    (event, { newValue, method }) => {
-      this.setState({
-        value: newValue });
+      (event, { newValue, method }) => {
+        this.setState({
+          value: newValue
+        });
 
-    });_defineProperty(this, "onSuggestionsFetchRequested",
+      }); _defineProperty(this, "onSuggestionsFetchRequested",
 
-    ({ value }) => {
-      this.setState({
-        suggestions: getSuggestions(value) });
+        ({ value }) => {
+          this.setState({
+            suggestions: getSuggestions(value)
+          });
 
-    });_defineProperty(this, "onSuggestionsClearRequested",
+        }); _defineProperty(this, "onSuggestionsClearRequested",
 
-    () => {
-      this.setState({
-        suggestions: [] });
+          () => {
+            this.setState({
+              suggestions: []
+            });
 
-    });this.state = { value: '', suggestions: [] };}
+          }); this.state = { value: '', suggestions: [] };
+  }
 
   render() {
     const { value, suggestions } = this.state;
     const inputProps = {
       placeholder: "Type 'c'",
       value,
-      onChange: this.onChange };
+      onChange: this.onChange
+    };
 
 
     return (
@@ -170,9 +184,11 @@ class App extends React.Component {
         renderSuggestion: renderSuggestion,
         renderSectionTitle: renderSectionTitle,
         getSectionSuggestions: getSectionSuggestions,
-        inputProps: inputProps }));
+        inputProps: inputProps
+      }));
 
-  }}
+  }
+}
 
 
 ReactDOM.render(React.createElement(App, null), document.getElementById('app'));

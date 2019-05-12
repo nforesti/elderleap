@@ -93,3 +93,29 @@ div.container{
 }
 
 
+#foot{
+  position: absolute;		
+  bottom: 0;		
+  width: 100%;		
+  height: 2.5rem;            
+  /* Footer height */
+}
+
+.subPage{
+  display:inline-block;
+  float:none;
+  vertical-align: text-top;
+  /* reset the text-align */
+  text-align:left;
+  /* inline-block space fix */
+  margin-right:-4px;
+  text-align: center;
+  cursor: pointer;
+  background-color: white;
+  margin: 1em;
+  padding: 1em;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.1), 0 6px 20px 0 rgba(0, 0, 0, 0.1);
+  color: rgba(117,117,117 ,1);
+  text-align: center;
+  border: none;
+}
