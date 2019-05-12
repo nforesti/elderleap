@@ -14,7 +14,7 @@ $(document).ready(() => {
                 console.log('You received some data!', data);
                 let html = "";
                 for (category in data) {
-                    html = html + '<li class="flex-item topcategory category">\n<img src="' + data[category].img + '">\n<h3>' + category + '</h3>\n</li>';
+                    html = html + '<li class="flex-item topcategory category">\n<img src="' + data[category].img.img + '">\n<h3>' + category + '</h3>\n</li>';
                     console.log(html);
                     $('#categoryContainer').html(html);
                     console.log(data[category].img);
@@ -39,7 +39,7 @@ $(document).ready(() => {
                 let html = "";
                 for (subcategory in data) {
                     if (subcategory != "img") {
-                        html = html + '<li onclick="toSpeech(&quot;' + subcategory + '&quot;)" class="flex-item category">\n<img src="' + data[subcategory].img + '">\n<h3>' + subcategory + '</h3>\n</li>';
+                        html = html + '<li onclick="toSpeech(&quot;' + subcategory + '&quot;)" class="flex-item category">\n<img src="' + data[subcategory].img.img + '">\n<h3>' + subcategory + '</h3>\n</li>';
                         $('#categoryContainer').html(html);
                     }
                 }

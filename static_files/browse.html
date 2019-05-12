@@ -11,6 +11,7 @@
 	<!-- Theme css -->
 	<link href="css/colorfrog.css" rel="stylesheet" media="screen">
 	<link href="css/kiddos.css" rel="stylesheet">
+	<link href="css/search.css" rel="stylesheet">
 
 	<link href='http://fonts.googleapis.com/css?family=PT+Sans:400,700,400italic,700italic' rel='stylesheet'
 		type='text/css'>
@@ -23,7 +24,7 @@
 	<script src="https://www.gstatic.com/firebasejs/3.1.0/firebase-database.js"></script>
 
 	<!-- TODO: Add SDKs for Firebase products that you want to use
-     https://firebase.google.com/docs/web/setup#config-web-app --> 
+     https://firebase.google.com/docs/web/setup#config-web-app -->
 
 	<script src="js/respond.min.js"></script>
 
@@ -33,6 +34,7 @@
 	<script src="js/colorfrog.js"></script>
 	<script src="js/speech.js"></script>
 	<script src="js/browse.js"></script>
+
 
 	<!--[if lt IE 9]>
 	<script>
@@ -65,13 +67,25 @@ Use the corresponding body tag for your chosen theme
 					</h4>
 					<h4 style="margin-left: 1.5em; margin-right: 0px;" class="flex-item "><a
 							href="message.html">Keyboard</a></h4>
-					<h4 style="margin-left: 1.5em; margin-right: 0px;" class="flex-item "><a href="about.html">About</a></h4>
+					<h4 style="margin-left: 1.5em; margin-right: 0px;" class="flex-item "><a href="about.html">About</a>
+					</h4>
 				</div>
 			</header>
 		</div>
 
 		<button style="display: none" id="backToHomeBtn" class="btn btn-small"><i class="fas fa-angle-left"></i>
 			Browse</button>
+
+
+
+		<div id="app"></div>
+		<script src='https://unpkg.com/react@15.4.2/dist/react.js'></script>
+		<script src='https://unpkg.com/react-dom@15.4.2/dist/react-dom.js'></script>
+		<script src='https://unpkg.com/react-autosuggest@9.0.0/dist/standalone/autosuggest.js'></script>
+		<script src="js/search.js"></script>
+
+
+
 		<!--<button id="updateDatabase"></button>-->
 		<h1 style="text-align: center; margin-left: auto; margin-right: auto;" id="subTitle"></h1>
 		<ul style="border: none" id="categoryContainer" class="flex-container wrap">
@@ -79,21 +93,21 @@ Use the corresponding body tag for your chosen theme
 	</div>
 
 	<footer>
-			<div class="container">
-				<div class="row">
-					<div class="col-sm-6">
-						<p>Copyright &copy; 2015 Colorfrog. All rights reserved.
-							<a href="">Terms</a> &amp;
-							<a href="">Privacy</a>.</p>
-					</div>
-					<div class="col-sm-6">
-						<p> Stock photos sourced from
-							<a href="http://pexels.com">Pexels</a>.</p>
-					</div>
+		<div class="container">
+			<div class="row">
+				<div class="col-sm-6">
+					<p>Copyright &copy; 2015 Colorfrog. All rights reserved.
+						<a href="">Terms</a> &amp;
+						<a href="">Privacy</a>.</p>
+				</div>
+				<div class="col-sm-6">
+					<p> Stock photos sourced from
+						<a href="http://pexels.com">Pexels</a>.</p>
 				</div>
 			</div>
-			<!--//end container -->
-		</footer>
+		</div>
+		<!--//end container -->
+	</footer>
 
 </body>
 
