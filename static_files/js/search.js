@@ -168,7 +168,7 @@ class App extends React.Component {
   render() {
     const { value, suggestions } = this.state;
     const inputProps = {
-      placeholder: "Type 'c'",
+      placeholder: "Search for a category, word, or adjective.",
       value,
       onChange: this.onChange
     };

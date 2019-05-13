@@ -10,6 +10,7 @@ $(document).ready(() => {
             dataType: 'json', // this URL returns data in JSON format
             success: (data) => {
                 document.getElementById("backToHomeBtn").style.display = "none";
+                document.getElementById("navbar").style.visibility = "visible";
                 $('#subTitle').html("");
                 console.log('You received some data!', data);
                 let html = "";
@@ -46,6 +47,7 @@ $(document).ready(() => {
             },
         });
 
+        document.getElementById("navbar").style.visibility = "hidden";
         document.getElementById("backToHomeBtn").style.display = "inline";
     });
     

@@ -60,7 +60,7 @@ Use the corresponding body tag for your chosen theme
 		<div style="width: 100%; padding-left: 0px; padding-right: 0px;" class="container">
 			<header id="navbar" class="nav" role="navigation">
 
-				<h1 onclick="window.location.replace('/')" id="homeBtn"><i class="flex-item fa fa-home"></i>ACT</h1>
+				<h3 onclick="window.location.replace('/')" id="homeBtn"><i class="flex-item fa fa-home"></i>ACT</h3>
 				<div id="navitem">
 					<h4 style="margin-left: auto; margin-right: 0px;" class="flex-item"><a
 							href="browse.html">Dashboard</a>
@@ -73,7 +73,7 @@ Use the corresponding body tag for your chosen theme
 			</header>
 		</div>
 
-		<button style="display: none" id="backToHomeBtn" class="btn btn-small"><i class="fas fa-angle-left"></i>
+		<button style="display: none; position: fixed; left: 2em;top: 2em; font-size: 1.2em;" id="backToHomeBtn" class="btn btn-small"><i class="fas fa-angle-left"></i>
 			Browse</button>
 
 
@@ -85,22 +85,14 @@ Use the corresponding body tag for your chosen theme
 		<script src="js/search.js"></script>
 
 
-		<h6 align="right"><i class="fas fa-image"></i> Stock photos from <a href="http://pexels.com">Pexels</a>.</h6>
+
 		<!--<button id="updateDatabase"></button>-->
 		<h1 style="text-align: center; margin-left: auto; margin-right: auto;" id="subTitle"></h1>
 		<ul style="border: none" id="categoryContainer" class="flex-container wrap">
 		</ul>
 	</div>
-
-
+	<h6 style="margin-top: .5em;" align="center"><i class="fas fa-image"></i> Stock photos from <a href="http://pexels.com">Pexels</a>.</h6>
 </body>
 
+
 </html>
-
-<footer id="foot">
-	<div class="container" style="display: flexbox; ">
-
-		<p align="center">Foresti & Edelman.</p>
-	</div>
-	<!--//end container -->
-</footer>
