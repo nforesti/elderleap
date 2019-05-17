@@ -72,17 +72,19 @@ Use the corresponding body tag for your chosen theme
 				</div>
 			</header>
 		</div>
+		<button
+				style="display: none; position: fixed; top: 1em; left: 1em; font-size: 1.2em; background-color:orange"
+				id="backToHomeBtn" class="btn btn-small"><i class="fas fa-angle-left"></i>
+				Back</button>
 
-		<button style="display: none; position: fixed; left: 2em;top: 2em; font-size: 1.2em; background-color:orange" id="backToHomeBtn" class="btn btn-small"><i class="fas fa-angle-left"></i>
-			Back</button>
 
-
-
+		<!--
 		<div id="app"></div>
 		<script src='https://unpkg.com/react@15.4.2/dist/react.js'></script>
 		<script src='https://unpkg.com/react-dom@15.4.2/dist/react-dom.js'></script>
 		<script src='https://unpkg.com/react-autosuggest@9.0.0/dist/standalone/autosuggest.js'></script>
 		<script src="js/search.js"></script>
+		-->
 
 
 
@@ -91,7 +93,15 @@ Use the corresponding body tag for your chosen theme
 		<ul style="border: none" id="categoryContainer" class="flex-container wrap">
 		</ul>
 	</div>
-	<h6 style="margin-top: .5em;" align="center"><i class="fas fa-image"></i> Stock photos from <a href="http://pexels.com">Pexels</a>.</h6>
+
+	<h6 style="margin-top: .5em;" align="center"><i class="fas fa-image"></i> Stock photos from <a
+			href="http://pexels.com">Pexels</a>.</h6>
+			<br><br>
+			<div id="suggestionContainer" >	
+				<div class="sentence btn btn-small">I want</div>
+				<div class="sentence btn btn-small">Where is</div>
+				<div style="float: right;background-color: white;" class="sentence btn btn-small"><i class="fas fa-volume-up"></i></div>
+			</div>
 </body>
 
 

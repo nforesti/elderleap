@@ -20,11 +20,11 @@ h1, h2, h3, h4, h5, h6 {
 header {
   float: left;
   padding: 15px 0 10px 0; }
-  header .brand {
+  /*header .brand {
     text-indent: -999px;
     display: block;
     width: 207px;
-    height: 53px; }
+    height: 53px; }*/
 
 /*
 * Main navigation
@@ -670,8 +670,8 @@ form {
   background-color: #8a46ab; }
 .blue .ba2 {
   background-color: #bf10f2; }
-.blue header .brand {
-  background: url(../img/blue/logo-blue.png) 0 0 no-repeat; }
+/*.blue header .brand {
+  background: url(../img/blue/logo-blue.png) 0 0 no-repeat; }*/
 .blue a {
   color: #029fe2; }
 .blue .nav-tabs .open .dropdown-toggle,
