@@ -44,6 +44,20 @@ function setCategoryImage(category) {
   });
 }
 
+//Get Photo by ID
+function setCategoryImageById(category) {
+  pexelsClient.getPhoto(708488)
+  .then(function(result){
+    let imgUrl = result.src.small;
+    firebase.database().ref('categories/' + category + '/img').set({
+      img: imgUrl });
+  }).
+  catch(function(e){
+      console.err(e);
+  });
+  }
+  //setCategoryImageById("food");
+
 //function that writes img data to sub-categories in database
 function setSubCategoryImage(category, subcategory) {
   pexelsClient.search(subcategory, 1, 1)
