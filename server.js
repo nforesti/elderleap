@@ -78,13 +78,20 @@ function setImages() {
 // call function to set images in database
 //setImages(); 
 
-//reset database to null values 
-//app.get('/update', function (req, res) {
-//  console.log("HTTP Get Request");
-//  res.send("HTTP GET Request");
-  //Insert key,value pair to database
-  //firebase.database().ref('/categories').set(categories);
-//});
+/*reset database to null values 
+app.get('/update', function (req, res) {
+  console.log("HTTP Get Request");
+  res.send("HTTP GET Request");
+ //Insert key,value pair to database
+firebase.database().ref('/categories').set(categories);
+});
+*/
+
+//set actionWords in databse
+const actionWords = info.getActionWords(); 
+var actionsRef = firebase.database().ref("actions/");
+//actionsRef.set(actionWords);
+
 
 app.get('/browse', function (req, res) {
   //Fetch instances
