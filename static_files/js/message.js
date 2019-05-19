@@ -52,7 +52,7 @@ $(document).ready(() => {
                 $("#messageBtn").css("background-color", "gray");
             }
             else {
-                $("#messageBtn").css("background-color", "#8a46ab");
+                $("#messageBtn").css("background-color", "orange");
             }
 
             var vlen = e.value.length, ewidth = e.offsetWidth;
