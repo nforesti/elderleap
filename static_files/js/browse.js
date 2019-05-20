@@ -47,7 +47,18 @@ $(document).ready(() => {
                 }
             },
         });
-
+        $.ajax({
+            url: '/sentences/'+catName,
+            type: 'GET',
+            dataType: 'json',
+            success: (data) => {
+                html = "";
+                data.words.forEach(word =>{
+                    html+='<div class="sentence btn btn-small">'+word+'</div>';
+                });
+                $('#sentences').html(html);
+            },
+        });
         document.getElementById("navbar").style.visibility = "hidden";
         document.getElementById("suggestionContainer").style.display = "inline";
         document.getElementById("backToHomeBtn").style.display = "inline";

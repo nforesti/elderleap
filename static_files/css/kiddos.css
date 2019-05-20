@@ -61,6 +61,7 @@
 }
 
 /* changed justify-content from space-around to space-evenly */
+
 .flex-container {
   justify-content: space-evenly;
   padding: 0;
@@ -78,7 +79,7 @@
 .wrap    { 
   -webkit-flex-wrap: wrap;
   flex-wrap: wrap;
-}  
+}  */
 .wrap li {
   background: gold;
 }
