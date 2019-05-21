@@ -14,7 +14,7 @@ We added a title and description to this page to orient the user to what actions
 ![image](https://drive.google.com/uc?export=view&id=1AY-2ZZJPjBgglfeBubhSmF1Z0GWu0DUo)
 
 ### Display subcategories
-The main feature we added to this page is a list of suggested words related to each category, for a more informative interaction than just clicking on images.  
+The main feature we added to this page is a list of suggested words related to each category displayed at the bottom of the page. This allows for a more informative interaction than simple clicking on images.  
 
 ![image](https://drive.google.com/uc?export=view&id=1SmIU6iyEOU2XOFmSgejXpcE5wnPTXd6x)
 
