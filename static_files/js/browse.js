@@ -7,13 +7,14 @@ $(document).ready(() => {
             // all URLs are relative to http://localhost:3000/
             url: requestURL,
             type: 'GET',
-            dataType: 'json', // this URL returns data in JSON format
+            dataType: 'json', // this URL  data in JSON format
             success: (data) => {
                 document.getElementById("backToHomeBtn").style.display = "none";
                 document.getElementById("suggestionContainer").style.display = "none";
                 document.getElementById("navbar").style.visibility = "visible";
                 document.getElementById("title").style.display = "inline";
                 $('#subTitle').html("");
+                $('#subTitle_description').html("");
                 console.log('You received some data!', data);
                 let html = "";
                 let counter = 0;
@@ -47,6 +48,7 @@ $(document).ready(() => {
             dataType: 'json',
             success: (data) => {
                 $('#subTitle').html(catName);
+                $('#subTitle_description').html("select an image or phrase to play the words aloud");
                 let html = "";
                 let counter = 0;
                 for (subcategory in data) {
