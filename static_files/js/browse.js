@@ -41,7 +41,7 @@ $(document).ready(() => {
                 let html = "";
                 for (subcategory in data) {
                     if (subcategory != "img") {
-                        html = html + '<li onclick="toSpeech(&quot;' + subcategory + '&quot;)" class="flex-item category">\n<img src="' + data[subcategory].img.img + '">\n<h3>' + subcategory + '</h3>\n</li>';
+                        html = html + '<li onclick="toSpeech(&quot;' + subcategory + '&quot;)" class="flex-item category">\n<img src="' + data[subcategory].img.img + '">\n<h3 class="subcategoryName">' + subcategory + '</h3>\n</li>';
                         $('#categoryContainer').html(html);
                     }
                 }
@@ -54,7 +54,7 @@ $(document).ready(() => {
             success: (data) => {
                 html = "";
                 data.words.forEach(word =>{
-                    html+='<div class="sentence btn btn-small">'+word+'</div>';
+                    html+='<div onclick="toSpeech(&quot;' + word + '&quot;)"class="sentence btn btn-small">'+word+'</div>';
                 });
                 $('#sentences').html(html);
             },
