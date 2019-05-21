@@ -23,5 +23,6 @@ The main feature we added to this page is a list of suggested words related to e
 ![image](https://drive.google.com/uc?export=view&id=
 
 ### (4) About Page
+Finally, we added content to our About Page describing the different features of our app and how we hope to accomodate our intended users.
 
 ![image](https://drive.google.com/uc?export=view&id=1LrB58UL2yXbLrYc5BZJ5t41zClEW1zTV)
