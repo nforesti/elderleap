@@ -34,10 +34,16 @@ $(document).ready(() => {
  *     e.g. <textarea name="textarea1" rows="3" cols="40" class="expand50-200"></textarea>
  *     The textarea will use an appropriate height between 50 and 200 pixels.
  */
-
+const delMessage = (element) =>{
+    event.stopPropagation(); element.parentElement.parentElement.removeChild(element.parentElement);
+}
 
 const addMessage = e =>{
-    $("#savedMessages").append('<div class="messages">'+document.getElementById("messageArea").value+'</div>')
+    $("#messageBtn").css("background-color", "rgba(128, 128, 128, 0.486)");
+    $("#saveBtn").css("opacity", ".4");
+    let message = document.getElementById("messageArea").value;
+    document.getElementById("messageArea").value = '';
+    $("#savedMessages").append('<div onclick="toSpeech(&quot;' + message + '&quot;)" class="messages">'+message+'<btn style="padding: 0 .5em; border: solid red 1px; line-height: 2.5em; font-size: .5em;color: red;float: right" onclick="delMessage(this)"><i  class="fas fa-trash-alt"></i></btn></div>');
 }
 
 (function ($) {
@@ -54,7 +60,7 @@ const addMessage = e =>{
 
 
             if (e.value.length == 0){
-                $("#messageBtn").css("background-color", "gray");
+                $("#messageBtn").css("background-color", "rgba(128, 128, 128, 0.486)");
                 $("#saveBtn").css("opacity", ".4");
                 document.getElementById('saveBtn').removeAttribute("onclick");
             }
