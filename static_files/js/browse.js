@@ -12,6 +12,7 @@ $(document).ready(() => {
                 document.getElementById("backToHomeBtn").style.display = "none";
                 document.getElementById("suggestionContainer").style.display = "none";
                 document.getElementById("navbar").style.visibility = "visible";
+                document.getElementById("title").style.display = "inline";
                 $('#subTitle').html("");
                 console.log('You received some data!', data);
                 let html = "";
@@ -75,6 +76,7 @@ $(document).ready(() => {
             },
         });
         document.getElementById("navbar").style.visibility = "hidden";
+        document.getElementById("title").style.display = "none";
         document.getElementById("suggestionContainer").style.display = "inline";
         document.getElementById("backToHomeBtn").style.display = "inline";
     });
