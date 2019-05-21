@@ -35,6 +35,11 @@ $(document).ready(() => {
  *     The textarea will use an appropriate height between 50 and 200 pixels.
  */
 
+
+const addMessage = e =>{
+    $("#savedMessages").append('<div class="messages">'+document.getElementById("messageArea").value+'</div>')
+}
+
 (function ($) {
 
     // jQuery plugin definition
@@ -46,13 +51,17 @@ $(document).ready(() => {
             // event or initialize element?
             e = e.target || e;
 
-            // find content length and box width
+
 
             if (e.value.length == 0){
                 $("#messageBtn").css("background-color", "gray");
+                $("#saveBtn").css("opacity", ".4");
+                document.getElementById('saveBtn').removeAttribute("onclick");
             }
             else {
                 $("#messageBtn").css("background-color", "orange");
+                $("#saveBtn").css("opacity", "1");
+                document.getElementById('saveBtn').onclick= addMessage;
             }
 
             var vlen = e.value.length, ewidth = e.offsetWidth;
