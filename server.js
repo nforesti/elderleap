@@ -106,7 +106,6 @@ const actionWords = info.getActionWords();
 var actionsRef = firebase.database().ref("actions/");
 //actionsRef.set(actionWords);
 
-
 app.get('/browse', function (req, res) {
   //Fetch instances
 
@@ -125,6 +124,8 @@ app.get('/browse', function (req, res) {
       res.send("The read failed: " + errorObject.code);
     });
 });
+
+
 
 app.get('/browse/:category', function (req, res) {
   //Fetch instances
@@ -166,3 +167,41 @@ app.get('/sentences/:category', function (req, res) {
     });
 });
 
+app.get('/message/:num/:newMessage', function (req, res) {
+  //Fetch instances
+
+  console.log("HTTP post Request with num");
+  firebase.database().ref("/message/message"+req.params.num).set(req.params.newMessage);
+  
+  console.log("HTTP post Request with num2");
+  json = JSON.parse('{"message '+req.params.num+'":"'+req.params.newMessage+'"}');
+  /*
+  var userReference = firebase.database().ref("/message");*/
+  res.send(json);
+
+});
+
+app.get('/message', function (req, res) {
+ 
+  console.log("HTTP Get Request");
+  var userReference = firebase.database().ref("/message");
+
+  //Attach an asynchronous callback to read the data
+  userReference.on("value",
+    function (snapshot) {
+      console.log(snapshot.val());
+      res.json(snapshot.val());
+      userReference.off("value");
+    },
+    function (errorObject) {
+      console.log("The read failed: " + errorObject.code);
+      res.send("The read failed: " + errorObject.code);
+    });
+});
+
+app.delete('/message/:todelete', function (req, res) {
+  console.log("HTTP Delete Request");
+  let userRef = firebase.database().ref('message/'+req.params.todelete);
+  userRef.remove()
+  res.send({});
+});

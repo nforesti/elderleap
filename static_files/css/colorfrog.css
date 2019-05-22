@@ -20,11 +20,11 @@ h1, h2, h3, h4, h5, h6 {
 header {
   float: left;
   padding: 15px 0 10px 0; }
-  /*header .brand {
+  header .brand {
     text-indent: -999px;
     display: block;
     width: 207px;
-    height: 53px; }*/
+    height: 53px; }
 
 /*
 * Main navigation

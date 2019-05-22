@@ -1,5 +1,17 @@
 $(document).ready(() => {
-    $("#messageBtn").click(messageToSpeech);    
+    $("#messageBtn").click(messageToSpeech);
+    $.ajax({
+        url: 'message/',
+        type: 'GET',
+        dataType: 'json',
+        success: (messages) => {
+            console.log(messages);
+            Object.keys(messages).forEach(function (key){
+                message = messages[key];
+                $("#savedMessages").prepend('<div id='+key+' onclick="toSpeech(&quot;' + message + '&quot;)" class="messages">' + message + '<btn style="padding: 0 .5em; border: solid red 1px; line-height: 2.5em; font-size: .5em;color: red;float: right" onclick="delMessage(this)"><i  class="fas fa-trash-alt"></i></btn></div>');
+            });
+        },
+    });
 });
 
 /**
@@ -34,16 +46,34 @@ $(document).ready(() => {
  *     e.g. <textarea name="textarea1" rows="3" cols="40" class="expand50-200"></textarea>
  *     The textarea will use an appropriate height between 50 and 200 pixels.
  */
-const delMessage = (element) =>{
-    event.stopPropagation(); element.parentElement.parentElement.removeChild(element.parentElement);
+const delMessage = (element) => {
+    
+    $.ajax({
+        url: 'message/'+element.parentElement.id,
+        type: 'DELETE',
+        dataType: 'json',
+        success: (messages) => {
+            console.log("todelete");
+            event.stopPropagation(); element.parentElement.parentElement.removeChild(element.parentElement);
+        },
+    });
 }
 
-const addMessage = e =>{
+const addMessage = e => {
     $("#messageBtn").css("background-color", "rgba(128, 128, 128, 0.486)");
     $("#saveBtn").css("opacity", ".4");
     let message = document.getElementById("messageArea").value;
     document.getElementById("messageArea").value = '';
-    $("#savedMessages").append('<div onclick="toSpeech(&quot;' + message + '&quot;)" class="messages">'+message+'<btn style="padding: 0 .5em; border: solid red 1px; line-height: 2.5em; font-size: .5em;color: red;float: right" onclick="delMessage(this)"><i  class="fas fa-trash-alt"></i></btn></div>');
+    let num = (document.getElementById("savedMessages").children.length +1)
+    $.ajax({
+        url: 'message/' +num+ '/' + message,
+        type: 'GET',
+        dataType: 'json',
+        success: (newid) => {
+            console.log(newid);
+                $("#savedMessages").prepend('<div id="message'+num+' onclick="toSpeech(&quot;' + message + '&quot;)" class="messages">' + message + '<btn style="padding: 0 .5em; border: solid red 1px; line-height: 2.5em; font-size: .5em;color: red;float: right" onclick="delMessage(this)"><i  class="fas fa-trash-alt"></i></btn></div>');
+        },
+    });
 }
 
 (function ($) {
@@ -59,7 +89,7 @@ const addMessage = e =>{
 
 
 
-            if (e.value.length == 0){
+            if (e.value.length == 0) {
                 $("#messageBtn").css("background-color", "rgba(128, 128, 128, 0.486)");
                 $("#saveBtn").css("opacity", ".4");
                 document.getElementById('saveBtn').removeAttribute("onclick");
@@ -67,7 +97,7 @@ const addMessage = e =>{
             else {
                 $("#messageBtn").css("background-color", "orange");
                 $("#saveBtn").css("opacity", "1");
-                document.getElementById('saveBtn').onclick= addMessage;
+                document.getElementById('saveBtn').onclick = addMessage;
             }
 
             var vlen = e.value.length, ewidth = e.offsetWidth;

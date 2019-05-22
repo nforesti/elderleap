@@ -11,10 +11,10 @@ $(document).ready(() => {
             success: (data) => {
                 document.getElementById("backToHomeBtn").style.display = "none";
                 document.getElementById("suggestionContainer").style.display = "none";
-                document.getElementById("navbar").style.visibility = "visible";
+                document.getElementById("browsehead").style.display = "block";
                 document.getElementById("title").style.display = "inline";
-                $('#subTitle').html("");
-                $('#subTitle_description').html("");
+                document.getElementById("subTitle").style.display="none";
+                document.getElementById("subTitle_description").style.display="none";
                 console.log('You received some data!', data);
                 let html = "";
                 let counter = 0;
@@ -42,13 +42,13 @@ $(document).ready(() => {
     $(document).on('click', '.topcategory', function () {
         const catName = $(this).find("h3")[0].innerHTML;
         console.log("!!!!! " + catName);
+        
+        $('#subTitle').html(catName);
         $.ajax({
             url: 'browse/' + catName,
             type: 'GET',
             dataType: 'json',
             success: (data) => {
-                $('#subTitle').html(catName);
-                $('#subTitle_description').html("select an image or phrase to play the words aloud");
                 let html = "";
                 let counter = 0;
                 for (subcategory in data) {
@@ -77,10 +77,12 @@ $(document).ready(() => {
                 $('#sentences').html(html);
             },
         });
-        document.getElementById("navbar").style.visibility = "hidden";
+        document.getElementById("browsehead").style.display = "none";
         document.getElementById("title").style.display = "none";
         document.getElementById("suggestionContainer").style.display = "inline";
         document.getElementById("backToHomeBtn").style.display = "inline";
+        document.getElementById("subTitle").style.display="block";
+        document.getElementById("subTitle_description").style.display="block";
     });
 
 });
