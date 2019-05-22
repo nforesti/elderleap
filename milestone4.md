@@ -1,5 +1,9 @@
 # Milestone 4
 
+## Actions
+1. The first non-trivial action is on the Dashboard page. In this page, the user can interact with categories and subcategories of words through the written word as well as images. By navigating through the categories and clicking on the category, the user will be guded to the images/subcategories that they may be looking for. The user can then click on any image, and the browser will read that out loud. Furthermore, for each category, there are a list of related actions, sentences, or wrods. Hence, the user can click on an image/noun/word and then a related action/verb. Both will be read aloud, and this will help the user communicate as well as possibly learn connections between images, words, and actions.
+2. The second non-trivial action is the keyboard page. Here, the user can type in any amount of text. The user can then request the browser to speak the text aloud. The user also has the option to save the text to view it later. All saved text from the past is visible below, and all of them can be clicked on and spoken aloud. They can also be deleted if the user no longer wants the saved messages.
+
 ## Screenshots of UI Webpages
 
 ### (1) Home Page
