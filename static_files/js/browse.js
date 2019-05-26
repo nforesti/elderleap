@@ -15,6 +15,8 @@ $(document).ready(() => {
                 document.getElementById("title").style.display = "inline";
                 document.getElementById("subTitle").style.display="none";
                 document.getElementById("subTitle_description").style.display="none";
+                document.getElementById("dropDiv").style.display = "none";
+                document.getElementById("dropDiv").append= "";
                 console.log('You received some data!', data);
                 let html = "";
                 let counter = 0;
@@ -52,10 +54,10 @@ $(document).ready(() => {
                 for (subcategory in data) {
                     if (subcategory != "img") {
                         if (counter != 0) {
-                            html = html + '<li onclick="toSpeech(&quot;' + subcategory + '&quot;)" class="flex-item category">\n<img src="' + data[subcategory].img.img + '">\n<h3 class="subcategoryName">' + subcategory + '</h3>\n</li>';
+                            html = html + '<li onclick="toSpeech(&quot;' + subcategory + '&quot;)" class="flex-item category" >\n<img id="'+subcategory+'" draggable="true" ondragstart="drag(event)"; src="' + data[subcategory].img.img + '">\n<h3 class="subcategoryName">' + subcategory + '</h3>\n</li>';
                         }
                         else {
-                            html = html + '<li style="margin-top: 0px !important;" onclick="toSpeech(&quot;' + subcategory + '&quot;)" class="flex-item category">\n<img src="' + data[subcategory].img.img + '">\n<h3 class="subcategoryName">' + subcategory + '</h3>\n</li>';
+                            html = html + '<li style="margin-top: 0px !important;" onclick="toSpeech(&quot;' + subcategory + '&quot;)" class="flex-item category" >\n<img id="'+subcategory+'" draggable="true" ondragstart="drag(event)" src="' + data[subcategory].img.img + '">\n<h3 class="subcategoryName">' + subcategory + '</h3>\n</li>';
                         }
                         $('#categoryContainer').html(html);
                     }
@@ -70,7 +72,7 @@ $(document).ready(() => {
             success: (data) => {
                 html = "";
                 data.words.forEach(word => {
-                    html += '<div onclick="toSpeech(&quot;' + word + '&quot;)"class="sentence btn btn-small">' + word + '</div>';
+                    html += '<div onclick="toSpeech(&quot;' + word + '&quot;)" class="sentence btn btn-small" id= "'+ word +'" ondragstart="dragStart(event)" draggable="true">' + word + '</div>';
                 });
                 $('#sentences').html(html);
             },
@@ -78,6 +80,7 @@ $(document).ready(() => {
         document.getElementById("browsehead").style.display = "none";
         document.getElementById("title").style.display = "none";
         document.getElementById("suggestionContainer").style.display = "inline";
+        document.getElementById("dropDiv").style.display = "inline-block";
         document.getElementById("backToHomeBtn").style.display = "inline";
         document.getElementById("subTitle").style.display="block";
         document.getElementById("subTitle_description").style.display="block";
