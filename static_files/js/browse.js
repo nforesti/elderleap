@@ -40,7 +40,7 @@ $(document).ready(() => {
     $("#updateDatabase").click((e) => { updateDatabase(); });
 
     $(document).on('click', '.topcategory', function () {
-        const catName = $(this).find("h3")[0].innerHTML;
+        const catName = $(this).find("h3")[0].innerHTML; 
         $('#subTitle').html(catName);
         $.ajax({
             url: 'browse/' + catName,

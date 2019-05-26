@@ -1,4 +1,9 @@
 $(document).ready(() => {
+    $('#JPO').popup();
+
+    // Set default `pagecontainer` for all popups (optional, but recommended for screen readers and iOS*)
+    $.fn.popup.defaults.pagecontainer = '#page'
+
     $("#messageBtn").click(messageToSpeech);
     $.ajax({
         url: 'message/',
@@ -45,8 +50,7 @@ $(document).ready(() => {
  *     e.g. <textarea name="textarea1" rows="3" cols="40" class="expand50-200"></textarea>
  *     The textarea will use an appropriate height between 50 and 200 pixels.
  */
-const delMessage = (element) => {
-    
+const delAjax = (element)=>{
     $.ajax({
         url: 'message/'+element.parentElement.textContent,
         type: 'DELETE',
@@ -56,6 +60,16 @@ const delMessage = (element) => {
             event.stopPropagation(); element.parentElement.parentElement.removeChild(element.parentElement);
         },
     });
+}
+
+const delMessage = (element) => {
+    if (localStorage.getItem("firstTime") == null){
+        console.log("is first time");
+        $('#JPO').popup();
+        delAjax(element);
+
+    }
+
 }
 
 const addMessage = e => {
@@ -70,7 +84,7 @@ const addMessage = e => {
         dataType: 'json',
         success: (newid) => {
             console.log(newid);
-                $("#savedMessages").prepend('<div onclick="toSpeech(&quot;' + message + '&quot;)" class="messages">' + message + '<btn style="padding: 0 .5em; border: solid red 1px; line-height: 2.5em; font-size: .5em;color: red;float: right" onclick="delMessage(this)"><i  class="fas fa-trash-alt"></i></btn></div>');
+                $("#savedMessages").prepend('<div onclick="toSpeech(&quot;' + message + '&quot;)" class="messages">' + message + '<btn class="JPO_open" style="padding: 0 .5em; border: solid red 1px; line-height: 2.5em; font-size: .5em;color: red;float: right" onclick="delMessage(this)"><i  class="fas fa-trash-alt"></i></btn></div>');
         },
     });
 }
