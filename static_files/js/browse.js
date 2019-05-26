@@ -41,8 +41,6 @@ $(document).ready(() => {
 
     $(document).on('click', '.topcategory', function () {
         const catName = $(this).find("h3")[0].innerHTML;
-        console.log("!!!!! " + catName);
-        
         $('#subTitle').html(catName);
         $.ajax({
             url: 'browse/' + catName,
