@@ -7,8 +7,7 @@ $(document).ready(() => {
         success: (messages) => {
             console.log(messages);
             Object.keys(messages).forEach(function (key){
-                message = messages[key];
-                $("#savedMessages").prepend('<div id='+key+' onclick="toSpeech(&quot;' + message + '&quot;)" class="messages">' + message + '<btn style="padding: 0 .5em; border: solid red 1px; line-height: 2.5em; font-size: .5em;color: red;float: right" onclick="delMessage(this)"><i  class="fas fa-trash-alt"></i></btn></div>');
+                $("#savedMessages").prepend('<div id='+key+' onclick="toSpeech(&quot;' + key + '&quot;)" class="messages">' + key + '<btn style="padding: 0 .5em; border: solid red 1px; line-height: 2.5em; font-size: .5em;color: red;float: right" onclick="delMessage(this)"><i  class="fas fa-trash-alt"></i></btn></div>');
             });
         },
     });
@@ -49,7 +48,7 @@ $(document).ready(() => {
 const delMessage = (element) => {
     
     $.ajax({
-        url: 'message/'+element.parentElement.id,
+        url: 'message/'+element.parentElement.textContent,
         type: 'DELETE',
         dataType: 'json',
         success: (messages) => {
@@ -66,12 +65,12 @@ const addMessage = e => {
     document.getElementById("messageArea").value = '';
     let num = (document.getElementById("savedMessages").children.length +1)
     $.ajax({
-        url: 'message/' +num+ '/' + message,
+        url: 'message/' + message,
         type: 'GET',
         dataType: 'json',
         success: (newid) => {
             console.log(newid);
-                $("#savedMessages").prepend('<div id="message'+num+' onclick="toSpeech(&quot;' + message + '&quot;)" class="messages">' + message + '<btn style="padding: 0 .5em; border: solid red 1px; line-height: 2.5em; font-size: .5em;color: red;float: right" onclick="delMessage(this)"><i  class="fas fa-trash-alt"></i></btn></div>');
+                $("#savedMessages").prepend('<div onclick="toSpeech(&quot;' + message + '&quot;)" class="messages">' + message + '<btn style="padding: 0 .5em; border: solid red 1px; line-height: 2.5em; font-size: .5em;color: red;float: right" onclick="delMessage(this)"><i  class="fas fa-trash-alt"></i></btn></div>');
         },
     });
 }

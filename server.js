@@ -167,11 +167,11 @@ app.get('/sentences/:category', function (req, res) {
     });
 });
 
-app.get('/message/:num/:newMessage', function (req, res) {
+app.get('/message/:newMessage', function (req, res) {
   //Fetch instances
 
   console.log("HTTP post Request with num");
-  firebase.database().ref("/message/message"+req.params.num).set(req.params.newMessage);
+  firebase.database().ref("/message/"+req.params.newMessage).set(1);
   
   console.log("HTTP post Request with num2");
   json = JSON.parse('{"message '+req.params.num+'":"'+req.params.newMessage+'"}');
