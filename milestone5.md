@@ -27,3 +27,13 @@ Case 2: Another target user is a nonverbal child who does know how to type. The 
 ### (4) About Page
 
 ![image](https://drive.google.com/uc?export=view&id=
+
+## Data Display & Visualizations
+
+### Dashboard Images
+
+To display the images for each category and subcateogry, we used the Pexels API to pull images from their database. 
+
+### Keyboard Phrases
+
+### Further Ideas for Improvement
