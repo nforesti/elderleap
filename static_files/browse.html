@@ -34,7 +34,7 @@
 	<script src="js/colorfrog.js"></script>
 	<script src="js/speech.js"></script>
 	<script src="js/browse.js"></script>
-
+	<script src="js/dragdrop.js"></script>
 
 	<!--[if lt IE 9]>
 	<script>
@@ -76,6 +76,7 @@ Use the corresponding body tag for your chosen theme
 			id="backToHomeBtn" class="btn btn-small"><i class="fas fa-angle-left"></i>
 			Back</button>
 
+			
 
 		<!--
 		<div id="app"></div>
@@ -85,18 +86,21 @@ Use the corresponding body tag for your chosen theme
 		<script src="js/search.js"></script>
 		-->
 
-		<div id="title" style="text-align: center">
+
+		<div id="title" style="text-align: center; width: 90%; margin-left: auto; margin-right: auto;">
 			<h2> Select a Category Below.</h2>
-			<h5> Click on a category to display its content. Then select an image or phrase to play the words aloud. </h5>
+			<h5 style="padding-bottom:20px"> Click on a category to display its content. Then select an image or phrase to play the words aloud. </h5> 
 		</div>
 
 		<!--<button id="updateDatabase"></button>-->
-		<h1 style="display: none; text-align: center; margin-left: auto; margin-right: auto; padding-top: 1em;" id="subTitle"></h1>
-		<h5 style="display: none; text-align: center; padding-bottom:20px" id="subTitle_description">select an image or phrase to play the words aloud</h5>
-		<ul style="border: none" id="categoryContainer" class="flex-container wrap">
-		</ul>
+	<div style="text-align: center">
+		<div id="dropDiv" style="text-align:center; padding-top:30px" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+		<h1 style="display: none; text-align: center; margin-left: auto; margin-right: auto" id="subTitle"></h1>
+		<h5 style="display: none; text-align: center; padding-bottom:10px" id="subTitle_description">Click on an image or word to play it out loud. Or drag and drop into the box above. </h5>
+		<ul style="border: none" id="categoryContainer" class="flex-container wrap"></ul>
 	</div>
 
+	
 	<h6 style="margin-top: .5em; padding-top:30px" align="center"><i class="fas fa-image"></i> Stock photos from <a
 			href="http://pexels.com">Pexels</a>.</h6>
 	<br><br>
