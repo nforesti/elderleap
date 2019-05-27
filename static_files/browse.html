@@ -32,9 +32,9 @@
 	<script src="js/bootstrap.js"></script>
 	<script src="js/jquery.fitvids.js"></script>
 	<script src="js/colorfrog.js"></script>
+	<script src="js/dragdrop.js"></script>
 	<script src="js/speech.js"></script>
 	<script src="js/browse.js"></script>
-	<script src="js/dragdrop.js"></script>
 
 	<!--[if lt IE 9]>
 	<script>
@@ -96,7 +96,8 @@ Use the corresponding body tag for your chosen theme
 	<div style="text-align: center">
 		<div id="dropDiv" style="text-align:left; padding-left: 20px;padding-top:8px;" ondrop="drop(event)" ondragover="allowDrop(event)">
 		</div>
-		<button id="clearBtn" onclick="clearDropDiv()" style="display:none;" class="btn btn-small"> clear </button>
+		<button id="clearBtn" onclick="clearDropDiv()" style="display:none;" class="btn btn-small"> Clear </button>
+		<button id="speakBtn" onclick="readAloud()" style="display:none;" class="btn btn-small"> Speak </button>
 		<h1 style="display: none; text-align: center; margin-left: auto; margin-right: auto" id="subTitle"></h1>
 		<h5 style="display: none; text-align: center; padding-bottom:10px" id="subTitle_description">Click on an image or word to play it out loud. Or drag and drop into the box above. </h5>
 		<ul style="border: none" id="categoryContainer" class="flex-container wrap"></ul>

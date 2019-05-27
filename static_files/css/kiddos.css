@@ -98,7 +98,6 @@
 .flex-item img{
   width: 80%;
   height: 120px;
-  
 }
 
 /* changes image configurations */ 
@@ -115,6 +114,25 @@
   font-size: 2em;
   text-align: center;
   cursor: pointer;
+}
+
+.text-block {
+  cursor: grab !important;
+  position: relative;
+  background-color: rgba(255, 255, 255, 0);
+  width: 80%;
+  bottom: 120px;
+  left: 27px;
+  color: lightblue;
+}
+.text-block-sentence {
+  cursor: grab !important;
+  position: relative;
+  background-color: rgba(255, 255, 255, 0);
+  width: 80%;
+  bottom: 10px;
+  left: 5px;
+  color: lightblue;
 }
 
 .category h3{
