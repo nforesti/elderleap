@@ -16,6 +16,8 @@ $(document).ready(() => {
             });
         },
     });
+
+
 });
 
 /**
@@ -62,12 +64,29 @@ const delAjax = (element)=>{
     });
 }
 
+
 const delMessage = (element) => {
     if (localStorage.getItem("firstTime") == null){
+        $("#yesDelete").on("click", function(){
+            console.log("yes");
+            delAjax(element);
+            $('#JPO').popup('hide');
+          });
+        
+          $("#noDelete").on("click", function(){
+            console.log("no");
+        
+            $('#JPO').popup('hide');
+          });
         console.log("is first time");
+        localStorage.setItem("firstTime", "first");
         $('#JPO').popup();
-        delAjax(element);
 
+    }
+    else{
+        event.stopPropagation();
+        console.log("already here");
+        delAjax(element);
     }
 
 }
