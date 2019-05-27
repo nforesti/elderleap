@@ -11,8 +11,8 @@ $(document).ready(() => {
         dataType: 'json',
         success: (messages) => {
             console.log(messages);
-            Object.keys(messages).forEach(function (key){
-                $("#savedMessages").prepend('<div id='+key+' onclick="toSpeech(&quot;' + key + '&quot;)" class="messages">' + key + '<btn style="padding: 0 .5em; border: solid red 1px; line-height: 2.5em; font-size: .5em;color: red;float: right" onclick="delMessage(this)"><i  class="fas fa-trash-alt"></i></btn></div>');
+            Object.keys(messages).forEach(function (key) {
+                $("#savedMessages").prepend('<div id=' + key + ' onclick="toSpeech(&quot;' + key + '&quot;)" class="messages">' + key + '<btn  class="JPO_open" style="padding: 0 .5em; border: solid red 1px; line-height: 2.5em; font-size: .5em;color: red;float: right" onclick="delMessage(this)"><i  class="fas fa-trash-alt"></i></btn></div>');
             });
         },
     });
@@ -52,9 +52,9 @@ $(document).ready(() => {
  *     e.g. <textarea name="textarea1" rows="3" cols="40" class="expand50-200"></textarea>
  *     The textarea will use an appropriate height between 50 and 200 pixels.
  */
-const delAjax = (element)=>{
+const delAjax = (element) => {
     $.ajax({
-        url: 'message/'+element.parentElement.textContent,
+        url: 'message/' + element.parentElement.textContent,
         type: 'DELETE',
         dataType: 'json',
         success: (messages) => {
@@ -66,26 +66,25 @@ const delAjax = (element)=>{
 
 
 const delMessage = (element) => {
-    if (localStorage.getItem("firstTime") == null){
-        $("#yesDelete").on("click", function(){
-            console.log("yes");
+    console.log("in delete message");
+    if (localStorage.getItem("firstTime") == null) {
+        console.log("in first time");
+        $("#yesDelete").on("click", function () {
             delAjax(element);
             $('#JPO').popup('hide');
-          });
-        
-          $("#noDelete").on("click", function(){
-            console.log("no");
-        
-            $('#JPO').popup('hide');
-          });
-        console.log("is first time");
-        localStorage.setItem("firstTime", "first");
-        $('#JPO').popup();
+        });
 
+        $("#noDelete").on("click", function () {
+            $('#JPO').popup('hide');
+        });
+        console.log("before popup");
+        $('#JPO').popup();
+        console.log("after popup");
+        localStorage.setItem("firstTime", "first");
     }
-    else{
+    else {
+        console.log("in second");
         event.stopPropagation();
-        console.log("already here");
         delAjax(element);
     }
 
@@ -96,14 +95,14 @@ const addMessage = e => {
     $("#saveBtn").css("opacity", ".4");
     let message = document.getElementById("messageArea").value;
     document.getElementById("messageArea").value = '';
-    let num = (document.getElementById("savedMessages").children.length +1)
+    let num = (document.getElementById("savedMessages").children.length + 1)
     $.ajax({
         url: 'message/' + message,
         type: 'GET',
         dataType: 'json',
         success: (newid) => {
             console.log(newid);
-                $("#savedMessages").prepend('<div onclick="toSpeech(&quot;' + message + '&quot;)" class="messages">' + message + '<btn class="JPO_open" style="padding: 0 .5em; border: solid red 1px; line-height: 2.5em; font-size: .5em;color: red;float: right" onclick="delMessage(this)"><i  class="fas fa-trash-alt"></i></btn></div>');
+            $("#savedMessages").prepend('<div onclick="toSpeech(&quot;' + message + '&quot;)" class="messages">' + message + '<btn class="JPO_open" style="padding: 0 .5em; border: solid red 1px; line-height: 2.5em; font-size: .5em;color: red;float: right" onclick="delMessage(this)"><i  class="fas fa-trash-alt"></i></btn></div>');
         },
     });
 }

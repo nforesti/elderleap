@@ -245,3 +245,15 @@ div.container{
       border: 1px solid #aaaaaa;
     
   }
+
+  .popup_content {
+    margin: 10px;
+    padding: 0em 10px 15px 10px;
+    max-width: 80%;
+    border: 2px solid #444;
+    background: white;
+  }
+  
+  #JPO button:focus{
+    border: solid 1px  #029fe2c7 !important;
+  }
