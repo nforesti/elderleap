@@ -94,7 +94,9 @@ Use the corresponding body tag for your chosen theme
 
 		<!--<button id="updateDatabase"></button>-->
 	<div style="text-align: center">
-		<div id="dropDiv" style="text-align:center" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+		<div id="dropDiv" style="text-align:left; padding-left: 20px;padding-top:8px;" ondrop="drop(event)" ondragover="allowDrop(event)">
+		</div>
+		<button id="clearBtn" onclick="clearDropDiv()" style="display:none;" class="btn btn-small"> clear </button>
 		<h1 style="display: none; text-align: center; margin-left: auto; margin-right: auto" id="subTitle"></h1>
 		<h5 style="display: none; text-align: center; padding-bottom:10px" id="subTitle_description">Click on an image or word to play it out loud. Or drag and drop into the box above. </h5>
 		<ul style="border: none" id="categoryContainer" class="flex-container wrap"></ul>
