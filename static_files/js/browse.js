@@ -16,7 +16,8 @@ $(document).ready(() => {
                 document.getElementById("subTitle").style.display="none";
                 document.getElementById("subTitle_description").style.display="none";
                 document.getElementById("dropDiv").style.display = "none";
-                document.getElementById("dropDiv").append= "";
+                $("#dropDiv").empty(); 
+                document.getElementById("clearBtn").style.display ="none";
                 console.log('You received some data!', data);
                 let html = "";
                 let counter = 0;
@@ -54,10 +55,10 @@ $(document).ready(() => {
                 for (subcategory in data) {
                     if (subcategory != "img") {
                         if (counter != 0) {
-                            html = html + '<li onclick="toSpeech(&quot;' + subcategory + '&quot;)" class="flex-item category" >\n<img id="'+subcategory+'" draggable="true" ondragstart="drag(event)"; src="' + data[subcategory].img.img + '">\n<h3 class="subcategoryName">' + subcategory + '</h3>\n</li>';
+                            html = html + '<li onclick="toSpeech(&quot;' + subcategory + '&quot;)" id="target '+ subcategory +'" class="flex-item category">\n<img draggable="true" ondragstart="drag(event)" id="'+subcategory+'" src="' + data[subcategory].img.img + '">\n<h3 class="subcategoryName">' + subcategory + '</h3>\n</li>';
                         }
                         else {
-                            html = html + '<li style="margin-top: 0px !important;" onclick="toSpeech(&quot;' + subcategory + '&quot;)" class="flex-item category" >\n<img id="'+subcategory+'" draggable="true" ondragstart="drag(event)" src="' + data[subcategory].img.img + '">\n<h3 class="subcategoryName">' + subcategory + '</h3>\n</li>';
+                            html = html + '<li style="margin-top: 0px !important;" onclick="toSpeech(&quot;' + subcategory + '&quot;)"id="target '+ subcategory +'" class="flex-item category" >\n<img  draggable="true" ondragstart="drag(event)" id="'+subcategory+'" src="' + data[subcategory].img.img + '">\n<h3 class="subcategoryName">' + subcategory + '</h3>\n</li>';
                         }
                         $('#categoryContainer').html(html);
                     }
@@ -84,6 +85,7 @@ $(document).ready(() => {
         document.getElementById("backToHomeBtn").style.display = "inline";
         document.getElementById("subTitle").style.display="block";
         document.getElementById("subTitle_description").style.display="block";
+        document.getElementById("clearBtn").style.display ="inline";
     });
 
 });
