@@ -24,6 +24,8 @@ For this milestone, we enhanced the subcategories page by adding a box at the to
 
 ### (3) Keyboard
 
+For this milestone, we fixed a bug in the keyboard's functionality so it can save multiple phrases without overwriting them in the database. We also added a pop-up for the "delete" icon explaining how it works the first time a user encounters it. 
+
 ![image](https://drive.google.com/uc?export=view&id=1xMf0mLfguVBIZHKFuN6VcU4d-GeIqOQz)
 
 ## Data Display & Visualizations
@@ -34,7 +36,7 @@ We used the Pexels API to populate the images for each category and subcateogry.
 
 ### Subcategory Images -- Drag and Drop 
 
-We also added another way to visualize words and images with a "drag and drop" feature that allows the user to combine phrases and images and play the resulting sentence out loud. 
+For this milestone, we added another way to visualize words and images with a "drag and drop" feature that allows the user to combine phrases and images and play the resulting sentence out loud. 
 
 ![image](https://drive.google.com/uc?export=view&id=1ixC23Sioq3W3F8LD7BJMGl-lUHF65iiP)
 
