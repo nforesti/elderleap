@@ -41,7 +41,9 @@ function drag(ev) {
 
 function drop(ev) {
     ev.preventDefault();
+
     var data = ev.dataTransfer.getData("text");
+    console.log(data);
     var nodeCopy = document.getElementById(data).cloneNode(true);
     nodeCopy.id = "new" + data;
     let newtext = nodeCopy.textContent;

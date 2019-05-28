@@ -22,8 +22,8 @@ $(document).ready(() => {
                 document.getElementById("subTitle_description").style.display="none";
                 document.getElementById("dropDiv").style.display = "none";
                 $("#dropDiv").empty(); 
-                document.getElementById("clearBtn").style.display ="none";
-                document.getElementById("speakBtn").style.display ="none";
+                document.getElementById("clearDrop").style.display ="none";
+                document.getElementById("speakDrop").style.display ="none";
                 console.log('You received some data!', data);
                 let html = "";
                 let counter = 0;
@@ -50,7 +50,7 @@ $(document).ready(() => {
 
     $(document).on('click', '.topcategory', function () {
         const catName = $(this).find("h3")[0].innerHTML; 
-        $('#subTitle').html(catName);
+        $('#subTitle').html("<br><br><br>" + catName);
         $.ajax({
             url: 'browse/' + catName,
             type: 'GET',
@@ -91,8 +91,8 @@ $(document).ready(() => {
         document.getElementById("backToHomeBtn").style.display = "inline";
         document.getElementById("subTitle").style.display="block";
         document.getElementById("subTitle_description").style.display="block";
-        document.getElementById("clearBtn").style.display ="inline";
-        document.getElementById("speakBtn").style.display ="inline";
+        document.getElementById("clearDrop").style.display ="inline";
+        document.getElementById("speakDrop").style.display ="inline";
     });
 
 });
