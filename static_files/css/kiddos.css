@@ -275,3 +275,16 @@ div.container{
   #JPO button:focus{
     border: solid 1px  #029fe2c7 !important;
   }
+
+  #dropDiv img{
+    max-width: 100px !important;
+    margin: .3em !important;
+  }
+
+  #dropDiv .sentence{
+    display: inline-block !important;
+    background-color: white !important;
+    border: solid 2px rgb(1,79,113);
+    color: rgb(1,79,113) !important;
+    margin: .3em !important;
+  }
