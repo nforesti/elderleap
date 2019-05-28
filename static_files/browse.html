@@ -31,6 +31,7 @@
 	<script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
 	<script src="js/bootstrap.js"></script>
 	<script src="js/jquery.fitvids.js"></script>
+	    <script src="https://cdn.jsdelivr.net/gh/vast-engineering/jquery-popup-overlay@2/jquery.popupoverlay.min.js"></script>
 	<script src="js/colorfrog.js"></script>
 	<script src="js/dragdrop.js"></script>
 	<script src="js/speech.js"></script>
@@ -57,7 +58,8 @@ Use the corresponding body tag for your chosen theme
 
 	<div style="width: 90%; margin-left: auto; margin-right: auto; ">
 
-		<div id="browsehead" style="width: 100%; padding-top: 2em;padding-left: 0px; padding-right: 0px;" class="container">
+		<div id="browsehead" style="width: 100%; padding-top: 2em;padding-left: 0px; padding-right: 0px;"
+			class="container">
 			<header id="navbar" class="nav" role="navigation">
 
 				<h3 onclick="window.location.replace('/')" id="homeBtn"><i class="flex-item fa fa-home"></i>ACT</h3>
@@ -76,7 +78,7 @@ Use the corresponding body tag for your chosen theme
 			id="backToHomeBtn" class="btn btn-small"><i class="fas fa-angle-left"></i>
 			Back</button>
 
-			
+
 
 		<!--
 		<div id="app"></div>
@@ -89,31 +91,43 @@ Use the corresponding body tag for your chosen theme
 
 		<div id="title" style="text-align: center; width: 90%; margin-left: auto; margin-right: auto;">
 			<h2> Select a Category Below.</h2>
-			<h5 style="padding-bottom:20px"> Click on a category to display its content. Then select an image or phrase to play the words aloud. </h5> 
+			<h5 style="padding-bottom:20px"> Click on a category to display its content. Then select an image or phrase
+				to play the words aloud. </h5>
+		</div>
+
+		<div  id="JPO">
+			<p  style="margin: 0px; padding: 0px;" id="content"><h2 style="padding: 20px; background-color: rgb(233, 233, 233)">Delete message?</h2></p>
+			<h4 style="padding: 20px;">Deleting a message will permanently remove it from the website.</h4>
+			<button id="yesDelete" style="float: right; border: solid 2px white; background-color: orange;"class="btn btn-large">Yes, delete message</button>
+			<button id="noDelete" style="float: right; margin-right: 1em; color: rgb(207, 207, 207); border: solid 2px rgb(207, 207, 207); background-color: white;" class="btn btn-large">No, keep message</button>
+			<!-- Add a button to close the popup (optional) -->
 		</div>
 
 		<!--<button id="updateDatabase"></button>-->
-	<div style="text-align: center">
-		<div id="dropDiv" style="text-align:left; padding-left: 20px;padding-top:8px;" ondrop="drop(event)" ondragover="allowDrop(event)">
+		<div style="text-align: center">
+			<div id="dropDiv" style="text-align:left; padding-left: 20px;padding-top:8px;" ondrop="drop(event)"
+				ondragover="allowDrop(event)">
+			</div>
+			<button class="JPO_open" id="clearBtn" onclick="clearDropDiv()" style="display:none; padding: 0 .5em;line-height: 2.5em; font-size: .5em;color: red;float: right" class="btn btn-small">
+				<i class="fas fa-trash-alt"></i>
+			</button>
+			<button id="speakBtn" onclick="readAloud()" style="display:none;" class="btn btn-small"> Speak </button>
+			<h1 style="display: none; text-align: center; margin-left: auto; margin-right: auto" id="subTitle"></h1>
+			<h5 style="display: none; text-align: center; padding-bottom:10px" id="subTitle_description">Click on an
+				image or word to play it out loud. Or drag and drop into the box above. </h5>
+			<ul style="border: none" id="categoryContainer" class="flex-container wrap"></ul>
 		</div>
-		<button id="clearBtn" onclick="clearDropDiv()" style="display:none;" class="btn btn-small"> Clear </button>
-		<button id="speakBtn" onclick="readAloud()" style="display:none;" class="btn btn-small"> Speak </button>
-		<h1 style="display: none; text-align: center; margin-left: auto; margin-right: auto" id="subTitle"></h1>
-		<h5 style="display: none; text-align: center; padding-bottom:10px" id="subTitle_description">Click on an image or word to play it out loud. Or drag and drop into the box above. </h5>
-		<ul style="border: none" id="categoryContainer" class="flex-container wrap"></ul>
-	</div>
 
-	
-	<h6 style="margin-top: .5em; padding-top:30px" align="center"><i class="fas fa-image"></i> Stock photos from <a
-			href="http://pexels.com">Pexels</a>.</h6>
-	<br><br>
-	<div id="suggestionContainer">
+
+		<h6 style="margin-top: .5em; padding-top:30px" align="center"><i class="fas fa-image"></i> Stock photos from <a
+				href="http://pexels.com">Pexels</a>.</h6>
+		<br><br>
+		<div id="suggestionContainer">
 			<!--<div style="float: right;background-color: white; color: orange;" class="btn btn-small"><i
 				class="fas fa-volume-up"></i></div>-->
-		<div id="sentences">
+			<div id="sentences">
+			</div>
 		</div>
-
-	</div>
 </body>
 
 

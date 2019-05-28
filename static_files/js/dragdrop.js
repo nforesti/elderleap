@@ -1,10 +1,29 @@
 
 function clearDropDiv() {
-    $("#dropDiv").empty();
+
+    if (localStorage.getItem("firsttimeclear") == null) {
+        console.log("in first time");
+        $("#yesDelete").on("click", function () {
+            $("#dropDiv").empty();
+            $('#JPO').popup('hide');
+        });
+
+        $("#noDelete").on("click", function () {
+            $('#JPO').popup('hide');
+        });
+        console.log("before popup");
+        $('#JPO').popup();
+        console.log("after popup");
+        localStorage.setItem("firsttimeclear", "first");
+    }
+    else {
+        event.stopPropagation();
+        $("#dropDiv").empty();
+    }
 }
 
 function allowDrop(ev) {
-     ev.preventDefault();
+    ev.preventDefault();
 }
 
 function drag(ev) {
@@ -27,10 +46,17 @@ function drop(ev) {
     nodeCopy.id = "new" + data;
     let newtext = nodeCopy.textContent;
     $(nodeCopy).empty();
-    nodeCopy.textContent=newtext;
+    nodeCopy.textContent = newtext;
     ev.target.appendChild(nodeCopy);
     document.getElementById(nodeCopy.id).setAttribute('draggable', false);
     document.getElementById(nodeCopy.id).removeAttribute("onclick");
+    if (nodeCopy.tagName == "IMG") {
+        $($("#" + nodeCopy.id)).addClass("copy");
+    }
+    else {
+        console.log("is div");
+        $($("#" + nodeCopy.id)).addClass("copy");
+    }
 }
 
 /* only for sub-category div 
@@ -54,14 +80,14 @@ function dragStart(event) {
 function readAloud(event) {
     let dragString = "";
     document.getElementById('dropDiv').querySelectorAll('*').forEach(node => {
-        if ($(node).hasClass("sentence")){
-            dragString += node.textContent;
+        if ($(node).hasClass("sentence")) {
+            dragString += node.textContent + " ";
         }
-        else{
-        dragString += node.id.replace('new', ' ') + " ";
-    }
-});
-console.log(dragString);
-toSpeech(dragString);
+        else {
+            dragString += node.id.replace('new', ' ') + " ";
+        }
+    });
+    console.log(dragString);
+    toSpeech(dragString);
 }
 
