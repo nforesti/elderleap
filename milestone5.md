@@ -10,11 +10,11 @@ Case 2: Another target user is a nonverbal child who does know how to type. The 
 
 ### (1) Home Page
 
-![image](https://drive.google.com/uc?export=view&id=
+![image](https://drive.google.com/uc?export=view&id=1ta8vSm5mGWSRazDNvi9YnjSoM01ymB4p)
 
 ### (2) Dashboard - Displays categories
 
-![image](https://drive.google.com/uc?export=view&id=
+![image](https://drive.google.com/uc?export=view&id=1AY-2ZZJPjBgglfeBubhSmF1Z0GWu0DUo)
 
 ### Display subcategories
 
@@ -22,18 +22,19 @@ Case 2: Another target user is a nonverbal child who does know how to type. The 
 
 ### (3) Keyboard
 
-![image](https://drive.google.com/uc?export=view&id=
-
-### (4) About Page
-
-![image](https://drive.google.com/uc?export=view&id=
+![image](https://drive.google.com/uc?export=view&id=1xMf0mLfguVBIZHKFuN6VcU4d-GeIqOQz)
 
 ## Data Display & Visualizations
 
 ### Dashboard Images
 
-To display the images for each category and subcateogry, we used the Pexels API to pull images from their database. 
+We used the Pexels API to populate the images for each category and subcateogry. The images were selected by searching for the first image result returned by the API call. Once the images were pushed into the database, we could load them from the front end and display them in a grid-like layout. The categories are organized from general to specific, accompanied by relevant phrases for a given subcategory. 
 
-### Keyboard Phrases
+### Subcategory Images -- Drag and Drop 
+
+![image](https://drive.google.com/uc?export=view&id=1ixC23Sioq3W3F8LD7BJMGl-lUHF65iiP)
+
+We also added another way to visualize words and images with a "drag and drop" feature that allows the user to combine phrases and images and play the resulting sentence out loud. 
 
 ### Further Ideas for Improvement
+
