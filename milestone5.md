@@ -20,7 +20,7 @@ Case 2: Another target user is a nonverbal child who does know how to type. The 
 
 For this milestone, we enhanced the subcategories page by adding a box at the top of the page where the user can drag and drop words and images to form a short sentence and have them be voiced out loud. We also added a "draggable" icon to the words and images to show they can be moved around. 
 
-![image](https://drive.google.com/uc?export=view&id=1v1CPvCVJWYKt5IxTVuPr7giqSfVAzzBn)
+![image](https://drive.google.com/uc?export=view&id=
 
 ### (3) Keyboard
 
@@ -38,7 +38,7 @@ We used the Pexels API to populate the images for each category and subcateogry.
 
 For this milestone, we added another way to visualize words and images with a "drag and drop" feature that allows the user to combine phrases and images and play the resulting sentence out loud. 
 
-![image](https://drive.google.com/uc?export=view&id=1ixC23Sioq3W3F8LD7BJMGl-lUHF65iiP)
+![image](https://drive.google.com/uc?export=view&id=
 
 ### Further Ideas for Improvement
 
