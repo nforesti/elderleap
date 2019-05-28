@@ -32,9 +32,11 @@ We used the Pexels API to populate the images for each category and subcateogry.
 
 ### Subcategory Images -- Drag and Drop 
 
-![image](https://drive.google.com/uc?export=view&id=1ixC23Sioq3W3F8LD7BJMGl-lUHF65iiP)
-
 We also added another way to visualize words and images with a "drag and drop" feature that allows the user to combine phrases and images and play the resulting sentence out loud. 
 
+![image](https://drive.google.com/uc?export=view&id=1ixC23Sioq3W3F8LD7BJMGl-lUHF65iiP)
+
 ### Further Ideas for Improvement
+
+Some improvements we can make for our data visualization is curating images for the different categories so they are more easily identifiable. We could also add a feature that allows users to upload their own images for categories to make the app for custumizable and relevant for each individual user. Some other improvements could be tracking which categories are frequently clicked on, and makings some sort of "shortcut" for those categories so the user can navigate to them more quickly. Perhaps a section for "recent" categories, based on the user's selection history. 
 
