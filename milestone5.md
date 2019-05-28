@@ -38,5 +38,5 @@ We also added another way to visualize words and images with a "drag and drop" f
 
 ### Further Ideas for Improvement
 
-Some improvements we can make for our data visualization is curating images for the different categories so they are more easily identifiable. We could also add a feature that allows users to upload their own images for categories to make the app for custumizable and relevant for each individual user. Some other improvements could be tracking which categories are frequently clicked on, and makings some sort of "shortcut" for those categories so the user can navigate to them more quickly. Perhaps a section for "recent" categories, based on the user's selection history. 
+Some improvements we can make for our data visualization is curating images for the different categories so they are more easily identifiable. We could also add a feature that allows users to upload their own images for categories to make the app for custumizable and relevant for each individual user. Some other improvements could be tracking which categories are frequently clicked on, and makings some sort of "shortcut" for those categories so the user can navigate to them more quickly, such as a section for "recent" categories, based on the user's selection history. 
 
