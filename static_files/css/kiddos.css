@@ -120,7 +120,7 @@
   cursor: grab !important;
   position: relative;
   background-color: rgba(255, 255, 255, 0);
-  width: 80%;
+  width: 20%;
   bottom: 120px;
   left: 27px;
   color: lightblue;
@@ -259,14 +259,14 @@ div.container{
     position: fixed;
     top: 1em;
     right: .5em;
-      width: 70%;
+    width: 70%;
   }
 
   #dropDiv{
     width: 100%;
-      min-height: 100px;
-      padding-top:8px;
-      border: 1px solid #aaaaaa;
+    min-height: 100px;
+    padding-top:8px;
+    border: 1px solid #aaaaaa;
     
   }
 

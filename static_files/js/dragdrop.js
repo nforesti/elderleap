@@ -41,6 +41,7 @@ function drag(ev) {
 
 function drop(ev) {
     ev.preventDefault();
+    console.log("drop" + ev);
 
     var data = ev.dataTransfer.getData("text");
     console.log(data);
@@ -67,7 +68,7 @@ function dragEnd(event) {
 */
 
 function dragStart(event) {
-
+console.log(event);
     if ($(event.target).hasClass("text-block")) {
         console.log(event.target);
         console.log($(event.target).prev("img"));

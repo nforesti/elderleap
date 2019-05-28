@@ -110,7 +110,7 @@ Use the corresponding body tag for your chosen theme
 
 		<!--<button id="updateDatabase"></button>-->
 		<div style="text-align: center">
-			
+
 			<h1 style="display: none; text-align: center; margin-left: auto; margin-right: auto" id="subTitle"></h1>
 			<h5 style="display: none; text-align: center; padding-bottom:10px" id="subTitle_description">Click on an
 				image or word to play it out loud. Or drag and drop into the box above. </h5>
@@ -131,12 +131,13 @@ Use the corresponding body tag for your chosen theme
 			<div id="dropDiv" style="background-color: white; text-align:left; padding-left: 20px;padding-top:8px;"
 				ondrop="drop(event)" ondragover="allowDrop(event)">
 			</div>
-			<div style="">
-				<button  class="btn btn-small JPO_open" id="clearDrop" onclick="clearDropDiv()"
-				style="position: relative; top: -100px; background-color: white; border: solid 2px red; float: right; display:none; color: red;float: right">
-				<i class="fas fa-trash-alt"></i>
-			</button>
-				<button id="speakDrop" onclick="readAloud()" style="position: relative; top: -45px; right: -40px; background-color: lightblue;  margin-right: 0px; float: right; display:none;"
+			<div >
+				<button class="btn btn-small JPO_open" id="clearDrop" onclick="clearDropDiv()"
+					style="position: relative; top: -100px; background-color: white; border: solid 2px rgba(255, 0, 0, 0.918); float: right; display:none; color: rgba(255, 0, 0, 0.918);float: right">
+					<i class="fas fa-trash-alt"></i>
+				</button>
+				<button id="speakDrop" onclick="readAloud()"
+					style="position: relative; top: -45px; right: -40px; background-color: rgb(119, 188, 211);  margin-right: 0px; float: right; display:none;"
 					class="btn btn-small"><i class="fas fa-volume-up"></i></button>
 
 			</div>
