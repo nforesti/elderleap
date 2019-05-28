@@ -10,30 +10,37 @@ Case 2: Another target user is a nonverbal child who does know how to type. The 
 
 ### (1) Home Page
 
-![image](https://drive.google.com/uc?export=view&id=
+![image](https://drive.google.com/uc?export=view&id=1ta8vSm5mGWSRazDNvi9YnjSoM01ymB4p)
 
 ### (2) Dashboard - Displays categories
 
-![image](https://drive.google.com/uc?export=view&id=
+![image](https://drive.google.com/uc?export=view&id=1u5bbF9i6AY8sovsUR3eRas1vO_7g-Dre)
 
 ### Display subcategories
+
+For this milestone, we enhanced the subcategories page by adding a box at the top of the page where the user can drag and drop words and images to form a short sentence and have them be voiced out loud. We also added a "draggable" icon to the words and images to show they can be moved around. 
 
 ![image](https://drive.google.com/uc?export=view&id=
 
 ### (3) Keyboard
 
-![image](https://drive.google.com/uc?export=view&id=
+For this milestone, we fixed a bug in the keyboard's functionality so it can save multiple phrases without overwriting them in the database. We also added a pop-up for the "delete" icon explaining how it works the first time a user encounters it. 
 
-### (4) About Page
-
-![image](https://drive.google.com/uc?export=view&id=
+![image](https://drive.google.com/uc?export=view&id=1xMf0mLfguVBIZHKFuN6VcU4d-GeIqOQz)
 
 ## Data Display & Visualizations
 
 ### Dashboard Images
 
-To display the images for each category and subcateogry, we used the Pexels API to pull images from their database. 
+We used the Pexels API to populate the images for each category and subcateogry. The images were selected by searching for the first image result returned by the API call. Once the images were pushed into the database, we could load them from the front end and display them in a grid-like layout. The categories are organized from general to specific, accompanied by relevant phrases for a given subcategory. 
 
-### Keyboard Phrases
+### Subcategory Images -- Drag and Drop 
+
+For this milestone, we added another way to visualize words and images with a "drag and drop" feature that allows the user to combine phrases and images and play the resulting sentence out loud. 
+
+![image](https://drive.google.com/uc?export=view&id=
 
 ### Further Ideas for Improvement
+
+Some improvements we can make for our data visualization is curating images for the different categories so they are more easily identifiable. We could also add a feature that allows users to upload their own images for categories to make the app for custumizable and relevant for each individual user. Some other improvements could be tracking which categories are frequently clicked on, and makings some sort of "shortcut" for those categories so the user can navigate to them more quickly, such as a section for "recent" categories, based on the user's selection history. 
+
