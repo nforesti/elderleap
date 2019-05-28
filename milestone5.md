@@ -14,7 +14,7 @@ Case 2: Another target user is a nonverbal child who does know how to type. The 
 
 ### (2) Dashboard - Displays categories
 
-![image](https://drive.google.com/uc?export=view&id=1AY-2ZZJPjBgglfeBubhSmF1Z0GWu0DUo)
+![image](https://drive.google.com/uc?export=view&id=1u5bbF9i6AY8sovsUR3eRas1vO_7g-Dre)
 
 ### Display subcategories
 
