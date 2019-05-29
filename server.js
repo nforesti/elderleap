@@ -55,7 +55,7 @@ function setCategoryImageById(category) {
   catch(function(e){
       console.err(e);
   });
-  }
+  } 
   //setCategoryImageById("food");
 
 //function that writes img data to sub-categories in database
