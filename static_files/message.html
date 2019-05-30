@@ -3,9 +3,9 @@
 
 <head>
     <meta charset="utf-8" />
-
     <title>Keyboard</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <!-- Bootstrap css -->
     <link href="css/bootstrap.css" rel="stylesheet" media="screen">
     <!-- Theme css -->
@@ -13,47 +13,27 @@
     <link href="css/kiddos.css" rel="stylesheet">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
         integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
-
-
     <link href='http://fonts.googleapis.com/css?family=PT+Sans:400,700,400italic,700italic' rel='stylesheet'
         type='text/css'>
     <link href="favicon.ico" rel="shortcut icon" type="image/x-icon" />
-    <script src="js/respond.min.js"></script>
 
+    <script src="js/respond.min.js"></script>
     <script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
     <script src="js/bootstrap.js"></script>
     <script src="js/jquery.fitvids.js"></script>
-    <script src="https://cdn.jsdelivr.net/gh/vast-engineering/jquery-popup-overlay@2/jquery.popupoverlay.min.js"></script>
+    <script
+        src="https://cdn.jsdelivr.net/gh/vast-engineering/jquery-popup-overlay@2/jquery.popupoverlay.min.js"></script>
     <script src="js/speech.js"></script>
     <script src="js/colorfrog.js"></script>
-
-
     <script src="js/message.js"></script>
-
-
-    <!--[if lt IE 9]>
-	<script>
-		document.createElement('header');document.createElement('nav');document.createElement('section');document.createElement('article');document.createElement('aside');document.createElement('footer');
-	</script>
-	<![endif]-->
 
 </head>
 
 <body>
-    <!--
-Use the corresponding body tag for your chosen theme
-<body class="blue">
-<body class="orange">
-<body class="green">
-<body class="bw">
--->
-
-
     <div style="width: 90%; margin-left: auto; margin-right: auto; ">
-
+        <!--Navigation-->
         <div style="width: 100%; padding-left: 0px; padding-right: 0px;" class="container">
             <header id="navbar" class="nav" role="navigation">
-
                 <h3 onclick="window.location.replace('/')" id="homeBtn"><i class="flex-item fa fa-home"></i>ACT</h3>
                 <div id="navitem">
                     <h4 style="margin-left: auto; margin-right: 0px;" class="flex-item"><a
@@ -66,26 +46,37 @@ Use the corresponding body tag for your chosen theme
                 </div>
             </header>
         </div>
-        <h2 align="center">Keyboard<br><h4 align="center">Write. Play. Save.</h4></h2>
+        <h2 align="center">Keyboard<br>
+            <h4 align="center">Write. Play. Save.</h4>
+        </h2>
+
+        <!--Message input-->
         <textarea id="messageArea" class="expand" name="our_textbox"
             style="margin-top: 1em !important; font-size: 5em; border: solid 2px; display: block; margin:0 auto;"></textarea>
         <div style="margin-top: 1.5em; margin-left: auto !important; margin-right: auto !important; width: 45%;">
-            <button style="float: left; background-color: rgba(128, 128, 128, 0.486); "
-                id="messageBtn" class="btn btn-large"><i class="fas fa-volume-up"></i></button>
+            <button style="float: left; background-color: rgba(128, 128, 128, 0.486); " id="messageBtn"
+                class="btn btn-large"><i class="fas fa-volume-up"></i></button>
             <button style="float: right; background-color: #6dbed8; opacity: .4;" id="saveBtn" class="btn btn-small"><i
                     class="fas fa-save"></i></button>
         </div>
-        <div style="margin-top: 7em;" id="savedMessages">
 
+        <!--Saved messages, populated by javascript--> 
+        <div style="margin-top: 7em;" id="savedMessages">
         </div>
 
     </div>
-    
-    <div  id="JPO">
-        <p  style="margin: 0px; padding: 0px;" id="content"><h2 style="padding: 20px; background-color: rgb(233, 233, 233)">Delete message?</h2></p>
+
+    <!--Popup HTML for when user clicks trash/delete for first time-->
+    <div id="JPO">
+        <p style="margin: 0px; padding: 0px;" id="content">
+            <h2 style="padding: 20px; background-color: rgb(233, 233, 233)">Delete message?</h2>
+        </p>
         <h4 style="padding: 20px;">Deleting a message will permanently remove it from the website.</h4>
-        <button id="yesDelete" style="float: right; border: solid 2px white; background-color: orange;"class="btn btn-large">Yes, delete message</button>
-        <button id="noDelete" style="float: right; margin-right: 1em; color: rgb(207, 207, 207); border: solid 2px rgb(207, 207, 207); background-color: white;" class="btn btn-large">No, keep message</button>
+        <button id="yesDelete" style="float: right; border: solid 2px white; background-color: orange;"
+            class="btn btn-large">Yes, delete message</button>
+        <button id="noDelete"
+            style="float: right; margin-right: 1em; color: rgb(207, 207, 207); border: solid 2px rgb(207, 207, 207); background-color: white;"
+            class="btn btn-large">No, keep message</button>
         <!-- Add a button to close the popup (optional) -->
     </div>
 
