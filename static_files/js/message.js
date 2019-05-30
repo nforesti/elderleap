@@ -85,6 +85,13 @@ const addMessage = e => {
 }
 
 
+//reads aloud the message that has been typed in
+function messageToSpeech() {
+    const message = $("#messageArea").val();
+    toSpeech(message);
+}
+
+
 /**
  * TextAreaExpander plugin for jQuery
  * v1.0
@@ -199,10 +206,3 @@ jQuery(document).ready(function () {
     jQuery("textarea[class*=expand]").TextAreaExpander(200, window.innerHeight * .7);
     console.log("print");
 });
-
-
-//reads aloud the message that has been typed in
-function messageToSpeech() {
-    const message = $("#messageArea").val();
-    toSpeech(message);
-}
