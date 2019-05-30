@@ -102,7 +102,7 @@
 
 /* changes image configurations */ 
 .flex-item.category {
-  background: gold;
+  background: #6a9abe63;
   box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
   padding: 15px;/*
   min-width: 200px;
@@ -119,11 +119,11 @@
 .text-block {
   cursor: grab !important;
   position: relative;
-  background-color: rgba(255, 255, 255, 0);
-  width: 20%;
+  background-color: rgba(255, 255, 255, 0.58);
+  width: 80%;
   bottom: 120px;
-  left: 27px;
-  color: lightblue;
+  left: 23px;
+  color: #164d65;
 }
 .text-block-sentence {
   cursor: grab !important;
@@ -132,7 +132,11 @@
   width: 80%;
   bottom: 10px;
   left: 5px;
-  color: lightblue;
+  color: #164d65;
+}
+
+.topcategory h3{
+  color: #194254;
 }
 
 .category h3{
@@ -266,7 +270,7 @@ div.container{
     width: 100%;
     min-height: 100px;
     padding-top:8px;
-    border: 1px solid #aaaaaa;
+    border: 2px solid #1f546b;
     
   }
 
@@ -295,3 +299,9 @@ div.container{
     margin: .3em !important;
   }
   
+
+  h3.subcategoryName {
+    color: #164d65;
+    margin-top: .3em !important;
+    margin-bottom: 0em !important;
+  }

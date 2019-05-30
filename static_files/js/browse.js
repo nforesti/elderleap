@@ -114,6 +114,7 @@ $(document).ready(() => {
         //show all elements for subcategories and hide elements unique to category dashboard
         document.getElementById("browsehead").style.display = "none";
         document.getElementById("title").style.display = "none";
+        document.getElementById("navhr").style.display = "none";
         document.getElementById("suggestionContainer").style.display = "inline";
         document.getElementById("dropDiv").style.display = "inline-block";
         document.getElementById("backToHomeBtn").style.display = "inline";

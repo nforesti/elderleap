@@ -5,8 +5,8 @@ body {
     background: url(../img/bw/bodybg-bw.png) repeat-x; }
   body.orange {
     background: url(../img/orange/bodybg-orange.png) repeat-x; }
-  body.blue {
-    background: url(../img/blue/bodybg-blue.png) repeat-x; }
+  /*body.blue {
+    background: url(../img/blue/bodybg-blue.png) repeat-x; }*/
   body.green {
     background: url(../img/green/bodybg-green.png) repeat-x; }
 
