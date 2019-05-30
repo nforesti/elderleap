@@ -1,4 +1,5 @@
-//Using DOM SpeechSynthesis, reads aloud a string
+//Using DOM SpeechSynthesis, a function that reads aloud a string
+
 function toSpeech(word) {
     let synth = window.speechSynthesis;
     var msg = new SpeechSynthesisUtterance(word);

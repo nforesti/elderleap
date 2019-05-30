@@ -1,3 +1,9 @@
+/**
+ * contains all functions for the message.html page, including adding, deleting, and reading aloud (calls speech.js) messages typed in by the user. Also includes
+ * a method that creates a responsive textbox that changes size depending on browser size and how much text is inside.
+ * */
+
+
 $(document).ready(() => {
 
     //initialize jquery popup for when trash button is first clicked
@@ -83,6 +89,7 @@ const addMessage = e => {
         },
     });
 }
+
 
 
 //reads aloud the message that has been typed in

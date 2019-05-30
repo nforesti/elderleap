@@ -1,3 +1,8 @@
+/**
+ * Contains all code for browse.html. Populates the page (using Ajax and Firebase in backend) with category data. When a category is clicked on,
+ * populates the page with subcategory data.
+ */
+
 $(document).ready(() => {
 
     //initialize the popup (for the first time a user clicks the delete sentence button)

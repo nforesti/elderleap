@@ -1,3 +1,10 @@
+/**
+ * server.js contains all the backend data. Utilizes Firebase API, Pexels API, and node.js. There are GET requests for category data/images, subcategory data/images,
+ * messages, and sentences/phrases for subcategories. There is also a delete request to delete messages from Firebase. There are also methods to populate the database with 
+ * from Pexels.
+ */
+
+
 //info.js is a file that contains api keys for firebase and pexels (ignored via .gitignore)
 //import modules containing keys
 const info = require('./info');
