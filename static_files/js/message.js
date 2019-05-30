@@ -1,17 +1,22 @@
 $(document).ready(() => {
-    $('#JPO').popup();
 
+    //initialize jquery popup for when trash button is first clicked
+    $('#JPO').popup();
     // Set default `pagecontainer` for all popups (optional, but recommended for screen readers and iOS*)
     $.fn.popup.defaults.pagecontainer = '#page'
 
     $("#messageBtn").click(messageToSpeech);
+
+    //load past saved messages from Firebase
     $.ajax({
         url: 'message/',
         type: 'GET',
         dataType: 'json',
         success: (messages) => {
-            console.log(messages);
             Object.keys(messages).forEach(function (key) {
+                //each message when clicked will be read aloud
+                //JPO_open means: when clicked this element will call the jquery popup overlay
+                //when trash is clicked, that message will be deleted from the browser and Firebase
                 $("#savedMessages").prepend('<div id=' + key + ' onclick="toSpeech(&quot;' + key + '&quot;)" class="messages">' + key + '<btn  class="JPO_open" style="padding: 0 .5em; border: solid red 1px; line-height: 2.5em; font-size: .5em;color: red;float: right" onclick="delMessage(this)"><i  class="fas fa-trash-alt"></i></btn></div>');
             });
         },
@@ -19,6 +24,66 @@ $(document).ready(() => {
 
 
 });
+
+
+//Ajax called to delete a message from Firebase
+const delAjax = (element) => {
+    $.ajax({
+        url: 'message/' + element.parentElement.textContent,
+        type: 'DELETE',
+        dataType: 'json',
+        success: (messages) => {
+            event.stopPropagation(); 
+            element.parentElement.parentElement.removeChild(element.parentElement);
+        },
+    });
+}
+
+//delete a message (From browser view)
+const delMessage = (element) => {
+    //if it is the user's first time clicking the trash button, open a popup to ask for confirmation
+    if (localStorage.getItem("firstTime") == null) {
+        //if clicks yes, delete message and hide popup
+        $("#yesDelete").on("click", function () {
+            delAjax(element);
+            $('#JPO').popup('hide');
+        });
+        //if no, hide popup
+        $("#noDelete").on("click", function () {
+            $('#JPO').popup('hide');
+        });
+        $('#JPO').popup();
+        localStorage.setItem("firstTime", "first");
+    }
+    else {
+        event.stopPropagation();
+        //delete message
+        delAjax(element);
+    }
+}
+
+//called when a user saves a message
+const addMessage = e => {
+    //change opacity of buttons so that they are brighter, signaling that buttons can be pressed
+    $("#messageBtn").css("background-color", "rgba(128, 128, 128, 0.486)");
+    $("#saveBtn").css("opacity", ".4");
+    //get the message
+    let message = document.getElementById("messageArea").value;
+    document.getElementById("messageArea").value = '';
+    //add message to Firebase and to messages in browser view
+    $.ajax({
+        url: 'message/' + message,
+        type: 'GET',
+        dataType: 'json',
+        success: (newid) => {
+            //id of the new message element
+            console.log(newid);
+            //when message is clicked on, will be read aloud. when trash is clicked on, open popup if first time.
+            $("#savedMessages").prepend('<div onclick="toSpeech(&quot;' + message + '&quot;)" class="messages">' + message + '<btn class="JPO_open" style="padding: 0 .5em; border: solid red 1px; line-height: 2.5em; font-size: .5em;color: red;float: right" onclick="delMessage(this)"><i  class="fas fa-trash-alt"></i></btn></div>');
+        },
+    });
+}
+
 
 /**
  * TextAreaExpander plugin for jQuery
@@ -52,60 +117,6 @@ $(document).ready(() => {
  *     e.g. <textarea name="textarea1" rows="3" cols="40" class="expand50-200"></textarea>
  *     The textarea will use an appropriate height between 50 and 200 pixels.
  */
-const delAjax = (element) => {
-    $.ajax({
-        url: 'message/' + element.parentElement.textContent,
-        type: 'DELETE',
-        dataType: 'json',
-        success: (messages) => {
-            console.log("todelete");
-            event.stopPropagation(); element.parentElement.parentElement.removeChild(element.parentElement);
-        },
-    });
-}
-
-
-const delMessage = (element) => {
-    console.log("in delete message");
-    if (localStorage.getItem("firstTime") == null) {
-        console.log("in first time");
-        $("#yesDelete").on("click", function () {
-            delAjax(element);
-            $('#JPO').popup('hide');
-        });
-
-        $("#noDelete").on("click", function () {
-            $('#JPO').popup('hide');
-        });
-        console.log("before popup");
-        $('#JPO').popup();
-        console.log("after popup");
-        localStorage.setItem("firstTime", "first");
-    }
-    else {
-        console.log("in second");
-        event.stopPropagation();
-        delAjax(element);
-    }
-
-}
-
-const addMessage = e => {
-    $("#messageBtn").css("background-color", "rgba(128, 128, 128, 0.486)");
-    $("#saveBtn").css("opacity", ".4");
-    let message = document.getElementById("messageArea").value;
-    document.getElementById("messageArea").value = '';
-    let num = (document.getElementById("savedMessages").children.length + 1)
-    $.ajax({
-        url: 'message/' + message,
-        type: 'GET',
-        dataType: 'json',
-        success: (newid) => {
-            console.log(newid);
-            $("#savedMessages").prepend('<div onclick="toSpeech(&quot;' + message + '&quot;)" class="messages">' + message + '<btn class="JPO_open" style="padding: 0 .5em; border: solid red 1px; line-height: 2.5em; font-size: .5em;color: red;float: right" onclick="delMessage(this)"><i  class="fas fa-trash-alt"></i></btn></div>');
-        },
-    });
-}
 
 (function ($) {
 
@@ -189,10 +200,9 @@ jQuery(document).ready(function () {
     console.log("print");
 });
 
+
+//reads aloud the message that has been typed in
 function messageToSpeech() {
-    /*
-    event.stopPropagation();
-    event.stopImmediatePropagation();*/
     const message = $("#messageArea").val();
     toSpeech(message);
 }
