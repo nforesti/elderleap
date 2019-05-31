@@ -23,7 +23,8 @@ $(document).ready(() => {
                 //each message when clicked will be read aloud
                 //JPO_open means: when clicked this element will call the jquery popup overlay
                 //when trash is clicked, that message will be deleted from the browser and Firebase
-                $("#savedMessages").prepend('<div id=' + key + ' onclick="toSpeech(&quot;' + key + '&quot;)" class="messages">' + key + '<btn  class="JPO_open" style="padding: 0 .5em; border: solid red 1px; line-height: 2.5em; font-size: .5em;color: red;float: right" onclick="delMessage(this)"><i  class="fas fa-trash-alt"></i></btn></div>');
+                   $("#savedMessages").prepend('<div id=' + key + ' onclick="toSpeech(&quot;' + key + '&quot;)" class="messages">' + key + '<btn  class="JPO_open" style="padding: 0 .5em; border: solid red 1px; line-height: 2.5em; font-size: .5em;color: red;float: right" onclick="delMessage(this)"><i  class="fas fa-trash-alt"></i></btn></div>');
+                
             });
         },
     });
@@ -39,7 +40,7 @@ const delAjax = (element) => {
         type: 'DELETE',
         dataType: 'json',
         success: (messages) => {
-            event.stopPropagation(); 
+            event.stopPropagation();
             element.parentElement.parentElement.removeChild(element.parentElement);
         },
     });
@@ -83,9 +84,11 @@ const addMessage = e => {
         dataType: 'json',
         success: (newid) => {
             //id of the new message element
-            console.log(newid);
+            console.log("newid" + newid);
             //when message is clicked on, will be read aloud. when trash is clicked on, open popup if first time.
-            $("#savedMessages").prepend('<div onclick="toSpeech(&quot;' + message + '&quot;)" class="messages">' + message + '<btn class="JPO_open" style="padding: 0 .5em; border: solid red 1px; line-height: 2.5em; font-size: .5em;color: red;float: right" onclick="delMessage(this)"><i  class="fas fa-trash-alt"></i></btn></div>');
+            if (document.getElementById(message) == null) {
+            $("#savedMessages").prepend('<div onclick="toSpeech(&quot;' + message + '&quot;)" id="'+message+'" class="messages">' + message + '<btn class="JPO_open" style="padding: 0 .5em; border: solid red 1px; line-height: 2.5em; font-size: .5em;color: red;float: right" onclick="delMessage(this)"><i  class="fas fa-trash-alt"></i></btn></div>');
+            }
         },
     });
 }
