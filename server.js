@@ -1,7 +1,7 @@
 /**
- * server.js contains all the backend data. Utilizes Firebase API, Pexels API, and node.js. There are GET requests for category data/images, subcategory data/images,
- * messages, and sentences/phrases for subcategories. There is also a delete request to delete messages from Firebase. There are also methods to populate the database with 
- * from Pexels.
+ * server.js contains all the backend data. Utilizes Firebase API, Pexels API, and node.js. There are GET requests for category data/images, 
+ * subcategory data/images, messages, and sentences/phrases for subcategories. There are also methods to populate the database with images 
+ * from Pexels, a delete request to delete messages from Firebase. 
  */
 
 
@@ -43,50 +43,15 @@ firebase.initializeApp(config);
 //get categories and subcategory words
 const categories = info.getCategories();
 
-// function that writes img data to category in database
-function setCategoryImage(category) {
-  pexelsClient.search(category, 1, 1)
-    .then(function (result) {
-      let imgUrl = result.photos[0].src.small;
-      firebase.database().ref('categories/' + category + '/img').set({
-        img: imgUrl
-      });
-    }).
-    catch(function (e) {
-      console.err(e);
-    });
-}
 
-//Get Photo by ID
-function setCategoryImageById(category) {
-  pexelsClient.getPhoto(708488)
-    .then(function (result) {
-      let imgUrl = result.src.small;
-      firebase.database().ref('categories/' + category + '/img').set({
-        img: imgUrl
-      });
-    }).
-    catch(function (e) {
-      console.err(e);
-    });
-}
-//setCategoryImageById("food");
+/*
+* Function calls utlizing Pexels API to set images in database 
+*/ 
 
-//function that writes img data to sub-categories in database
-function setSubCategoryImage(category, subcategory) {
-  pexelsClient.search(subcategory, 1, 1)
-    .then(function (result) {
-      let imgUrl = result.photos[0].src.small;
-      firebase.database().ref('categories/' + category + '/' + subcategory + '/img').set({
-        img: imgUrl
-      });
-    }).
-    catch(function (e) {
-      console.err(e);
-    });
-}
-
-// sets images in database using function calls to PexelsPAI
+/* 
+* Function Name: setImages()
+* Effect: sets category and subcategory images in database using function calls to Pexels API
+*/
 function setImages() {
   let categories_array = (Object.keys(categories));
   let subcategories_array = [];
@@ -104,10 +69,64 @@ function setImages() {
     });
   });
 }
-// call function to set images in database
+
+/*  
+* Function Name: setCategoryImage 
+* Effect: writes category img data to the database using the pexels API search function 
+*   to search through images and return the first image matching the category keyword.
+*/
+function setCategoryImage(category) {
+  pexelsClient.search(category, 1, 1)
+    .then(function (result) {
+      let imgUrl = result.photos[0].src.small;
+      firebase.database().ref('categories/' + category + '/img').set({
+        img: imgUrl
+      });
+    }).
+    catch(function (e) {
+      console.err(e);
+    });
+}
+
+/* 
+* Function Name: setCategoryImageById 
+* Effect: manually selects an image using the pexels API ImageById function, 
+*   and writes the resulting img data to the database
+*/
+function setCategoryImageById(category) {
+  pexelsClient.getPhoto(708488)
+    .then(function (result) {
+      let imgUrl = result.src.small;
+      firebase.database().ref('categories/' + category + '/img').set({
+        img: imgUrl
+      });
+    }).
+    catch(function (e) {
+      console.err(e);
+    });
+}
+
+/*
+*  Function Name: setSubCategoryImage 
+* Effect: writes subcategory img data to the database using the pexels API search function.
+*/
+function setSubCategoryImage(category, subcategory) {
+  pexelsClient.search(subcategory, 1, 1)
+    .then(function (result) {
+      let imgUrl = result.photos[0].src.small;
+      firebase.database().ref('categories/' + category + '/' + subcategory + '/img').set({
+        img: imgUrl
+      });
+    }).
+    catch(function (e) {
+      console.err(e);
+    });
+}
+
+/*  call setImages function to set all images in database */ 
 //setImages(); 
 
-/*reset database to null values 
+/*reset database values to null 
 app.get('/update', function (req, res) {
   console.log("HTTP Get Request");
   res.send("HTTP GET Request");
@@ -116,7 +135,7 @@ firebase.database().ref('/categories').set(categories);
 });
 */
 
-//set actionWords in databse
+/*set actionWords in databse */
 const actionWords = info.getActionWords();
 var actionsRef = firebase.database().ref("actions/");
 //actionsRef.set(actionWords);

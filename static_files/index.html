@@ -1,3 +1,4 @@
+
 <!--This is the home page that includes navigation and a description of what the app can be used for-->
 
 <!DOCTYPE html>
@@ -6,112 +7,57 @@
 <head>
 	<meta charset="utf-8" />
 
-	<title>ACT Home</title>
+	<title>WordBox Home</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<!-- Bootstrap css -->
 	<link href="css/bootstrap.css" rel="stylesheet" media="screen">
 	<!-- Theme css -->
 	<link href="css/colorfrog.css" rel="stylesheet" media="screen">
 	<link href="css/kiddos.css" rel="stylesheet">
-	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
-		integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
-	<link href='http://fonts.googleapis.com/css?family=PT+Sans:400,700,400italic,700italic' rel='stylesheet'
-		type='text/css'>
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf"
+	 crossorigin="anonymous">
+	<link href='http://fonts.googleapis.com/css?family=PT+Sans:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
 	<link href="favicon.ico" rel="shortcut icon" type="image/x-icon" />
-	
+
 	<script src="js/respond.min.js"></script>
 	<script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
 	<script src="js/bootstrap.js"></script>
 	<script src="js/jquery.fitvids.js"></script>
 	<script src="js/colorfrog.js"></script>
-
-
-	<!--[if lt IE 9]>
-	<script>
-		document.createElement('header');document.createElement('nav');document.createElement('section');document.createElement('article');document.createElement('aside');document.createElement('footer');
-	</script>
-	<![endif]-->
-	<script>
-		/*
-$(document).on('click', '#updateDatabase', function () {
-	console.log("print");
-	database.ref('categories/').set(fakeData.preset);
-});*/
-
-		$(document).ready(() => {
-			$("#signInBtn").click(function () {
-				window.location.replace("/browse.html");
-			});
-
-			const requestURL = '/update';
-			console.log(requestURL);
-			$.ajax({
-				// all URLs are relative to http://localhost:3000/
-				url: requestURL,
-				type: 'GET',
-				dataType: 'json', // this URL returns data in JSON format
-				success: (data) => {
-					console.log("success");
-				},
-			});
-		});
-	</script>
-
 </head>
 
 <body style="background-color:rgb(1,79,113)">
-	<!--
-Use the corresponding body tag for your chosen theme
-<body class="blue">
-<body class="orange">
-<body class="green">
-<body class="bw">
--->
+	<div style="width: 100%; background-color: white; ">
+		<div style="width: 90%; margin-left: auto; margin-right: auto; ">
+			<!-- header for navbar -->
+			<div style="width: 100%; padding-left: 0px; padding-right: 0px;" class="container">
+				<header id="navbar" class="nav" role="navigation">
+					<h3 onclick="window.location.replace('/')" id="homeBtn">
+						<i class="flex-item fa fa-home"></i> WordBox</h3>
+					<div id="navitem">
+						<h4 style="margin-left: auto; margin-right: 0px;" class="flex-item">
+							<a href="browse.html">Dashboard</a>
+						</h4>
+						<h4 style="margin-left: 1.5em; margin-right: 0px;" class="flex-item ">
+							<a href="message.html">Keyboard</a>
+						</h4>
+						<h4 style="margin-left: 1.5em; margin-right: 0px;" class="flex-item ">
+							<a href="about.html">About</a>
+						</h4>
+					</div>
+				</header>
+			</div>
 
-	<!--
-	<div style="width: 90%; margin-left: auto; margin-right: auto; ">
-
-		<div style="width: 100%; padding-left: 0px; padding-right: 0px;" class="container">
-
-			<header id="navbar" class="nav" role="navigation">
-
-				<h2 onclick="window.location.replace('/')" id="homeBtn"><i class="flex-item fa fa-home"></i>ACT</h2>
-				<div id="navitem">
-					<button style="margin-left: auto; margin-right: 0px;" id="loginBtn"
-						onclick="window.location.replace('/login.html');" class="btn flex-item">Login</button>
-				</div>
-
-			</header>
-		-->
-<div style="width: 100%; background-color: white; ">
-	<div style="width: 90%; margin-left: auto; margin-right: auto; ">
-
-		<div style="width: 100%; padding-left: 0px; padding-right: 0px;" class="container">
-			<header id="navbar" class="nav" role="navigation">
-
-				<h3 onclick="window.location.replace('/')" id="homeBtn"><i class="flex-item fa fa-home"></i>ACT</h3>
-				<div id="navitem">
-					<h4 style="margin-left: auto; margin-right: 0px;" class="flex-item"><a
-							href="browse.html">Dashboard</a>
-					</h4>
-					<h4 style="margin-left: 1.5em; margin-right: 0px;" class="flex-item "><a
-							href="message.html">Keyboard</a></h4>
-					<h4 style="margin-left: 1.5em; margin-right: 0px;" class="flex-item "><a href="about.html">About</a>
-					</h4>
-				</div>
-			</header>
 		</div>
-
 	</div>
-</div>
 
 
 
 	<div>
 		<div style="background-color: rgb(1,79,113); box-shadow: none; padding-bottom: .5em;" class="jumbotron">
 			<div class="container">
-				<h1>Welcome to A.C.T.</h1>
-				<h2>An Assistive Communication Tool for nonverbal children and young adults. </h2>
+				<h1>Welcome to WordBox!</h1>
+				<h2>An interactive communication tool for nonverbal children. </h2>
 			</div>
 		</div>
 		<div style="width: 90%; padding: top 0px;" class="container content underHero;">
