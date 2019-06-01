@@ -1,6 +1,14 @@
+/*
+* Filename: dragdrop.js
+* Purpose: functions for dragging and dropping elements in subcategory pages
+*/
 
+
+/*
+* Function Name: clearDropDiv
+* Effect: clears elements in drag & drop box 
+*/
 function clearDropDiv() {
-
     if (localStorage.getItem("firsttimeclear") == null) {
         console.log("in first time");
         $("#yesDelete").on("click", function () {
@@ -22,13 +30,34 @@ function clearDropDiv() {
     }
 }
 
+
 function allowDrop(ev) {
     ev.preventDefault();
 }
 
+/*
+* Function Name: dragStart
+* Effect: gets id of element we want to drag 
+*/
+function dragStart(event) {
+    console.log(event);
+        if ($(event.target).hasClass("text-block")) {
+            console.log(event.target);
+            console.log($(event.target).prev("img"));
+            event.target.id = $(event.target).prev("img")[0].id;
+            console.log("newest" + event.target.id);
+        }
+        console.log("dragStart");
+        event.dataTransfer.setData("Text", event.target.id);
+    
+    }
+
+/*
+* Function Name: drag
+* Effect: gets id of element we want to drag 
+*/
 function drag(ev) {
     console.log("drag");
-
     console.log(event.target.id);
     if ($(event.target).hasClass("text-block")) {
         console.log(event.target);
@@ -39,6 +68,10 @@ function drag(ev) {
     ev.dataTransfer.setData("text", ev.target.id);
 }
 
+/*
+* Function Name: drop
+* Effect: sets attributes of img or button we dragged into the drag & drop box 
+*/
 function drop(ev) {
     ev.preventDefault();
     console.log("drop" + ev);
@@ -62,24 +95,10 @@ function drop(ev) {
     }
 }
 
-/* only for sub-category div 
-function dragEnd(event) {
-}
+/*
+* Function Name:  readAloud
+* Effect: creates a string for all the elements in the drag and drop box and speaks the string aloud via text-to-speech function 
 */
-
-function dragStart(event) {
-console.log(event);
-    if ($(event.target).hasClass("text-block")) {
-        console.log(event.target);
-        console.log($(event.target).prev("img"));
-        event.target.id = $(event.target).prev("img")[0].id;
-        console.log("newest" + event.target.id);
-    }
-    console.log("dragStart");
-    event.dataTransfer.setData("Text", event.target.id);
-
-}
-
 function readAloud(event) {
     let dragString = "";
     document.getElementById('dropDiv').querySelectorAll('*').forEach(node => {
