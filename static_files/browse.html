@@ -18,21 +18,19 @@
 	<link href="css/colorfrog.css" rel="stylesheet" media="screen">
 	<link href="css/kiddos.css" rel="stylesheet">
 	<link href="css/search.css" rel="stylesheet">
-	<link href='http://fonts.googleapis.com/css?family=PT+Sans:400,700,400italic,700italic' rel='stylesheet'
-		type='text/css'>
-	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
-		integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+	<link href='http://fonts.googleapis.com/css?family=PT+Sans:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf"
+	 crossorigin="anonymous">
 	<link href="img/favicon.ico" rel="shortcut icon" type="image/x-icon" />
 
-	
+
 	<script src="https://www.gstatic.com/firebasejs/5.11.1/firebase-app.js"></script>
 	<script src="https://www.gstatic.com/firebasejs/3.1.0/firebase-database.js"></script>
 	<script src="js/respond.min.js"></script>
 	<script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
 	<script src="js/bootstrap.js"></script>
 	<script src="js/jquery.fitvids.js"></script>
-	<script
-		src="https://cdn.jsdelivr.net/gh/vast-engineering/jquery-popup-overlay@2/jquery.popupoverlay.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/gh/vast-engineering/jquery-popup-overlay@2/jquery.popupoverlay.min.js"></script>
 	<script src="js/colorfrog.js"></script>
 	<script src="js/dragdrop.js"></script>
 	<script src="js/speech.js"></script>
@@ -41,34 +39,29 @@
 
 
 <body>
-	<!--
-Use the corresponding body tag for your chosen theme
-<body class="blue">
-<body class="orange">
-<body class="green">
-<body class="bw">
--->
 
-
-
+	<!-- Top navbar : Home, Dashbaord, Keyboard, About page links -->
 	<div style="width: 90%; margin-left: auto; margin-right: auto; ">
-
-		<div id="browsehead" style="width: 100%; padding-top: 2em;padding-left: 0px; padding-right: 0px;"
-			class="container">
+		<div id="browsehead" style="width: 100%; padding-top: 2em;padding-left: 0px; padding-right: 0px;" class="container">
 			<header id="navbar" class="nav" role="navigation">
 
-				<h3 onclick="window.location.replace('/')" id="homeBtn"><i class="flex-item fa fa-home"></i> WordBox</h3>
+				<h3 onclick="window.location.replace('/')" id="homeBtn">
+					<i class="flex-item fa fa-home"></i> WordBox</h3>
 				<div id="navitem">
-					<h4 style="margin-left: auto; margin-right: 0px;" class="flex-item"><a
-							href="browse.html">Dashboard</a>
+					<h4 style="margin-left: auto; margin-right: 0px;" class="flex-item">
+						<a href="browse.html">Dashboard</a>
 					</h4>
-					<h4 style="margin-left: 1.5em; margin-right: 0px;" class="flex-item "><a
-							href="message.html">Keyboard</a></h4>
-					<h4 style="margin-left: 1.5em; margin-right: 0px;" class="flex-item "><a href="about.html">About</a>
+					<h4 style="margin-left: 1.5em; margin-right: 0px;" class="flex-item ">
+						<a href="message.html">Keyboard</a>
+					</h4>
+					<h4 style="margin-left: 1.5em; margin-right: 0px;" class="flex-item ">
+						<a href="about.html">About</a>
 					</h4>
 				</div>
 			</header>
 		</div>
+
+		<!-- border under navabar -->
 		<hr id="navhr" style="border-top: 2px solid #164d65; width: 100vw;
 		position: relative;
 		margin-left: -50vw;
@@ -76,70 +69,63 @@ Use the corresponding body tag for your chosen theme
 		left: 50%;
 		">
 
-		<button style="display: none; position: fixed; top: 1em; left: 1em; font-size: 1.2em; background-color:orange"
-			id="backToHomeBtn" class="btn btn-small"><i class="fas fa-angle-left"></i>
+		<!-- back button displays when entering subcategory page -->
+		<button style="display: none; position: fixed; top: 1em; left: 1em; font-size: 1.2em; background-color:orange" id="backToHomeBtn"
+		 class="btn btn-small">
+			<i class="fas fa-angle-left"></i>
 			Back</button>
 
-
-
-		<!--
-		<div id="app"></div>
-		<script src='https://unpkg.com/react@15.4.2/dist/react.js'></script>
-		<script src='https://unpkg.com/react-dom@15.4.2/dist/react-dom.js'></script>
-		<script src='https://unpkg.com/react-autosuggest@9.0.0/dist/standalone/autosuggest.js'></script>
-		<script src="js/search.js"></script>
-		-->
-
+		<!-- pop-up notification to confirm whether the user wants to delete the phrase they entered in the drag and drop box -->
 		<div id="JPO">
 			<p style="margin: 0px; padding: 0px;" id="content">
 				<h2 style="padding: 20px; background-color: rgb(233, 233, 233)">Delete message?</h2>
 			</p>
 			<h4 style="padding: 20px;">Deleting a message will permanently remove it from the website.</h4>
-			<button id="yesDelete" style="float: right; border: solid 2px white; background-color: orange;"
-				class="btn btn-large">Yes, delete message</button>
-			<button id="noDelete"
-				style="float: right; margin-right: 1em; color: rgb(207, 207, 207); border: solid 2px rgb(207, 207, 207); background-color: white;"
-				class="btn btn-large">No, keep message</button>
+			<button id="yesDelete" style="float: right; border: solid 2px white; background-color: orange;" class="btn btn-large">Yes, delete message</button>
+			<button id="noDelete" style="float: right; margin-right: 1em; color: rgb(207, 207, 207); border: solid 2px rgb(207, 207, 207); background-color: white;"
+			 class="btn btn-large">No, keep message</button>
 			<!-- Add a button to close the popup (optional) -->
 		</div>
+
+		<!-- heading for category page -->
 		<div id="title" style="text-align: center; width: 90%; margin-left: auto; margin-right: auto;">
 			<h2> Select a Category Below.</h2>
-			<h5 style="padding-bottom:20px"> Click on a category to display its content. Then select an image or phrase
-				to play the words aloud. </h5>
+			<h5 style="padding-bottom:20px"> Click on a category to display its content. Then select an image or phrase to play the words aloud. </h5>
 		</div>
 
-
-		<!--<button id="updateDatabase"></button>-->
+		<!-- div with subcategory elements that display when subcategory is clicked -->
 		<div style="text-align: center">
-
 			<h1 style="display: none; text-align: center; margin-left: auto; margin-right: auto" id="subTitle"></h1>
-			<h5 style="display: none; text-align: center; padding-bottom:10px" id="subTitle_description">Click on an
-				image or word to play it out loud. Or drag and drop into the box above. </h5>
+			<h5 style="display: none; text-align: center; padding-bottom:10px" id="subTitle_description">Click on an image or word to play it out loud. Or drag and drop into the box above. </h5>
 			<ul style="border: none" id="categoryContainer" class="flex-container wrap"></ul>
 		</div>
 
+		<!-- footer displays in main categories page -->
+		<h6 style="margin-top: .5em; padding-top:30px" align="center">
+			<i class="fas fa-image"></i> Stock photos from
+			<a href="http://pexels.com">Pexels</a>.</h6>
+		<br>
+		<br>
 
-		<h6 style="margin-top: .5em; padding-top:30px" align="center"><i class="fas fa-image"></i> Stock photos from <a
-				href="http://pexels.com">Pexels</a>.</h6>
-		<br><br>
+		<!-- container at bottom of subcategory pages with draggable phrases relevant to each subcategory -->
 		<div id="suggestionContainer">
-			<!--<div style="float: right;background-color: white; color: orange;" class="btn btn-small"><i
-				class="fas fa-volume-up"></i></div>-->
 			<div id="sentences">
 			</div>
 		</div>
+
+		<!-- drag and drop box displays at top of subcategory pages, in addition to "speak" and "delete" buttons -->
 		<div id="fixedDiv">
-			<div id="dropDiv" style="background-color: white; text-align:left; padding-left: 20px;padding-top:8px;"
-				ondrop="drop(event)" ondragover="allowDrop(event)">
+			<div id="dropDiv" style="background-color: white; text-align:left; padding-left: 20px;padding-top:8px;" ondrop="drop(event)"
+			 ondragover="allowDrop(event)">
 			</div>
-			<div >
-				<button class="btn btn-small JPO_open" id="clearDrop" onclick="clearDropDiv()"
-					style="position: relative; top: -100px; right: 5px; background-color: white; border: solid 2px rgba(255, 0, 0, 0.918); float: right; display:none; color: rgba(255, 0, 0, 0.918);float: right">
+			<div>
+				<button class="btn btn-small JPO_open" id="clearDrop" onclick="clearDropDiv()" style="position: relative; top: -100px; right: 5px; background-color: white; border: solid 2px rgba(255, 0, 0, 0.918); float: right; display:none; color: rgba(255, 0, 0, 0.918);float: right">
 					<i class="fas fa-trash-alt"></i>
 				</button>
-				<button id="speakDrop" onclick="readAloud()"
-					style="position: relative; top: -56px; right: -37px; background-color: rgb(97, 151, 207);  margin-right: 0px; float: right; display:none;"
-					class="btn btn-large"><i class="fas fa-volume-up"></i></button>
+				<button id="speakDrop" onclick="readAloud()" style="position: relative; top: -56px; right: -37px; background-color: rgb(97, 151, 207);  margin-right: 0px; float: right; display:none;"
+				 class="btn btn-large">
+					<i class="fas fa-volume-up"></i>
+				</button>
 
 			</div>
 

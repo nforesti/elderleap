@@ -13,10 +13,9 @@
     <!-- Theme css -->
     <link href="css/colorfrog.css" rel="stylesheet" media="screen">
     <link href="css/kiddos.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
-        integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
-    <link href='http://fonts.googleapis.com/css?family=PT+Sans:400,700,400italic,700italic' rel='stylesheet'
-        type='text/css'>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf"
+        crossorigin="anonymous">
+    <link href='http://fonts.googleapis.com/css?family=PT+Sans:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
     <link href="favicon.ico" rel="shortcut icon" type="image/x-icon" />
 
     <script src="js/respond.min.js"></script>
@@ -24,78 +23,58 @@
     <script src="js/bootstrap.js"></script>
     <script src="js/jquery.fitvids.js"></script>
     <script src="js/colorfrog.js"></script>
-
-
-    <!--[if lt IE 9]>
-	<script>
-		document.createElement('header');document.createElement('nav');document.createElement('section');document.createElement('article');document.createElement('aside');document.createElement('footer');
-	</script>
-	<![endif]-->
-
 </head>
 
 <body>
-    <!--
-Use the corresponding body tag for your chosen theme
-<body class="blue">
-<body class="orange">
-<body class="green">
-<body class="bw">
--->
-
-
     <div style="width: 90%; margin-left: auto; margin-right: auto; ">
-
+        <!-- Top navbar : Home, Dashboard, Keyboard, About page links -->
         <div style="width: 100%; padding-left: 0px; padding-right: 0px;" class="container">
             <header id="navbar" class="nav" role="navigation">
-
-                <h3 onclick="window.location.replace('/')" id="homeBtn"><i class="flex-item fa fa-home"></i> WordBox</h3>
+                <h3 onclick="window.location.replace('/')" id="homeBtn">
+                    <i class="flex-item fa fa-home"></i> WordBox</h3>
                 <div id="navitem">
-                    <h4 style="margin-left: auto; margin-right: 0px;" class="flex-item"><a
-                            href="browse.html">Dashboard</a>
+                    <h4 style="margin-left: auto; margin-right: 0px;" class="flex-item">
+                        <a href="browse.html">Dashboard</a>
                     </h4>
-                    <h4 style="margin-left: 1.5em; margin-right: 0px;" class="flex-item "><a
-                            href="message.html">Keyboard</a></h4>
-                    <h4 style="margin-left: 1.5em; margin-right: 0px;" class="flex-item "><a href="about.html">About</a>
+                    <h4 style="margin-left: 1.5em; margin-right: 0px;" class="flex-item ">
+                        <a href="message.html">Keyboard</a>
                     </h4>
-
+                    <h4 style="margin-left: 1.5em; margin-right: 0px;" class="flex-item ">
+                        <a href="about.html">About</a>
+                    </h4>
                 </div>
             </header>
         </div>
+
+        <!-- border under navbar -->
         <hr style="border-top: 2px solid #164d65; width: 100vw;
             position: relative;
             margin-left: -50vw;
             margin-top: 0px; margin-bottom:0px;
             left: 50%;
             ">
-
+        
+        <!-- Content of About Page  -->
         <h2 align="center">About WordBox</h2>
         <div style="padding-left:20%; padding-right:20%; padding-top:2%">
-            <p align="left"> This tool is not intended for clinical use. Given the wide range of needs and abilites of
-                nonverbal folks,
-                we realize that our app may not be able to accomodate all of those needs.
-                However, we hope that this tool may provide some assistance as a communication medium.
+            <p align="left"> This tool is not intended for clinical use. Given the wide range of needs and abilites of nonverbal folks, we
+                realize that our app may not be able to accomodate all of those needs. However, we hope that this tool may
+                provide some assistance as a communication medium.
             </p>
             <p>
-                The main Dashboard is intended for children and young adults who are not inclined to type. It consists
-                of words and images grouped
-                together by categories. Once a category is selected, the images and phrases for that category are
-                displayed. Clicking on a word or
-                phrase triggers a text-to-speech vocalization. You can also combine phrases and images using the drag
-                and drop feature.
+                The main Dashboard is intended for children and young adults who are not inclined to type. It consists of words and images
+                grouped together by categories. Once a category is selected, the images and phrases for that category are
+                displayed. Clicking on a word or phrase triggers a text-to-speech vocalization. You can also combine phrases
+                and images using the drag and drop feature.
                 <p>
-                    For more advanced users, we included the Keyboard feature as a simple text-to-speech tool.
-                    Simply type in the desired phrase and click "speak" for the message to be verbalized.
+                    For more advanced users, we included the Keyboard feature as a simple text-to-speech tool. Simply type in the desired phrase
+                    and click "speak" for the message to be verbalized.
                 </p>
                 <p>
                     <!--Please contact us with any questions or concerns. -->
                 </p>
         </div>
-
-
     </div>
-
-
 </body>
 
 </html>
