@@ -25,6 +25,22 @@
 
 ## List of Source Files
 
+- server.js
+ ### html
+ - index.html
+ - browse.html
+ - message.html
+ - about.html 
+ ### css
+ - kiddos.css 
+ 
+ ### js
+ - browse.js
+ - dragdrop.js
+ - message.js
+ - pexels.js
+ - speech.js 
+
 ## Links to presentation slide and demo video 
 
 ### Slide link:
