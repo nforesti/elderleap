@@ -5,10 +5,11 @@
 ### Neve Foresti
 - Dashboard page layout 
   - categories & subcategories display 
+  - phrases display 
 - Keyboard page 
 - Text to Speech functionality 
 - setting up databse
-  - list of categories & subcategories 
+  - generated list of categories & subcategories 
 - drag & drop functionality 
 - UI changes
 
