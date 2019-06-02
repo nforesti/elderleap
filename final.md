@@ -8,6 +8,7 @@
 - Keyboard page 
 - Text to Speech functionality 
 - setting up databse
+  - list of categories & subcategories 
 - drag & drop functionality 
 - UI changes
 
