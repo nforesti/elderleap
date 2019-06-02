@@ -29,13 +29,13 @@
   - contains all the backend data. Utilizes Firebase API, Pexels API, and node.js. 
  ### html
  - index.html
-  - home page that includes navigation links, a short description, and key highlights of our app 
+   - home page that includes navigation links, a short description, and key highlights of our app 
  - browse.html
-  - "dashboard" page; displays categories and loads subcategories once a category is clicked on 
+   - "dashboard" page; displays categories and loads subcategories once a category is clicked on 
  - message.html
-  - "keyboard" page; displays interface for text-to-speech keyboard 
+   - "keyboard" page; displays interface for text-to-speech keyboard 
  - about.html 
-  - a short About page describing our app 
+   - a short About page describing our app 
  ### css
  - kiddos.css 
    - main css file
