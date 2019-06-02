@@ -2,6 +2,12 @@
 
 ## Group Member Contributions
 
+### Neve Foresti
+
+### Shira Edelman
+-
+-
+-
 ## List of Source Files
 
 ## Links to presentation slide and demo video 
