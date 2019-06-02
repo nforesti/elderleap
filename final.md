@@ -12,6 +12,7 @@
   - generated list of categories & subcategories 
 - drag & drop functionality 
 - UI changes
+- presentation slide
 
 ### Shira Edelman
 - Home page
@@ -20,6 +21,7 @@
   - populating images in database
 - drag & drop functionality
 - UI changes
+- demo video 
 
 ## List of Source Files
 
