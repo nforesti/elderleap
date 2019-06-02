@@ -25,15 +25,14 @@
 
 ## List of Source Files
 ### server
-- server.js
+- server.js 
  ### html
  - index.html
  - browse.html
  - message.html
  - about.html 
  ### css
- - kiddos.css 
- 
+ - kiddos.css : main css file
  ### js
  - browse.js
  - dragdrop.js
