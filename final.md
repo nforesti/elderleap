@@ -41,15 +41,15 @@
    - main css file
  ### js
  - browse.js
-  - Populates the page (using Ajax and Firebase in backend) with category data. When a category is clicked on, populates the page with subcategory data.
+   - Populates the page (using Ajax and Firebase in backend) with category data. When a category is clicked on, populates the page with      subcategory data.
  - dragdrop.js
-  - contains functions related to dragging and dropping elements in the subcategory page
+   - contains functions related to dragging and dropping elements in the subcategory page
  - message.js
-  - functionality for text-to-speech keyboard including a responsive textbox, adding and deleting phrases, as well as saving phrases in the database. 
+   - functionality for text-to-speech keyboard including a responsive textbox, adding and deleting phrases, as well as saving phrases in      the database. 
  - pexels.js
-  - contains Pexels API functions
+   - contains Pexels API functions
  - speech.js 
-  - contains text-to-speech functions 
+   - contains text-to-speech functions 
 
 ## Links to presentation slide and demo video 
 
