@@ -10,17 +10,17 @@
 - Text to Speech functionality 
 - setting up databse
   - generated list of categories & subcategories 
-- drag & drop functionality 
-- UI changes
+- drag & drop UI (CSS, button events) 
+- UI improvements
 - presentation slide
 
 ### Shira Edelman
 - Home page
 - About page
-- API function calls 
-  - populating images in database
-- drag & drop functionality
-- UI changes
+- API (Pexels) function calls 
+  - populating images into database
+- drag & drop set-up and functionality
+- UI improvements
 - demo video 
 
 ## List of Source Files
@@ -41,11 +41,12 @@
    - main css file
  ### js
  - browse.js
-   - Populates the page (using Ajax and Firebase in backend) with category data. When a category is clicked on, populates the page with      subcategory data.
+   - Populates the page (using Ajax and Firebase in backend) with category data. When a category is clicked on, populates the page with      subcategory data (Ajax and Firebase in backend)
  - dragdrop.js
    - contains functions related to dragging and dropping elements in the subcategory page
  - message.js
-   - functionality for text-to-speech keyboard including a responsive textbox, adding and deleting phrases, as well as saving phrases in      the database. 
+   - functionality for text-to-speech keyboard including a responsive textbox, adding and deleting phrases, as well as saving and     
+     retrieving phrases to/from the Firebase database
  - pexels.js
    - contains Pexels API functions
  - speech.js 
