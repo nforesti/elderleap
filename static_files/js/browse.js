@@ -15,14 +15,14 @@ $(document).ready(() => {
     const enterBrowse = () => {
         const requestURL = '/browse';
         console.log(requestURL);
-        //ajax request to /browse (get category data)
+        //ajax request to /browse (get category data) in server.js
         $.ajax({
             // all URLs are relative to http://localhost:3000/
             url: requestURL,
             type: 'GET',
             dataType: 'json', // this URL  data in JSON format
             success: (data) => {
-                //hide all elements unique to subcategory page
+                //hide all elements unique to subcategory page. show all elements for category page
                 document.getElementById("backToHomeBtn").style.display = "none";
                 document.getElementById("suggestionContainer").style.display = "none";
                 document.getElementById("browsehead").style.display = "block";
@@ -65,7 +65,7 @@ $(document).ready(() => {
         const catName = $(this).find("h3")[0].innerHTML;
         $('#subTitle').html("<br><br><br>" + catName);
 
-        //get data for subcategory
+        //get data for subcategory. calls get request in server.js
         $.ajax({
             url: 'browse/' + catName,
             type: 'GET',
@@ -93,7 +93,7 @@ $(document).ready(() => {
             },
         });
 
-        //get sentence/phrase data for subcategory
+        //get sentence/phrase data for subcategory. calls get request function in server.js
         $.ajax({
             url: '/sentences/' + catName,
             type: 'GET',
