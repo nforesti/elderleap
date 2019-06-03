@@ -3,6 +3,7 @@
 ## Group Member Contributions
 
 ### Neve Foresti
+- storyboard and interactive prototype #1
 - Dashboard page layout 
   - categories & subcategories display 
   - phrases display 
@@ -16,6 +17,7 @@
 - milestone writeups
 
 ### Shira Edelman
+- storyboard and interactive prototype #2
 - Home page
 - About page
 - API (Pexels) function calls 
