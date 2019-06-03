@@ -124,7 +124,7 @@ function setSubCategoryImage(category, subcategory) {
 }
 
 /*  call setImages function to set all images in database */ 
-//setImages(); 
+setImages(); 
 
 /*reset database values to null 
 app.get('/update', function (req, res) {
@@ -138,7 +138,7 @@ firebase.database().ref('/categories').set(categories);
 /*set actionWords in databse */
 const actionWords = info.getActionWords();
 var actionsRef = firebase.database().ref("actions/");
-//actionsRef.set(actionWords);
+actionsRef.set(actionWords);
 
 
 
