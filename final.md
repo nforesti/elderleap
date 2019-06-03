@@ -8,11 +8,12 @@
   - phrases display 
 - Keyboard page 
 - Text to Speech functionality 
-- setting up databse
+- setting up Firebase database in backend server.js
   - generated list of categories & subcategories 
 - drag & drop UI (CSS, button events) 
-- UI improvements
+- UI (CSS, structural, JS) improvements
 - presentation slide
+- milestone writeups
 
 ### Shira Edelman
 - Home page
@@ -20,13 +21,14 @@
 - API (Pexels) function calls 
   - populating images into database
 - drag & drop set-up and functionality
-- UI improvements
+- UI (CSS, structural, JS) improvements
 - demo video 
+- milestone writeups
 
 ## List of Source Files
 ### server
 - server.js 
-  - contains all the backend data. Utilizes Firebase API, Pexels API, and node.js. 
+  - contains all the backend functions. Utilizes Firebase API, Pexels API, and node.js. 
  ### html
  - index.html
    - home page that includes navigation links, a short description, and key highlights of our app 
